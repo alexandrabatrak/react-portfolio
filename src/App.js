@@ -1,21 +1,26 @@
-import './App.css';
-import Header from './components/Header';
-import Landing from './components/Landing';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from './components/Nav';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import Projects from './components/pages/Projects';
 import Footer from './components/Footer';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
-    <div>
-      <Header />
+    <Router>
       <main>
-        <Landing />
-        <Projects />
-        <Contact />
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/projects' element={<Projects />} />
+        </Routes>
+        <Footer />
       </main>
-      <Footer />
-    </div>
+    </Router>
   );
 }
