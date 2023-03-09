@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Project from '../Project';
 import ProjectDetails from '../ProjectDetails';
@@ -22,10 +22,11 @@ export default function Projects() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: '100%' }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: '100%' }}
-      className='bg-primary d-flex align-items-center min-vh-100 p-5 position-relative'>
+      initial={{ opacity: 0, x: 0 }}
+      animate={{ opacity: 1, x: [0, 50, 0] }}
+      exit={{ opacity: 0, x: 0 }}
+      transition={{ ease: 'easeInOut', duration: 1 }}
+      className='bg-primary d-flex align-items-center min-vh-100 p-5'>
       <Container style={{ maxWidth: '1200px' }}>
         <Row>
           <div>

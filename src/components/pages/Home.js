@@ -43,9 +43,9 @@ export default function Home() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, x: 0 }}
-      animate={{ opacity: 1, x: [0, 50, 0] }}
-      exit={{ opacity: 0, x: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: '200%' }}
       transition={{ ease: 'easeInOut', duration: 1 }}
       className='bg-primary d-flex align-items-center min-vh-100 p-5'>
       <Container fluid>
