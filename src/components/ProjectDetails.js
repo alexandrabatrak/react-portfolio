@@ -1,77 +1,65 @@
-import { useState, useEffect } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { motion } from 'framer-motion';
 import projects from './projects.json';
+import { Modal, Row, Col } from 'react-bootstrap';
+import 'swiper/swiper-bundle.min.css';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { motion } from 'framer-motion';
+
+SwiperCore.use([Navigation, Pagination]);
 
 export default function ProjectDetails({ id, show, onHide }) {
-  const [currentIndex, setCurrentIndex] = useState(
-    projects.findIndex((p) => p.id === id)
-  );
-  const [project, setProject] = useState(projects[currentIndex]);
-
-  useEffect(() => {
-    setProject(projects[currentIndex]);
-  }, [currentIndex]);
-
-  const goToNextProject = () => {
-    if (currentIndex === projects.length - 1) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  const goToPreviousProject = () => {
-    if (currentIndex === 0) {
-      setCurrentIndex(projects.length - 1);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
+  const projectIndex = projects.findIndex((p) => p.id === id);
 
   return (
-    <Modal show={show} onHide={onHide} size='lg' centered>
-      <Modal.Header closeButton>
-        <Modal.Title>{project.title}</Modal.Title>
-      </Modal.Header>
+    <Modal show={show} onHide={onHide} size='xxl' centered>
+      <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <motion.div
-          className='project-image'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}>
-          <div
-            className='bg-image'
-            style={{ backgroundImage: `url(${project.img})` }}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}>
-          <p>{project.description}</p>
-          <p>
-            <a href={project.repo} target='_blank' rel='noreferrer'>
-              Repo
-            </a>{' '}
-            |{' '}
-            <a href={project.deployment} target='_blank' rel='noreferrer'>
-              Deployment
-            </a>
-          </p>
-        </motion.div>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          initialSlide={projectIndex}
+          loop={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}>
+          {projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}>
+                <Row>
+                  <Col className=''>
+                    <div
+                      className='bg-image'
+                      style={{ backgroundImage: `url(${project.img})` }}
+                    />
+                  </Col>
+                  <Col>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <p>
+                      <a href={project.repo} target='_blank' rel='noreferrer'>
+                        Repo
+                      </a>
+                      <a
+                        href={project.deployment}
+                        target='_blank'
+                        rel='noreferrer'>
+                        Deployment
+                      </a>
+                    </p>
+                  </Col>
+                </Row>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+          <div className='swiper-button-next'></div>
+          <div className='swiper-button-prev'></div>
+        </Swiper>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant='secondary' onClick={goToPreviousProject}>
-          Previous
-        </Button>
-        <Button variant='secondary' onClick={goToNextProject}>
-          Next
-        </Button>
-        <Button variant='primary' onClick={onHide}>
-          Close
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 }
