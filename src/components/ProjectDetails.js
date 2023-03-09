@@ -12,9 +12,9 @@ export default function ProjectDetails({ id, show, onHide }) {
   const projectIndex = projects.findIndex((p) => p.id === id);
 
   return (
-    <Modal show={show} onHide={onHide} size='xxl' centered>
+    <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton></Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='p-0'>
         <Swiper
           spaceBetween={0}
           slidesPerView={1}
@@ -30,14 +30,14 @@ export default function ProjectDetails({ id, show, onHide }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}>
-                <Row>
-                  <Col className=''>
+                <Row className='project-slider-wrapper'>
+                  <Col className='project-thumbnail col-sm-12 col-md-6'>
                     <div
                       className='bg-image'
                       style={{ backgroundImage: `url(${project.img})` }}
                     />
                   </Col>
-                  <Col>
+                  <Col className='project-content col-sm-12 col-md-6'>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                     <p>
