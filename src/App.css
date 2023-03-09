@@ -1,0 +1,50 @@
+/* Util */
+
+.bg-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+/* Animations */
+
+.reveal-text {
+  position: relative;
+}
+
+.reveal-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  animation: reveal-text 1s linear backwards;
+}
+
+@keyframes reveal-text {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  99% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+.project-image {
+  height: 250px;
+}

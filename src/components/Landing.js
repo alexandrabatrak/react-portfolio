@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 
 export default function Landing() {
-  const [loopN, setLoopN] = useState('0');
+  const [loopN, setLoopN] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toAnimate = ['create', 'develop', 'meep-meep'];
   const [text, setText] = useState('');
@@ -41,19 +41,19 @@ export default function Landing() {
   };
 
   return (
-    <Container fluid>
-      <Row>
-        <div className='bg-primary d-flex align-items-center min-vh-100 px-5'>
+    <section className='bg-primary d-flex align-items-center min-vh-100 p-5'>
+      <Container fluid>
+        <Row>
           <div>
-            <h1 className='display-1'>
+            <h1 className='display-1 reveal-text'>
               {`Hey! I `}
               <span className='wrap'>{text}</span>
             </h1>
-            <p>Lorem ipsum dolore</p>
-            <button>Get in touch</button>
+            <p className='reveal-text'>Lorem ipsum dolore</p>
+            <button className='btn btn-black reveal-text'>Get in touch</button>
           </div>
-        </div>
-      </Row>
-    </Container>
+        </Row>
+      </Container>
+    </section>
   );
 }
