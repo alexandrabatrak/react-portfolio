@@ -1,0 +1,118 @@
+// include customized bootstrap
+@import './scss/config';
+// include all of Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/* Util */
+
+.bg-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+/* Animations */
+
+.reveal-text {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0;
+    animation: reveal-text 1s linear backwards;
+  }
+}
+
+@keyframes reveal-text {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  99% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+
+div:not(.project-details) .project-image {
+  height: 250px;
+}
+
+.modal {
+  &,
+  &-dialog,
+  &-content {
+    width: 100% !important;
+    height: 100vh !important;
+    --bs-modal-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  &-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border: none;
+    z-index: 10000;
+  }
+}
+
+.swiper {
+  height: 100%;
+
+  &-button {
+    &-next,
+    &-prev {
+      bottom: 0;
+      top: auto;
+      width: 75px;
+      height: 75px;
+      background: white;
+      color: black;
+    }
+    &-next {
+      right: 0;
+      left: auto;
+
+      &:after {
+        content: '->';
+      }
+    }
+    &-prev {
+      right: 75px;
+      left: auto;
+      &:after {
+        content: '<-';
+      }
+    }
+  }
+}
+
+.project {
+  &-slider-wrapper {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+  }
+  &-content {
+    padding: 3rem 0;
+  }
+}
