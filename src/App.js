@@ -1,37 +1,45 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Projects from './components/pages/Projects';
 import Footer from './components/Footer';
-// import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { AnimatePresence } from 'framer-motion';
+import CustomCursor from './components/CustomCursor';
+
+const withCustomCursor = (Component, hoverable) => {
+  return (props) => (
+    <>
+      <CustomCursor hoverable={hoverable} />
+      <Component {...props} />
+    </>
+  );
+};
+
+const HoverableHome = withCustomCursor(Home, 'a, button');
+const HoverableAbout = withCustomCursor(About, 'a, button');
+const HoverableContact = withCustomCursor(Contact, 'a, button');
+const HoverableProjects = withCustomCursor(Projects, 'a, button');
 
 export default function App() {
+  const location = useLocation();
+
   return (
-    <main>
-      <Router>
+    <>
+      <main className='overflow-hidden'>
         <Nav />
         <AnimatePresence mode='wait'>
-          <Routes
-          // key={useLocation().pathname} location={useLocation()}
-          >
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/projects' element={<Projects />} />
+          <Routes key={location.pathname} location={location}>
+            <Route exact path='/' element={<HoverableHome />} />
+            <Route path='/about' element={<HoverableAbout />} />
+            <Route path='/contact' element={<HoverableContact />} />
+            <Route path='/projects' element={<HoverableProjects />} />
           </Routes>
         </AnimatePresence>
         <Footer />
-      </Router>
-    </main>
+      </main>
+    </>
   );
 }
