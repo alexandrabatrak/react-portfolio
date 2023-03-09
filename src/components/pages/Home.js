@@ -1,3 +1,4 @@
+import Projects from './Projects';
 import { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
@@ -42,24 +43,39 @@ export default function Home() {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, y: '200%' }}
-      transition={{ ease: 'easeInOut', duration: 1 }}
-      className='bg-primary d-flex align-items-center min-vh-100 p-5'>
-      <Container fluid>
-        <Row>
-          <div>
-            <h1 className='display-1 reveal-text'>
-              {`Hey! I `}
-              <span className='wrap'>{text}</span>
-            </h1>
-            <p className='reveal-text'>Lorem ipsum dolore</p>
-            <button className='btn btn-black reveal-text'>Get in touch</button>
-          </div>
-        </Row>
-      </Container>
-    </motion.section>
+    <>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, y: '200%' }}
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        className='bg-primary d-flex align-items-center min-vh-100 p-5'>
+        <Container fluid>
+          <Row>
+            <div>
+              <h1 className='display-1 reveal-text'>
+                {`Hey! I `}
+                <span className='wrap'>{text}</span>
+              </h1>
+              <p className='reveal-text'>Lorem ipsum dolore</p>
+              <button className='btn btn-black reveal-text'>
+                Get in touch
+              </button>
+            </div>
+          </Row>
+        </Container>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, y: '200%' }}
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        className='bg-primary d-flex align-items-center min-vh-100 p-5'>
+        <Container fluid>
+          <Projects />
+        </Container>
+      </motion.section>
+    </>
   );
 }

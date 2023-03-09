@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Project from '../Project';
-import ProjectDetails from '../ProjectDetails';
 import projects from '../projects.json';
 
 export default function Projects() {
@@ -39,13 +38,21 @@ export default function Projects() {
                   layoutId={project.id}
                   onClick={() => handleProjectClick(project.id)}
                   key={project.id}>
-                  <Project
-                    id={project.id}
-                    title={project.title}
-                    deployment={project.deployment}
-                    repo={project.repo}
-                    img={project.img}
-                  />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false }}
+                    className='d-flex flex-column'>
+                    <motion.div className='project-image'>
+                      <div
+                        className='bg-image'
+                        style={{ backgroundImage: `url(${project.img})` }}
+                      />
+                    </motion.div>
+                    <motion.h3>{project.title}</motion.h3>
+                    <motion.a href={project.repo}>Repo</motion.a>
+                    <motion.a href={project.deployment}>Deployment</motion.a>
+                  </motion.div>
                 </motion.div>
               );
             })}
@@ -53,7 +60,7 @@ export default function Projects() {
         </Row>
       </Container>
       {selectedProject && (
-        <ProjectDetails
+        <Project
           id={selectedProject.id}
           show={selectedProjectId !== null}
           onHide={handleClose}
