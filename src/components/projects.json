@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Project 1",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  },
+  {
+    "id": 2,
+    "title": "Project 2",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  },
+  {
+    "id": 3,
+    "title": "Project 3",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  },
+  {
+    "id": 4,
+    "title": "Project 4",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  },
+  {
+    "id": 5,
+    "title": "Project 5",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  },
+  {
+    "id": 6,
+    "title": "Project 6",
+    "deployment": "#",
+    "repo": "#",
+    "img": "./placeholder.webp"
+  }
+]
