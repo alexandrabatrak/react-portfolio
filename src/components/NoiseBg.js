@@ -5,6 +5,7 @@ import P5 from 'p5';
 
 const NoiseBg = ({ width, height }) => {
   const canvasRef = useRef(null);
+  const [p5, setP5] = useState();
   const [canvasSize, setCanvasSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -126,6 +127,8 @@ const NoiseBg = ({ width, height }) => {
           yoff += inc;
         }
 
+        prevMouse = curMouse;
+        curMouse = new P5.Vector(p5.mouseX, p5.mouseY);
         for (let i = 0; i < particles.length; i++) {
           particles[i].follow(flowfield);
           particles[i].update();
@@ -133,25 +136,46 @@ const NoiseBg = ({ width, height }) => {
           particles[i].show();
         }
 
-        prevMouse = curMouse.copy();
-        curMouse = p5.createVector(p5.mouseX, p5.mouseY);
-        mousePos.lerp(curMouse, 0.05);
-        zoff += 0.005;
+        p5.mouseMoved = () => {
+          mousePos = new P5.Vector(p5.mouseX, p5.mouseY);
+        };
+
+        // prevMouse = curMouse.copy();
+        // curMouse = p5.createVector(p5.mouseX, p5.mouseY);
+        // mousePos.lerp(curMouse, 0.05);
+        // zoff += 0.005;
       };
     };
 
     const p5 = new P5(sketch);
-    window.addEventListener('resize', handleResize);
-    cols = p5.floor(width / scl);
-    rows = p5.floor(height / scl);
-    for (let i = 0; i < 200; i++) {
-      particles.push(new Particle(p5));
-    }
-    return () => {
-      p5.remove();
-      window.removeEventListener('resize', handleResize);
+    const windowResized = () => {
+      if (p5) {
+        p5.resizeCanvas(window.innerWidth, window.innerHeight);
+      }
     };
-  }, [canvasSize]);
+    window.addEventListener('resize', windowResized);
+    return () => {
+      window.removeEventListener('resize', windowResized);
+      p5.remove();
+    };
+  }, []);
+
+  //   const p5 = new P5(sketch);
+  //   window.addEventListener('resize', handleResize);
+  //   cols = p5.floor(width / scl);
+  //   rows = p5.floor(height / scl);
+  //   for (let i = 0; i < 200; i++) {
+  //     particles.push(new Particle(p5));
+  //   }
+  //   return () => {
+  //     p5.remove();
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, [canvasSize]);
+
+  // const windowResized = (p5) => {
+  //   p5.resizeCanvas(window.innerWidth, window.innerHeight);
+  // };
 
   const handleResize = () => {
     setCanvasSize({
