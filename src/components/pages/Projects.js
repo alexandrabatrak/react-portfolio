@@ -25,7 +25,7 @@ export default function Projects() {
       animate={{ opacity: 1, x: [0, 50, 0] }}
       exit={{ opacity: 0, x: 0 }}
       transition={{ ease: 'easeInOut', duration: 1 }}
-      className='bg-primary d-flex align-items-center min-vh-100 p-5'>
+      className='bg-black bg-opacity-50 d-flex align-items-center min-vh-100 p-5'>
       <Container style={{ maxWidth: '1200px' }}>
         <Row>
           <div>
