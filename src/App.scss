@@ -13,35 +13,35 @@
 
 /* Animations */
 
-.reveal-text {
-  position: relative;
+// .reveal-text {
+//   position: relative;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0;
-    animation: reveal-text 1s linear backwards;
-  }
-}
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//     background-color: black;
+//     opacity: 0;
+//     animation: reveal-text 1s linear backwards;
+//   }
+// }
 
-@keyframes reveal-text {
-  0% {
-    width: 100%;
-    opacity: 1;
-  }
-  99% {
-    width: 0;
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+// @keyframes reveal-text {
+//   0% {
+//     width: 100%;
+//     opacity: 1;
+//   }
+//   99% {
+//     width: 0;
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
 /* Grid */
 
@@ -130,7 +130,7 @@ div:not(.project-details) .project-image {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: black;
+  background: rgb(255, 255, 255);
   pointer-events: none;
 
   &.click {
@@ -142,7 +142,7 @@ div:not(.project-details) .project-image {
   }
 
   &.hover ~ .cursor-buddy {
-    background-color: rgba(84, 84, 84, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: difference;
   }
 
@@ -151,10 +151,14 @@ div:not(.project-details) .project-image {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     pointer-events: none;
-    transition: all 0.4s ease;
+    transition: all 0.25s ease;
     z-index: 10001;
     transform: translate(-50%, -50%);
   }
 }
+
+// a {
+//   color: rgb(73, 58, 30);
+// }
