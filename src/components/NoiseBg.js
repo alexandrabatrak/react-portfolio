@@ -5,30 +5,33 @@ import P5 from 'p5';
 
 const NoiseBg = ({ width, height }) => {
   const canvasRef = useRef(null);
-  // const [p5, setP5] = useState();
+  const [p5, setP5] = useState(null);
   const [canvasSize, setCanvasSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const inc = 0.05;
-  const scl = 25;
-  const threshold = 10;
+  const inc = 0.1;
+  const scl = 15;
+  const threshold = 0.5;
   let cols, rows;
-  let zoff = 9;
-  let particles = [];
+  let zoff = 1;
   cols = Math.floor(width / scl);
   rows = Math.floor(height / scl);
   let flowfield = [];
   let prevMouse = new P5.Vector(0, 0);
   let curMouse = new P5.Vector(0, 0);
   let mousePos = new P5.Vector(0, 0);
+  const NUM_PARTICLES = 2300;
+  const particles = [];
+  let particleColor = [128, 255, 190];
 
   class Particle {
     constructor(p5) {
       this.pos = p5.createVector(p5.random(p5.width), p5.random(p5.height));
       this.vel = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
       this.acc = p5.createVector(0, 0);
-      this.color = p5.color(255, 50);
+      const opacity = Math.floor(Math.random() * (75 - 10 + 1)) + 10;
+      this.color = p5.color([...particleColor, opacity]);
       this.maxspeed = 3;
       this.prevPos = this.pos.copy();
       this.update = function () {
@@ -75,11 +78,11 @@ const NoiseBg = ({ width, height }) => {
         let y = p5.floor(this.pos.y / scl);
         let index = x + y * cols;
         if (vectors[index]) {
-          let force = vectors[index].copy().mult(0.5);
+          let force = vectors[index].copy().mult(2);
           let mouseVel = curMouse.copy().sub(prevMouse);
           let d = mousePos.dist(this.pos);
           let m;
-          if (d < 100) {
+          if (d < 200) {
             m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 2);
           } else {
             m = this.maxspeed;
@@ -91,6 +94,12 @@ const NoiseBg = ({ width, height }) => {
     }
   }
 
+  // for (let i = 0; i < NUM_PARTICLES; i++) {
+  //   const particle = new Particle(p5);
+  //   particle.init(p5);
+  //   particles.push(particle);
+  // }
+
   useEffect(() => {
     const sketch = (p5) => {
       p5.setup = () => {
@@ -100,7 +109,7 @@ const NoiseBg = ({ width, height }) => {
         cols = Math.floor(width / scl);
         rows = Math.floor(height / scl);
         flowfield = new Array(cols * rows);
-        for (let i = 0; i < 2500; i++) {
+        for (let i = 0; i < NUM_PARTICLES; i++) {
           particles[i] = new Particle(p5);
         }
       };
@@ -117,12 +126,12 @@ const NoiseBg = ({ width, height }) => {
             v.setMag(threshold);
             flowfield[index] = v;
             xoff += inc;
-            p5.stroke(0, 50);
-            // p5.push();
-            // p5.translate(x * scl, y * scl);
-            // p5.rotate(v.heading());
-            // p5.line(0, 0, scl, 0);
-            // p5.pop();
+            p5.stroke(1);
+            p5.push();
+            p5.translate(x * scl, y * scl);
+            p5.rotate(v.heading());
+            p5.line(0, 0, scl, 0);
+            p5.pop();
           }
           yoff += inc;
         }
@@ -141,9 +150,8 @@ const NoiseBg = ({ width, height }) => {
         };
 
         // prevMouse = curMouse.copy();
-        // curMouse = p5.createVector(p5.mouseX, p5.mouseY);
         mousePos.lerp(curMouse, 0.05);
-        zoff += 0.005;
+        zoff += 0.0009;
       };
     };
 

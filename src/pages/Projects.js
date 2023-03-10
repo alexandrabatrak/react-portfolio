@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import Project from '../Project';
+import Project from '../components/Project';
 import projects from '../projects.json';
 
 export default function Projects() {
@@ -64,11 +64,11 @@ export default function Projects() {
           id={selectedProject.id}
           show={selectedProjectId !== null}
           onHide={handleClose}
-          title={selectedProject.title}
-          img={selectedProject.img}
-          description={selectedProject.description}
-          repo={selectedProject.repo}
-          deployment={selectedProject.deployment}
+          // title={selectedProject.title}
+          // img={selectedProject.img}
+          // description={selectedProject.description}
+          // repo={selectedProject.repo}
+          // deployment={selectedProject.deployment}
         />
       )}
     </motion.section>

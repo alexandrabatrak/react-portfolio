@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <div>
+    <footer>
       <p>
         Coded with * Copyright &copy; {new Date().getFullYear()} Alexandra
         Batrak
       </p>
-    </div>
+    </footer>
   );
 }
