@@ -1,8 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import P5 from 'p5';
+
+// TODO: 1. Make canvas adapt to window.resize
+// TODO: 2. Add delay to mouse gravity (so it stops slowing cursor down)
 
 const NoiseBg = ({ width, height }) => {
   const canvasRef = useRef(null);
+  const [canvasSize, setCanvasSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   const inc = 0.05;
   const scl = 25;
   const threshold = 10;
@@ -87,7 +94,9 @@ const NoiseBg = ({ width, height }) => {
   useEffect(() => {
     const sketch = (p5) => {
       p5.setup = () => {
-        p5.createCanvas(width, height).parent(canvasRef.current);
+        p5.createCanvas(canvasSize.width, canvasSize.height).parent(
+          canvasRef.current
+        );
         cols = Math.floor(width / scl);
         rows = Math.floor(height / scl);
         flowfield = new Array(cols * rows);
@@ -142,6 +151,15 @@ const NoiseBg = ({ width, height }) => {
       p5.remove();
     };
   }, [canvasRef, height, width]);
+
+  useEffect(() => {
+    window.addEventListener('resize', windowResized);
+    return () => window.removeEventListener('resize', windowResized);
+  }, []);
+
+  const windowResized = () => {
+    setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+  };
 
   return <div ref={canvasRef}></div>;
 };
