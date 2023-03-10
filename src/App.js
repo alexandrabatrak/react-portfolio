@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import './App.scss';
 import { AnimatePresence } from 'framer-motion';
 import CustomCursor from './components/CustomCursor';
+import NoiseBg from './components/NoiseBg';
 
 const withCustomCursor = (Component, hoverable) => {
   return (props) => (
@@ -28,7 +29,10 @@ export default function App() {
 
   return (
     <>
-      <main className='overflow-hidden'>
+      <div className='position-fixed z-0'>
+        <NoiseBg width={window.innerWidth} height={window.innerHeight} />
+      </div>
+      <main className='overflow-hidden position-relative z-1'>
         <Nav />
         <AnimatePresence mode='wait'>
           <Routes key={location.pathname} location={location}>
