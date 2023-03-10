@@ -177,12 +177,12 @@ const NoiseBg = ({ width, height }) => {
   //   p5.resizeCanvas(window.innerWidth, window.innerHeight);
   // };
 
-  const handleResize = () => {
-    setCanvasSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+  // const handleResize = () => {
+  //   setCanvasSize({
+  //     width: window.innerWidth,
+  //     height: window.innerHeight,
+  //   });
+  // };
 
   return <div ref={canvasRef}></div>;
 };
