@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import P5 from 'p5';
 
-// TODO: 1. Make canvas adapt to window.resize
 // TODO: 2. Add delay to mouse gravity (so it stops slowing cursor down)
 
 const NoiseBg = ({ width, height }) => {
@@ -142,6 +141,7 @@ const NoiseBg = ({ width, height }) => {
     };
 
     const p5 = new P5(sketch);
+    window.addEventListener('resize', handleResize);
     cols = p5.floor(width / scl);
     rows = p5.floor(height / scl);
     for (let i = 0; i < 200; i++) {
@@ -149,16 +149,15 @@ const NoiseBg = ({ width, height }) => {
     }
     return () => {
       p5.remove();
+      window.removeEventListener('resize', handleResize);
     };
-  }, [canvasRef, height, width]);
+  }, [canvasSize]);
 
-  useEffect(() => {
-    window.addEventListener('resize', windowResized);
-    return () => window.removeEventListener('resize', windowResized);
-  }, []);
-
-  const windowResized = () => {
-    setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+  const handleResize = () => {
+    setCanvasSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
   };
 
   return <div ref={canvasRef}></div>;
