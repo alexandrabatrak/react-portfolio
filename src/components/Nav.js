@@ -21,8 +21,8 @@ export default function Header() {
     <header>
       <Navbar
         className={scrolled ? 'scrolled' : ''}
-        bg='light'
-        variant='light'
+        bg='black'
+        variant='dark'
         fixed='top'>
         <Container>
           <Link className='navbar-brand' to='/'>
