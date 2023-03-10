@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      <div className='position-fixed z-0'>
+      <div className='bg-black position-fixed z-0'>
         <NoiseBg width={window.innerWidth} height={window.innerHeight} />
       </div>
       <main className='overflow-hidden position-relative z-1'>
