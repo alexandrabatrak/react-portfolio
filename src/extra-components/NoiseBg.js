@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
 import P5 from 'p5';
 
-// TODO: 2. Add delay to mouse gravity (so it stops slowing cursor down)
-
-const NoiseBg = ({ width, height }) => {
+const NoiseBg = memo(({ width, height }) => {
   const canvasRef = useRef(null);
   const [p5, setP5] = useState(null);
   const [canvasSize, setCanvasSize] = useState({
@@ -21,18 +19,18 @@ const NoiseBg = ({ width, height }) => {
   let prevMouse = new P5.Vector(0, 0);
   let curMouse = new P5.Vector(0, 0);
   let mousePos = new P5.Vector(0, 0);
-  const NUM_PARTICLES = 2300;
+  const numParicles = 1500;
   const particles = [];
   let particleColor = [128, 255, 190];
 
   class Particle {
     constructor(p5) {
       this.pos = p5.createVector(p5.random(p5.width), p5.random(p5.height));
-      this.vel = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
+      this.vel = p5.createVector(p5.random(-2, 2), p5.random(-2, 2));
       this.acc = p5.createVector(0, 0);
       const opacity = Math.floor(Math.random() * (75 - 10 + 1)) + 10;
       this.color = p5.color([...particleColor, opacity]);
-      this.maxspeed = 3;
+      this.maxspeed = 5;
       this.prevPos = this.pos.copy();
       this.update = function () {
         this.vel.add(this.acc);
@@ -44,10 +42,9 @@ const NoiseBg = ({ width, height }) => {
         this.acc.add(force);
       };
       this.show = function () {
-        p5.stroke(this.color);
-        p5.strokeWeight(1);
-        p5.line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
-        this.updatePrev();
+        p5.noStroke();
+        p5.fill(this.color);
+        p5.circle(this.pos.x, this.pos.y, 3);
       };
 
       this.updatePrev = function () {
@@ -78,11 +75,11 @@ const NoiseBg = ({ width, height }) => {
         let y = p5.floor(this.pos.y / scl);
         let index = x + y * cols;
         if (vectors[index]) {
-          let force = vectors[index].copy().mult(2);
+          let force = vectors[index].copy().mult(0.5);
           let mouseVel = curMouse.copy().sub(prevMouse);
           let d = mousePos.dist(this.pos);
           let m;
-          if (d < 200) {
+          if (d < 100) {
             m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 2);
           } else {
             m = this.maxspeed;
@@ -94,12 +91,6 @@ const NoiseBg = ({ width, height }) => {
     }
   }
 
-  // for (let i = 0; i < NUM_PARTICLES; i++) {
-  //   const particle = new Particle(p5);
-  //   particle.init(p5);
-  //   particles.push(particle);
-  // }
-
   useEffect(() => {
     const sketch = (p5) => {
       p5.setup = () => {
@@ -109,29 +100,47 @@ const NoiseBg = ({ width, height }) => {
         cols = Math.floor(width / scl);
         rows = Math.floor(height / scl);
         flowfield = new Array(cols * rows);
-        for (let i = 0; i < NUM_PARTICLES; i++) {
+        for (let i = 0; i < numParicles; i++) {
           particles[i] = new Particle(p5);
         }
+        // replace setInterval with requestAnimationFrame
+        p5.frameRate(60);
+        p5.noStroke();
+        p5.colorMode(p5.RGB, 255);
+        p5.background(0);
+        p5.loop();
       };
 
+      let particleCounter = 0;
       p5.draw = () => {
+        particleCounter++;
+
+        // update the particles every five frames
+        if (particleCounter % 5 === 0) {
+          particles.forEach((particle) => {
+            particle.follow(flowfield);
+            particle.update();
+            particle.edges();
+          });
+        }
+
+        // render the particles
+        particles.forEach((particle) => {
+          particle.show();
+        });
+
         p5.background(0);
+        // update the flow field
+        zoff += inc;
         let yoff = 0;
         for (let y = 0; y < rows; y++) {
           let xoff = 0;
           for (let x = 0; x < cols; x++) {
             let index = x + y * cols;
             let angle = p5.noise(xoff, yoff, zoff) * p5.TWO_PI;
-            let v = p5.createVector(p5.cos(angle), p5.sin(angle));
-            v.setMag(threshold);
+            let v = p5.createVector(p5.cos(angle), p5.sin(angle)).mult(1);
             flowfield[index] = v;
             xoff += inc;
-            p5.stroke(1);
-            p5.push();
-            p5.translate(x * scl, y * scl);
-            p5.rotate(v.heading());
-            p5.line(0, 0, scl, 0);
-            p5.pop();
           }
           yoff += inc;
         }
@@ -146,10 +155,11 @@ const NoiseBg = ({ width, height }) => {
         }
 
         p5.mouseMoved = () => {
-          mousePos = new P5.Vector(p5.mouseX, p5.mouseY);
+          prevMouse = curMouse;
+          curMouse = p5.createVector(p5.mouseX, p5.mouseY);
+          mousePos = p5.createVector(p5.mouseX, p5.mouseY);
         };
 
-        // prevMouse = curMouse.copy();
         mousePos.lerp(curMouse, 0.05);
         zoff += 0.0009;
       };
@@ -168,31 +178,7 @@ const NoiseBg = ({ width, height }) => {
     };
   }, []);
 
-  //   const p5 = new P5(sketch);
-  //   window.addEventListener('resize', handleResize);
-  //   cols = p5.floor(width / scl);
-  //   rows = p5.floor(height / scl);
-  //   for (let i = 0; i < 200; i++) {
-  //     particles.push(new Particle(p5));
-  //   }
-  //   return () => {
-  //     p5.remove();
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, [canvasSize]);
-
-  // const windowResized = (p5) => {
-  //   p5.resizeCanvas(window.innerWidth, window.innerHeight);
-  // };
-
-  // const handleResize = () => {
-  //   setCanvasSize({
-  //     width: window.innerWidth,
-  //     height: window.innerHeight,
-  //   });
-  // };
-
   return <div ref={canvasRef}></div>;
-};
+});
 
 export default NoiseBg;
