@@ -3,6 +3,7 @@
 // include all of Bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import url(https://fonts.bunny.net/css?family=ephesis:400|rufina:400,700);
+// @import url('https://unpkg.com/css.gg@2.0.0/icons/css/loadbar-sound.css');
 
 body {
   font-family: 'Rufina', serif;
@@ -14,8 +15,15 @@ body {
     transition: opacity 0.5s ease-out;
     opacity: 1;
   }
-  .delete {
-    opacity: 0;
+
+  .fade {
+    &-out {
+      opacity: 0;
+    }
+
+    &-in {
+      opacity: 1;
+    }
   }
 }
 
@@ -172,5 +180,55 @@ div:not(.project-details) .project-image {
     transition: all 0.25s ease;
     z-index: 10001;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 20px rgb(128, 255, 190, 0.5);
+  }
+}
+
+$size: 100px;
+$speed: 0.6s;
+$bar-width: ceil($size / 5);
+$gutter-width: floor(($size - $bar-width * 3) / 2);
+$bar-color: white;
+
+.sound-icon {
+  margin: 100px auto; // Just for presentation
+  position: relative;
+  width: $size;
+  height: $size;
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: $bar-width;
+    background-color: $bar-color;
+    animation: up-down $speed infinite;
+
+    &:nth-child(2) {
+      left: $bar-width + $gutter-width;
+      animation-delay: -$speed / 3 * 2;
+    }
+
+    &:nth-child(3) {
+      left: $bar-width * 2 + $gutter-width * 2;
+      animation-delay: -$speed / 3;
+    }
+  }
+
+  &.no {
+    animation: none;
+  }
+}
+
+@keyframes up-down {
+  from {
+    top: 100px;
+  }
+  50% {
+    top: 0;
+  }
+  to {
+    top: 100px;
   }
 }
