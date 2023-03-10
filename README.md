@@ -11,3 +11,4 @@ https://www.aurigait.com/blog/how-to-implement-p5-js-javascript-canvas-library-w
 https://stackoverflow.com/questions/72349396/react-component-is-duplicated-with-p5-js-canvas
 https://www.lloydatkinson.net/posts/2022/how-to-prevent-a-duplicated-canvas-when-using-p5-and-react-strict-mode/
 https://stackoverflow.com/questions/72274015/react-strictmode-double-initializasion-where-to-put-logic-that-should-be-execu
+https://stackoverflow.com/questions/67134602/p5js-resizecanvas-is-not-a-function-on-resize
