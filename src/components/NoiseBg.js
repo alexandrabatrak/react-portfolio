@@ -5,7 +5,7 @@ import P5 from 'p5';
 
 const NoiseBg = ({ width, height }) => {
   const canvasRef = useRef(null);
-  const [p5, setP5] = useState();
+  // const [p5, setP5] = useState();
   const [canvasSize, setCanvasSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -118,11 +118,11 @@ const NoiseBg = ({ width, height }) => {
             flowfield[index] = v;
             xoff += inc;
             p5.stroke(0, 50);
-            p5.push();
-            p5.translate(x * scl, y * scl);
-            p5.rotate(v.heading());
-            p5.line(0, 0, scl, 0);
-            p5.pop();
+            // p5.push();
+            // p5.translate(x * scl, y * scl);
+            // p5.rotate(v.heading());
+            // p5.line(0, 0, scl, 0);
+            // p5.pop();
           }
           yoff += inc;
         }
@@ -142,8 +142,8 @@ const NoiseBg = ({ width, height }) => {
 
         // prevMouse = curMouse.copy();
         // curMouse = p5.createVector(p5.mouseX, p5.mouseY);
-        // mousePos.lerp(curMouse, 0.05);
-        // zoff += 0.005;
+        mousePos.lerp(curMouse, 0.05);
+        zoff += 0.005;
       };
     };
 
