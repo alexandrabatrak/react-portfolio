@@ -1,8 +1,8 @@
 import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import NoiseBg from '../components/NoiseBg';
-import Title from '../components/Title';
-import ScrollDown from '../components/ScrollDown';
+import NoiseBg from '../extra-components/NoiseBg';
+import Title from '../components/Title/Title';
+import ScrollDown from '../extra-components/ScrollDown/ScrollDown';
 
 export default function Home() {
   return (

@@ -1,6 +1,7 @@
-import { Nav, Navbar, Container } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+import './style.scss';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './style.scss';
 
 // TODO: Cursor render isn't smooth enough on the home page
 

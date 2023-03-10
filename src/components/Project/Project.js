@@ -1,10 +1,10 @@
-import projects from '../projects.json';
+import projects from '../../projects.json';
 import { Modal, Row, Col } from 'react-bootstrap';
-import 'swiper/swiper-bundle.min.css';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
+import 'swiper/swiper-bundle.min.css';
+import './style.scss';
 
 SwiperCore.use([Navigation, Pagination]);
 

@@ -1,9 +1,9 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
-import CustomCursor from './CustomCursor';
+import CustomCursor from '../extra-components/CustomCursor/CustomCursor';
 import Home from '../pages/Home';
+import Projects from '../pages/Projects';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import Projects from '../pages/Projects';
 
 export default function RoutesWrapper() {
   const location = useLocation();

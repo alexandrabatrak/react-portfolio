@@ -1,33 +1,10 @@
-// include customized bootstrap
 @import './scss/config';
-// include all of Bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import url(https://fonts.bunny.net/css?family=ephesis:400|rufina:400,700);
-// @import url('https://unpkg.com/css.gg@2.0.0/icons/css/loadbar-sound.css');
 
 body {
   font-family: 'Rufina', serif;
 }
-
-.masthead {
-  & h1 {
-    font-family: 'Ephesis', handwriting;
-    transition: opacity 0.5s ease-out;
-    opacity: 1;
-  }
-
-  .fade {
-    &-out {
-      opacity: 0;
-    }
-
-    &-in {
-      opacity: 1;
-    }
-  }
-}
-
-/* Util */
 
 .bg-image {
   height: 100%;
@@ -35,200 +12,13 @@ body {
   background-size: cover;
 }
 
-/* Animations */
-
-// .reveal-text {
-//   position: relative;
-
-//   &:before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     height: 100%;
-//     width: 100%;
-//     background-color: black;
-//     opacity: 0;
-//     animation: reveal-text 1s linear backwards;
-//   }
-// }
-
-// @keyframes reveal-text {
-//   0% {
-//     width: 100%;
-//     opacity: 1;
-//   }
-//   99% {
-//     width: 0;
-//     opacity: 1;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// }
-
 /* Grid */
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 2rem;
-}
 
-div:not(.project-details) .project-image {
-  height: 250px;
-}
-
-.modal {
-  &,
-  &-dialog,
-  &-content {
-    width: 100% !important;
-    height: 100vh !important;
-    --bs-modal-width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  &-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border: none;
-    z-index: 10000;
-  }
-}
-
-.swiper {
-  height: 100%;
-
-  &-button {
-    &-next,
-    &-prev {
-      bottom: 0;
-      top: auto;
-      width: 75px;
-      height: 75px;
-      background: white;
-      color: black;
-    }
-    &-next {
-      right: 0;
-      left: auto;
-
-      &:after {
-        content: '->';
-      }
-    }
-    &-prev {
-      right: 75px;
-      left: auto;
-      &:after {
-        content: '<-';
-      }
-    }
-  }
-}
-
-.project {
-  &-slider-wrapper {
-    height: 100vh;
-    position: fixed;
-    width: 100%;
-  }
-  &-content {
-    padding: 3rem 0;
-  }
-}
-
-/* Cursor */
-
-// body {
-//   cursor: none;
-// }
-
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: rgb(255, 255, 255);
-  pointer-events: none;
-
-  &.click {
-    transform: scale(0.25);
-  }
-
-  &.hover {
-    transform: scale(0);
-  }
-
-  &.hover ~ .cursor-buddy {
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: difference;
-  }
-
-  &-buddy {
-    position: fixed;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    border: 1px solid #ffffff;
-    pointer-events: none;
-    transition: all 0.25s ease;
-    z-index: 10001;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 20px rgb(128, 255, 190, 0.5);
-  }
-}
-
-$size: 100px;
-$speed: 0.6s;
-$bar-width: ceil($size / 5);
-$gutter-width: floor(($size - $bar-width * 3) / 2);
-$bar-color: white;
-
-.sound-icon {
-  margin: 100px auto; // Just for presentation
-  position: relative;
-  width: $size;
-  height: $size;
-
-  .bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    width: $bar-width;
-    background-color: $bar-color;
-    animation: up-down $speed infinite;
-
-    &:nth-child(2) {
-      left: $bar-width + $gutter-width;
-      animation-delay: -$speed / 3 * 2;
-    }
-
-    &:nth-child(3) {
-      left: $bar-width * 2 + $gutter-width * 2;
-      animation-delay: -$speed / 3;
-    }
-  }
-
-  &.no {
-    animation: none;
-  }
-}
-
-@keyframes up-down {
-  from {
-    top: 100px;
-  }
-  50% {
-    top: 0;
-  }
-  to {
-    top: 100px;
+  .project-image {
+    height: 250px;
   }
 }

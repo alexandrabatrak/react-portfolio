@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import Project from '../components/Project';
+import Project from '../components/Project/Project';
 import projects from '../projects.json';
 
 export default function Projects() {

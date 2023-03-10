@@ -1,3 +1,5 @@
+import './style.scss';
+
 export default function SoundIcon() {
   const soundToggle = () => {
     const icon = document.querySelector('.sound-icon');

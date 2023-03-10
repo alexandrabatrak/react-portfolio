@@ -1,0 +1,18 @@
+/* Title */
+.masthead {
+  & h1 {
+    font-family: 'Ephesis', handwriting;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+  }
+
+  .fade {
+    &-out {
+      opacity: 0;
+    }
+
+    &-in {
+      opacity: 1;
+    }
+  }
+}

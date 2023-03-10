@@ -1,0 +1,62 @@
+/* Project */
+.modal {
+  &,
+  &-dialog,
+  &-content {
+    width: 100% !important;
+    height: 100vh !important;
+    --bs-modal-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  &-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border: none;
+    z-index: 10000;
+  }
+}
+
+.swiper {
+  height: 100%;
+
+  &-button {
+    &-next,
+    &-prev {
+      bottom: 0;
+      top: auto;
+      width: 75px;
+      height: 75px;
+      background: white;
+      color: black;
+    }
+    &-next {
+      right: 0;
+      left: auto;
+
+      &:after {
+        content: '->';
+      }
+    }
+    &-prev {
+      right: 75px;
+      left: auto;
+      &:after {
+        content: '<-';
+      }
+    }
+  }
+}
+
+.project {
+  &-slider-wrapper {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+  }
+  &-content {
+    padding: 3rem 0;
+  }
+}

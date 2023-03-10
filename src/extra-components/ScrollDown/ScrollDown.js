@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MdOutlineSouth } from 'react-icons/md';
+import './style.scss';
 
 export default function ScrollDown() {
   return (

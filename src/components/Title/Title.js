@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './style.scss';
 
 export default function Title() {
   const [loopN, setLoopN] = useState(0);
