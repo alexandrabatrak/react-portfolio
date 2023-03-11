@@ -16,9 +16,11 @@ const NoiseBg = memo(({ width, height }) => {
   let time = 0;
   const numParicles = 2500;
   const particles = [];
-  let particleColor = [255, 255, 255];
+  const bgColor = [25];
+  // let particleColor = [173, 155, 170];
+  let particleColor = [176, 137, 104];
   let particleSpeed = 5;
-  const opacity = Math.floor(Math.random() * 47);
+  const opacity = Math.floor(Math.random() * 90);
   let maxOpacityIncrease = 255;
   const opacityIncrease = Math.floor(Math.random() * maxOpacityIncrease) + 1;
   let prevMouse = new P5.Vector(0, 0);
@@ -30,7 +32,7 @@ const NoiseBg = memo(({ width, height }) => {
       this.pos = p5.createVector(p5.random(p5.width), p5.random(p5.height));
       this.vel = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
       this.acc = p5.createVector(0, 0);
-      this.color = p5.color([...particleColor, opacity]);
+      this.color = p5.color(...particleColor, opacity);
       this.maxspeed = particleSpeed;
       this.prevPos = this.pos.copy();
       this.update = function () {
@@ -45,9 +47,19 @@ const NoiseBg = memo(({ width, height }) => {
         this.acc.add(force);
       };
       this.show = function () {
-        p5.noStroke();
+        const size = Math.random() * 2.5;
+
+        // p5.noStroke();
         p5.fill(this.color);
-        p5.circle(this.pos.x, this.pos.y, 2.5);
+        // p5.circle(this.pos.x, this.pos.y, size);
+        p5.beginShape();
+        for (let i = 0; i < 6; i++) {
+          let angle = (i * p5.TWO_PI) / 6;
+          let x = this.pos.x + size * p5.cos(angle);
+          let y = this.pos.y + size * p5.sin(angle);
+          p5.vertex(x, y);
+        }
+        p5.endShape(p5.CLOSE);
       };
 
       this.updatePrev = function () {
@@ -92,7 +104,7 @@ const NoiseBg = memo(({ width, height }) => {
         p5.frameRate(60);
         p5.noStroke();
         p5.colorMode(p5.RGB, 255);
-        p5.background(0);
+        p5.background(...bgColor);
         p5.loop();
       };
 
@@ -114,7 +126,7 @@ const NoiseBg = memo(({ width, height }) => {
           particle.show();
         });
 
-        p5.background(0);
+        p5.background(...bgColor);
         // update the flow field
         zoff += inc;
         let yoff = 0;
