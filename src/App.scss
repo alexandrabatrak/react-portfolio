@@ -1,7 +1,11 @@
+@import './scss/animations';
 @import './scss/config';
 @import 'bootstrap/scss/bootstrap';
 @import url(https://fonts.bunny.net/css?family=ephesis:400|rufina:400,700);
 
+* {
+  webkit-font-smoothing: subpixel-antialiased;
+}
 body {
   font-family: 'Rufina', serif;
 }
@@ -10,6 +14,10 @@ body {
   height: 100%;
   width: 100%;
   background-size: cover;
+}
+
+a {
+  color: $primary;
 }
 
 /* Grid */
