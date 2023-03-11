@@ -10,25 +10,28 @@ const NoiseBg = memo(({ width, height }) => {
   });
   const inc = 0.1;
   const scl = 15;
-  const threshold = 0.5;
+  // const threshold = 0.5;
   let cols, rows;
   let zoff = 1;
-  cols = Math.floor(width / scl);
-  rows = Math.floor(height / scl);
+  // cols = Math.floor(width / scl);
+  // rows = Math.floor(height / scl);
   let flowfield = [];
   let prevMouse = new P5.Vector(0, 0);
   let curMouse = new P5.Vector(0, 0);
   let mousePos = new P5.Vector(0, 0);
-  const numParicles = 1500;
+  let time = 0;
+  const numParicles = 2500;
   const particles = [];
-  let particleColor = [128, 255, 190];
+  let particleColor = [255, 255, 255];
+  const opacity = Math.floor(Math.random() * 47);
+  const maxOpacityIncrease = 255;
+  const opacityIncrease = Math.floor(Math.random() * maxOpacityIncrease) + 1;
 
   class Particle {
     constructor(p5) {
       this.pos = p5.createVector(p5.random(p5.width), p5.random(p5.height));
-      this.vel = p5.createVector(p5.random(-2, 2), p5.random(-2, 2));
+      this.vel = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
       this.acc = p5.createVector(0, 0);
-      const opacity = Math.floor(Math.random() * (75 - 10 + 1)) + 10;
       this.color = p5.color([...particleColor, opacity]);
       this.maxspeed = 5;
       this.prevPos = this.pos.copy();
@@ -37,6 +40,8 @@ const NoiseBg = memo(({ width, height }) => {
         this.vel.limit(this.maxspeed);
         this.pos.add(this.vel);
         this.acc.mult(0);
+        this.opacity += opacityIncrease;
+        this.color.setAlpha(this.opacity);
       };
       this.applyForce = function (force) {
         this.acc.add(force);
@@ -44,7 +49,7 @@ const NoiseBg = memo(({ width, height }) => {
       this.show = function () {
         p5.noStroke();
         p5.fill(this.color);
-        p5.circle(this.pos.x, this.pos.y, 3);
+        p5.circle(this.pos.x, this.pos.y, 2.5);
       };
 
       this.updatePrev = function () {
@@ -75,7 +80,7 @@ const NoiseBg = memo(({ width, height }) => {
         let y = p5.floor(this.pos.y / scl);
         let index = x + y * cols;
         if (vectors[index]) {
-          let force = vectors[index].copy().mult(0.5);
+          let force = vectors[index].copy().mult(2);
           let mouseVel = curMouse.copy().sub(prevMouse);
           let d = mousePos.dist(this.pos);
           let m;
@@ -115,8 +120,8 @@ const NoiseBg = memo(({ width, height }) => {
       p5.draw = () => {
         particleCounter++;
 
-        // update the particles every five frames
-        if (particleCounter % 5 === 0) {
+        // update the particles every 2 frames
+        if (particleCounter % 2 === 0) {
           particles.forEach((particle) => {
             particle.follow(flowfield);
             particle.update();
@@ -137,12 +142,13 @@ const NoiseBg = memo(({ width, height }) => {
           let xoff = 0;
           for (let x = 0; x < cols; x++) {
             let index = x + y * cols;
-            let angle = p5.noise(xoff, yoff, zoff) * p5.TWO_PI;
-            let v = p5.createVector(p5.cos(angle), p5.sin(angle)).mult(1);
+            let angle = p5.noise(xoff, yoff, zoff, time) * p5.TWO_PI * 1.5;
+            let v = p5.createVector(p5.cos(angle), p5.sin(angle)).mult(0.5);
             flowfield[index] = v;
             xoff += inc;
           }
           yoff += inc;
+          time += 0.001;
         }
 
         prevMouse = curMouse;
@@ -161,7 +167,7 @@ const NoiseBg = memo(({ width, height }) => {
         };
 
         mousePos.lerp(curMouse, 0.05);
-        zoff += 0.0009;
+        zoff += 0.009;
       };
     };
 
