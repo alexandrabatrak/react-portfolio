@@ -1,50 +1,90 @@
 [
   {
-    "id": "1",
-    "title": "Project 1",
-    "description": "Lorem Ipsum",
-    "deployment": "#",
-    "repo": "#",
-    "img": "./placeholder.webp"
-  },
-  {
-    "id": "2",
-    "title": "Project 2",
+    "id": "fin-focus",
+    "title": "Fin Focus",
     "description": "Lorem Ipsumfdfd ",
+    "tools": ["ajax", "javascript", "jquery", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./placeholder.webp"
+    "img": "./fin-focus-ss.png"
   },
   {
-    "id": "3",
-    "title": "Project 3",
+    "id": "team-profile-generator",
+    "title": "Team profile generator",
     "description": "Lorem Ipsumewedwe wewe",
+    "tools": ["node-js", "javascript", "ES6", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./placeholder.webp"
+    "img": "./team-gen-ss.png"
+  },
+  {
+    "id": "readme-generator",
+    "title": "README generator",
+    "description": "Lorem Ipsumwew2",
+    "tools": ["node-js", "markdown", "javascript", "ES6"],
+    "deployment": "#",
+    "repo": "#",
+    "img": "./readme-gen-preview.gif"
   },
   {
     "id": "4",
-    "title": "Project 4",
-    "description": "Lorem Ipsumwew2",
+    "title": "Weather Dashboard",
+    "description": "Lorem Ipsumewee",
+    "tools": ["ajax", "jquery", "javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./placeholder.webp"
+    "img": "./weather-ss.png"
   },
   {
     "id": "5",
-    "title": "Project 5",
-    "description": "Lorem Ipsumewee",
+    "title": "Daily Planner",
+    "description": "Lorem Ipsum dolore",
+    "tools": ["jquery", "javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./placeholder.webp"
+    "img": "./daily-plan-ss.png"
   },
   {
     "id": "6",
-    "title": "Project 6",
+    "title": "Code quiz",
     "description": "Lorem Ipsum dolore",
+    "tools": ["javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./placeholder.webp"
+    "img": "./code-q-ss.png"
+  },
+  {
+    "id": "7",
+    "title": "Password Generator",
+    "description": "Lorem Ipsum dolore",
+    "tools": ["javascript", "html", "css"],
+    "deployment": "#",
+    "repo": "#",
+    "img": "./pass-gen-ss.png"
+  },
+  {
+    "id": "8",
+    "title": "Portfolio 2022",
+    "description": "Lorem Ipsum dolore",
+    "tools": ["javascript", "bootstrap", "html", "css"],
+    "deployment": "#",
+    "repo": "#",
+    "img": "./bootstr-pfolio-ss.png"
+  },
+  {
+    "id": "9",
+    "title": "Portfolio 2021",
+    "description": "Personal portfolio: custom WordPress theme.",
+    "tools": [
+      "php",
+      "jquery",
+      "scss",
+      "javascript",
+      "wordpress",
+      "gulp",
+      "node-js"
+    ],
+    "deployment": "https://alexandrabatrak.uk",
+    "img": "./ab-ss.jpg"
   }
 ]
