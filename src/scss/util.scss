@@ -1,0 +1,24 @@
+.bg-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.show.fade-in {
+  opacity: 1;
+}
+
+.hide.fade-out {
+  opacity: 0;
+}
+
+/* Projects Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+
+  .project-image {
+    height: 250px;
+  }
+}
