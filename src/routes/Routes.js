@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import CustomCursor from '../extra-components/CustomCursor/CustomCursor';
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
+import ProjectPage from '../pages/ProjectPage';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 
@@ -20,6 +21,7 @@ export default function RoutesWrapper() {
   const HoverableAbout = withCustomCursor(About, 'a, button');
   const HoverableContact = withCustomCursor(Contact, 'a, button');
   const HoverableProjects = withCustomCursor(Projects, 'a, button');
+  const HoverableProjectPage = withCustomCursor(ProjectPage, 'a, button');
 
   return (
     <Routes key={location.pathname} location={location}>
@@ -27,6 +29,7 @@ export default function RoutesWrapper() {
       <Route path='/about' element={<HoverableAbout />} />
       <Route path='/contact' element={<HoverableContact />} />
       <Route path='/projects' element={<HoverableProjects />} />
+      <Route path='/projects/:projectId' element={<HoverableProjectPage />} />
     </Routes>
   );
 }

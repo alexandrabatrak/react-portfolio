@@ -1,21 +1,11 @@
 /* Project */
-.modal {
-  &,
-  &-dialog,
-  &-content {
-    width: 100% !important;
-    height: 100vh !important;
-    --bs-modal-width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
+.project {
+  &-thumbnail {
+    height: 50vh;
   }
 
-  &-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border: none;
-    z-index: 10000;
+  &-content {
+    min-height: 50vh;
   }
 }
 
@@ -47,16 +37,5 @@
         content: '<-';
       }
     }
-  }
-}
-
-.project {
-  &-slider-wrapper {
-    height: 100vh;
-    position: fixed;
-    width: 100%;
-  }
-  &-content {
-    padding: 3rem 0;
   }
 }
