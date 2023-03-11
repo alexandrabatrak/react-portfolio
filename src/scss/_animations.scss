@@ -26,3 +26,10 @@
     transform: translate3d(-1rem, -0.5rem, -0.5rem) rotate(-2deg);
   }
 }
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+    transition: all 0.1s !important;
+  }
+}

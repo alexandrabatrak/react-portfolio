@@ -10,22 +10,20 @@ const NoiseBg = memo(({ width, height }) => {
   });
   const inc = 0.1;
   const scl = 15;
-  // const threshold = 0.5;
   let cols, rows;
   let zoff = 1;
-  // cols = Math.floor(width / scl);
-  // rows = Math.floor(height / scl);
   let flowfield = [];
-  let prevMouse = new P5.Vector(0, 0);
-  let curMouse = new P5.Vector(0, 0);
-  let mousePos = new P5.Vector(0, 0);
   let time = 0;
   const numParicles = 2500;
   const particles = [];
   let particleColor = [255, 255, 255];
+  let particleSpeed = 5;
   const opacity = Math.floor(Math.random() * 47);
-  const maxOpacityIncrease = 255;
+  let maxOpacityIncrease = 255;
   const opacityIncrease = Math.floor(Math.random() * maxOpacityIncrease) + 1;
+  let prevMouse = new P5.Vector(0, 0);
+  let curMouse = new P5.Vector(0, 0);
+  let mousePos = new P5.Vector(0, 0);
 
   class Particle {
     constructor(p5) {
@@ -33,7 +31,7 @@ const NoiseBg = memo(({ width, height }) => {
       this.vel = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
       this.acc = p5.createVector(0, 0);
       this.color = p5.color([...particleColor, opacity]);
-      this.maxspeed = 5;
+      this.maxspeed = particleSpeed;
       this.prevPos = this.pos.copy();
       this.update = function () {
         this.vel.add(this.acc);
@@ -73,24 +71,6 @@ const NoiseBg = memo(({ width, height }) => {
         if (this.pos.y < 0) {
           this.pos.y = p5.height;
           this.updatePrev();
-        }
-      };
-      this.follow = function (vectors) {
-        let x = p5.floor(this.pos.x / scl);
-        let y = p5.floor(this.pos.y / scl);
-        let index = x + y * cols;
-        if (vectors[index]) {
-          let force = vectors[index].copy().mult(2);
-          let mouseVel = curMouse.copy().sub(prevMouse);
-          let d = mousePos.dist(this.pos);
-          let m;
-          if (d < 100) {
-            m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 2);
-          } else {
-            m = this.maxspeed;
-          }
-          force.add(mouseVel.mult(m));
-          this.applyForce(force);
         }
       };
     }
@@ -172,6 +152,53 @@ const NoiseBg = memo(({ width, height }) => {
     };
 
     const p5 = new P5(sketch);
+
+    const handleReduceMotion = (e, p5) => {
+      if (e.matches) {
+        particleSpeed = 2;
+        maxOpacityIncrease = 0;
+        // follow function when reduced motion is on
+        Particle.prototype.follow = function (vectors) {
+          let x = p5.floor(this.pos.x / scl);
+          let y = p5.floor(this.pos.y / scl);
+          let index = x + y * cols;
+          if (vectors[index]) {
+            let force = vectors[index].copy().mult(2);
+            this.applyForce(force);
+          }
+        };
+      } else {
+        particleSpeed = 5;
+        // follow function when refuced motion is off
+        Particle.prototype.follow = function (vectors) {
+          let x = p5.floor(this.pos.x / scl);
+          let y = p5.floor(this.pos.y / scl);
+          let index = x + y * cols;
+          if (vectors[index]) {
+            let force = vectors[index].copy().mult(2);
+            let mouseVel = curMouse.copy().sub(prevMouse);
+            let d = mousePos.dist(this.pos);
+            let m;
+            if (d < 100) {
+              m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 2);
+            } else {
+              m = this.maxspeed;
+            }
+            force.add(mouseVel.mult(m));
+            this.applyForce(force);
+          }
+        };
+      }
+    };
+
+    // reduced motion listener
+    const motionPref = window.matchMedia('(prefers-reduced-motion: reduce)');
+    handleReduceMotion(motionPref, p5);
+
+    const handleChange = (e) => handleReduceMotion(e, p5);
+    motionPref.addEventListener('change', handleChange);
+
+    // window resize listener
     const windowResized = () => {
       if (p5) {
         p5.resizeCanvas(window.innerWidth, window.innerHeight);
