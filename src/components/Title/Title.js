@@ -1,52 +1,61 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './style.scss';
 
 export default function Title() {
-  const [loopN, setLoopN] = useState(0);
-  // amimate opacity of text
-  const [textClass, setTextClass] = useState('fade-out');
-  const toAnimate = ['create', 'develop', 'design'];
-  const [text, setText] = useState('');
-  const interval = 300;
-  const [delta, setDelta] = useState(100 - Math.random() * 300);
+  const wordsArr = ['design', 'develop', 'create'];
+  const [words, setWords] = useState(wordsArr);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showWord, setShowWord] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const indexDelay = 5000;
+  const showDelay = 1000;
+  const fadeOutDelay = 300;
+
+  const setWordsCallback = useCallback((newWords) => {
+    setWords(newWords);
+    setCurrentIndex(0);
+  }, []);
 
   useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
+    setWordsCallback(wordsArr);
+  }, [setWordsCallback]);
+
+  useEffect(() => {
+    const isLastWord = currentIndex === words.length - 1;
+    let timeout;
+    let showTimeout;
+
+    if (!isLastWord) {
+      showTimeout = setTimeout(() => {
+        setFadeOut(true);
+        setTimeout(() => {
+          setShowWord(false);
+        }, fadeOutDelay);
+      }, indexDelay - showDelay);
+    }
+
+    timeout = setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        isLastWord || prevIndex === words.length - 1 ? prevIndex : prevIndex + 1
+      );
+      setShowWord(true);
+      setFadeOut(false);
+    }, indexDelay);
 
     return () => {
-      clearInterval(ticker);
+      clearTimeout(timeout);
+      clearTimeout(showTimeout);
     };
-  }, [text]);
-
-  const tick = () => {
-    let i = loopN % toAnimate.length;
-    let fullText = toAnimate[i];
-    let updatedText = fullText;
-
-    if (text === '') {
-      setTextClass('fade-out');
-    } else if (textClass === 'fade-out') {
-      setTextClass('fade-in');
-    } else {
-      setTextClass('fade-out');
-      updatedText = '';
-    }
-
-    setText(updatedText);
-    if (updatedText === '' && i === toAnimate.length - 1) {
-      setLoopN(0);
-    } else if (updatedText === '') {
-      setLoopN(loopN + 1);
-    }
-  };
+  }, [currentIndex, words]);
 
   return (
-    <div className='masthead'>
+    <div className='masthead d-flex flex-column justify-content-center align-items center'>
       <h1 className='display-1 text-white fst-italic'>
         {`I `}
-        <span className={textClass}>{text}</span>
+        <span className={`show ${fadeOut ? 'fade-out' : ''}`}>
+          {showWord && words[currentIndex]}
+        </span>
       </h1>
       <p className='text-white-50 w-50 fst-italic'>
         A design enthusiast with exceptional attention to detail, plenty of
