@@ -1,9 +1,9 @@
 @import '../../scss/animations';
-@import '../../scss/config';
+@import '../../scss/variables';
 /* Title */
 .masthead {
   transition: transform 1s ease-in-out;
-  animation: float 10s infinite;
+  animation: float 15s infinite;
 
   & h1 {
     // font-family: 'Ephesis', handwriting;
@@ -31,3 +31,14 @@
     }
   }
 }
+
+//! experimental shite
+// .masthead h1 {
+//   opacity: 0;
+//   transition: all 1s ease-in-out;
+//   color: #ae845e;
+//   word-break: break-all;
+//   font-size: 20rem;
+//   -webkit-text-stroke: 1px #ae845e;
+//   -webkit-text-fill-color: transparent;
+// }
