@@ -1,1 +1,28 @@
+@import '../../scss/animations';
+
 /* ScrollDown */
+.scroll-down {
+  animation: float-side 10s infinite;
+
+  & * {
+    transition: all 0.5s ease-in-out;
+  }
+
+  a {
+    font-size: 2rem;
+    transform: none;
+  }
+
+  &:hover {
+    p {
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+    }
+    a {
+      transform: rotate(-90deg) translate(60px, -65px);
+    }
+    & * {
+      color: white;
+    }
+  }
+}
