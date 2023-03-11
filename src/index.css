@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'ethereal';
+  src: local('etheral'),
+    url('./fonts/ethereal-thin-webfont.woff2') format('woff2'), local('etheral'),
+    url('./fonts/ethereal-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
