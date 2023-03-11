@@ -1,16 +1,31 @@
+@import '../../scss/animations';
+@import '../../scss/config';
 /* Title */
 .masthead {
+  transition: transform 1s ease-in-out;
+  animation: float 10s infinite;
+
   & h1 {
-    font-family: 'Ephesis', handwriting;
+    // font-family: 'Ephesis', handwriting;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    transition: letter-spacing 2s ease-in-out, opacity 1s ease-in-out;
+
+    &:hover span {
+      letter-spacing: 1.5rem;
+      color: $primary;
+    }
 
     span {
       opacity: 0;
       transition: all 1s ease-in-out;
+
       &.show {
         opacity: 1;
 
         &.fade-out {
           opacity: 0;
+          letter-spacing: 0;
         }
       }
     }

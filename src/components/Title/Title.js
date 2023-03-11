@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import './style.scss';
 
+// TODO: Add more text section to appear after each other (use await?)
+
 export default function Title() {
   const wordsArr = ['design', 'develop', 'create'];
   const [words, setWords] = useState(wordsArr);
@@ -9,8 +11,8 @@ export default function Title() {
   const [fadeOut, setFadeOut] = useState(false);
 
   const indexDelay = 5000;
-  const showDelay = 1000;
-  const fadeOutDelay = 300;
+  const showDelay = 2000;
+  const fadeOutDelay = 1000;
 
   const setWordsCallback = useCallback((newWords) => {
     setWords(newWords);
