@@ -47,27 +47,15 @@ export default function CustomCursor({ hoverable }) {
   }, [hoverable]);
 
   return (
-    <>
-      <div
-        className={`cursor ${clicking ? 'click' : ''} ${
-          hovering ? 'hover' : ''
-        }`}
-        style={{
-          transform: ` ${hovering ? 'scale(0)' : 'scale(1)'} translate3d(calc(${
-            position.x
-          }px), calc(${position.y}px), 0)`,
-        }}
-      />
-      <div
-        className='cursor-buddy'
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: hovering
-            ? 'scale(2) translate(-15%, -15%)'
-            : 'scale(1) translate(-15%, -15%)',
-        }}
-      />
-    </>
+    <div
+      className={`cursor ${clicking ? 'click' : ''} ${hovering ? 'hover' : ''}`}
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        transform: hovering
+          ? 'scale(2) translate(-15%, -15%)'
+          : 'scale(1) translate(-15%, -15%)',
+      }}
+    />
   );
 }
