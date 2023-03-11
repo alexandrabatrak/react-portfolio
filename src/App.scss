@@ -1,29 +1,20 @@
+@import './scss/variables';
 @import './scss/animations';
+@import './scss/util';
 @import './scss/config';
 @import 'bootstrap/scss/bootstrap';
 @import url(https://fonts.bunny.net/css?family=ephesis:400|rufina:400,700);
 
+/* General */
 body {
-  font-family: 'Rufina', serif;
-}
-
-.bg-image {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
+  font-family: $body-font;
 }
 
 a {
   color: $primary;
+  text-decoration: none;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 2rem;
-
-  .project-image {
-    height: 250px;
-  }
+p a {
+  text-decoration: underline wavy;
 }
