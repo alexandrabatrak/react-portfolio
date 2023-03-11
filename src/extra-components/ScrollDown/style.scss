@@ -1,14 +1,15 @@
+@import '../../scss/variables';
 @import '../../scss/animations';
 
 /* ScrollDown */
 .scroll-down {
-  animation: float-side 10s infinite;
+  animation: float 10s infinite;
 
   & * {
-    transition: all 0.5s ease-in-out;
+    transition: $ease-transition;
   }
 
-  a {
+  span {
     font-size: 2rem;
     transform: none;
   }
@@ -18,11 +19,11 @@
       font-size: 1.05rem;
       letter-spacing: 2px;
     }
-    a {
+    span {
       transform: rotate(-90deg) translate(60px, -65px);
     }
     & * {
-      color: white;
+      color: $white;
     }
   }
 }
