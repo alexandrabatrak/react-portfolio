@@ -21,7 +21,7 @@ const NoiseBg = memo(({ width, height }) => {
   // let particleColor = [173, 155, 170];
   let particleColor = [176, 137, 104];
   let particleSpeed = 5;
-  const opacity = Math.floor(Math.random() * 90);
+  const opacity = Math.floor(Math.random() * (85 - 50 + 1)) + 50;
   let maxOpacityIncrease = 255;
   const opacityIncrease = Math.floor(Math.random() * maxOpacityIncrease) + 1;
   let prevMouse = new P5.Vector(0, 0);
