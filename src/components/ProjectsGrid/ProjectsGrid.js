@@ -8,18 +8,18 @@ export default function ProjectsGrid({ props }) {
     <div className='grid'>
       {projects.map((project) => {
         return (
-          <motion.div layoutId={project.id} key={project.id}>
+          <motion.div
+            layoutId={project.id}
+            key={project.id}
+            className='grid-item'>
             <Link to={`/projects/${project.id}`}>
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
-                className='d-flex flex-column'>
+                className='project-wrapper'>
                 <motion.div className='project-image'>
-                  <div
-                    className='bg-image'
-                    style={{ backgroundImage: `url(${project.img})` }}
-                  />
+                  <img src={project.img} alt={project.img.alt} />
                 </motion.div>
                 <motion.h3>{project.title}</motion.h3>
                 {/* <motion.a href={project.repo}>Repo</motion.a>

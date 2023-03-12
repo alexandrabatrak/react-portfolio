@@ -1,10 +1,93 @@
+@import '../../scss/variables';
 /* Projects */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 2rem;
+  max-width: 1920px;
+  margin: 0 auto;
 
-  .project-image {
-    height: 250px;
+  &-item {
+    height: 50vh;
+
+    .project {
+      &-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        height: 100%;
+        width: 100%;
+
+        h3 {
+          color: $white;
+          border: 1px solid $white;
+          text-align: center;
+          padding: 2rem 1.5rem;
+          width: 75%;
+          min-height: 75%;
+          max-height: 75%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          text-transform: uppercase;
+          font-size: 0.88rem;
+          letter-spacing: 10px;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          transition: $ease-transition;
+        }
+
+        &:hover {
+          .project-image {
+            &:before {
+              background: rgba($black, 0.25);
+            }
+            img {
+              transform: scale(0.9);
+              filter: grayscale(0);
+            }
+          }
+          h3 {
+            background: black;
+            min-height: 1%;
+            max-height: auto;
+          }
+        }
+      }
+
+      &-image {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+          content: '';
+          background: rgba(black, 0.85);
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          z-index: 1;
+          transition: $ease-transition;
+        }
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          filter: grayscale(1);
+          transform: scale(1);
+          transition: $ease-transition;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 }
