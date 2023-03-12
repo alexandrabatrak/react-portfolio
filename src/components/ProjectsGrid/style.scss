@@ -1,0 +1,9 @@
+/* Projects */
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+
+  .project-image {
+    height: 250px;
+  }
+}

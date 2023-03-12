@@ -3,7 +3,7 @@ import './style.scss';
 
 // TODO: Add more text section to appear after each other (use await?)
 
-export default function Title() {
+export default function MainTitle() {
   const wordsArr = ['I design', 'I develop', 'I create'];
   const [words, setWords] = useState(wordsArr);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,13 +52,13 @@ export default function Title() {
   }, [currentIndex, words]);
 
   return (
-    <div className='masthead d-flex flex-column justify-content-center align-items text-center'>
-      <h1 className='display-1 text-white fst-italic'>
+    <div className='masthead'>
+      <h1>
         <span className={`show ${fadeOut ? 'fade-out' : ''}`}>
           {showWord && words[currentIndex]}
         </span>
       </h1>
-      <p className='hide text-white-50 w-50 mx-auto fst-italic'>
+      <p className='hide'>
         A design enthusiast with exceptional attention to detail, plenty of
         patience and a desire to create beautiful solutions.
       </p>

@@ -2,13 +2,17 @@
 @import '../../scss/variables';
 /* Title */
 .masthead {
+  color: $white;
   transition: transform 1s ease-in-out;
   animation: float 15s infinite;
+  text-align: center;
 
   & h1 {
-    // font-family: 'Ephesis', handwriting;
+    font-size: 7rem;
+    font-style: italic;
     text-transform: uppercase;
     letter-spacing: 1rem;
+    word-break: break-all;
     transition: letter-spacing 2s ease-in-out, opacity 1s ease-in-out;
 
     &:hover span {
@@ -29,6 +33,18 @@
         }
       }
     }
+  }
+
+  p {
+    color: rbga($white, 0.5);
+    font-style: italic;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead p {
+    width: 50%;
   }
 }
 
