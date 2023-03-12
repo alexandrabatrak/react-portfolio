@@ -11,9 +11,9 @@ export default function Projects() {
       exit={{ opacity: 0, x: 0 }}
       transition={{ ease: 'easeInOut', duration: 1 }}>
       <PageTitle title={'Projects'} />
-      <Container>
-        <ProjectsGrid />
-      </Container>
+      {/* <Container> */}
+      <ProjectsGrid />
+      {/* </Container> */}
     </motion.section>
   );
 }

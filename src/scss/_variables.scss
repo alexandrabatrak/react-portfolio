@@ -4,7 +4,8 @@ $black: #191919;
 $primary: rgb(176, 137, 104);
 $secondary: rgb(127, 85, 57);
 
-$ease-transition: all 0.5s ease-in-out;
+$transition: all 0.5s ease-in-out;
+$long-transition: all 1s ease-in-out;
 
 $max-width: 1200px;
 $inner-padding: 1rem;

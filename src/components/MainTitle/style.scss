@@ -22,7 +22,7 @@
 
     span {
       opacity: 0;
-      transition: all 1s ease-in-out;
+      transition: $long-transition;
 
       &.show {
         opacity: 1;
