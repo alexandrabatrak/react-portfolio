@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, memo } from 'react';
 import P5 from 'p5';
+import './style.scss';
 
 const NoiseBg = memo(({ width, height }) => {
   const canvasRef = useRef(null);
@@ -154,6 +155,7 @@ const NoiseBg = memo(({ width, height }) => {
 
         p5.mouseMoved = () => {
           prevMouse = curMouse;
+          // TODO: test touchX and touchY and see if need to include them too
           curMouse = p5.createVector(p5.mouseX, p5.mouseY);
           mousePos = p5.createVector(p5.mouseX, p5.mouseY);
         };
@@ -223,7 +225,7 @@ const NoiseBg = memo(({ width, height }) => {
     };
   }, []);
 
-  return <div ref={canvasRef}></div>;
+  return <div className='noise-canvas' ref={canvasRef}></div>;
 });
 
 export default NoiseBg;

@@ -6,7 +6,7 @@
     "tools": ["ajax", "javascript", "jquery", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./fin-focus-ss.png"
+    "img": "./finfocus/fin-focus-ss.png"
   },
   {
     "id": "team-profile-generator",
@@ -15,7 +15,7 @@
     "tools": ["node-js", "javascript", "ES6", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./team-gen-ss.png"
+    "img": "./teamgen/team-gen-ss.png"
   },
   {
     "id": "readme-generator",
@@ -24,7 +24,7 @@
     "tools": ["node-js", "markdown", "javascript", "ES6"],
     "deployment": "#",
     "repo": "#",
-    "img": "./readme-gen-preview.gif"
+    "img": "./readmegen/readme-gen-preview.gif"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "tools": ["ajax", "jquery", "javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./weather-ss.png"
+    "img": "./weather/weather-ss.png"
   },
   {
     "id": "5",
@@ -42,7 +42,7 @@
     "tools": ["jquery", "javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./daily-plan-ss.png"
+    "img": "./dailyplanner/daily-plan-ss.png"
   },
   {
     "id": "6",
@@ -51,7 +51,7 @@
     "tools": ["javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./code-q-ss.png"
+    "img": "./codequiz/code-q-ss.png"
   },
   {
     "id": "7",
@@ -60,7 +60,7 @@
     "tools": ["javascript", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./pass-gen-ss.png"
+    "img": "./passwordgen/pass-gen-ss.png"
   },
   {
     "id": "8",
@@ -69,7 +69,7 @@
     "tools": ["javascript", "bootstrap", "html", "css"],
     "deployment": "#",
     "repo": "#",
-    "img": "./bootstr-pfolio-ss.png"
+    "img": "./bootstrapportfolio/bootstr-pfolio-ss.png"
   },
   {
     "id": "9",
@@ -85,6 +85,6 @@
       "node-js"
     ],
     "deployment": "https://alexandrabatrak.uk",
-    "img": "./ab-ss.jpg"
+    "img": "./aleandrabatrakuk/ab-ss.jpg"
   }
 ]

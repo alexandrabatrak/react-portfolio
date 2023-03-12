@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <Nav />
-      <main className='bg-black overflow-hidden position-relative z-1'>
+      <main>
         <SoundIcon />
         <AnimatePresence mode='wait'>
           <RoutesWrapper />

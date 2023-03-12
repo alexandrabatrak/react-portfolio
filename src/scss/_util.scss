@@ -1,0 +1,13 @@
+.bg-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.show.fade-in {
+  opacity: 1;
+}
+
+.hide.fade-out {
+  opacity: 0;
+}

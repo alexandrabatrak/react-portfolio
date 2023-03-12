@@ -1,11 +1,17 @@
 @import './scss/variables';
 @import './scss/animations';
 @import './scss/util';
-@import './scss/config';
-@import 'bootstrap/scss/bootstrap';
-@import url(https://fonts.bunny.net/css?family=ephesis:400|rufina:400,700);
+@import './scss/typography';
 
 /* General */
+*,
+:after,
+:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: $body-font;
 }
@@ -17,4 +23,39 @@ a {
 
 p a {
   text-decoration: underline wavy;
+}
+
+main {
+  background: $black;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.row {
+  display: flex;
+}
+
+.container {
+  padding: $inner-padding;
+}
+
+.max-width {
+  max-width: $max-width;
+}
+
+.absolute-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  min-height: 100dvh;
+  min-height: 100vh;
+  position: relative;
+  padding: 2rem;
+
+  &:not(.home) {
+    background: $black;
+  }
 }
