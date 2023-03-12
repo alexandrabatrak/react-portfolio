@@ -4,14 +4,28 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 100vw;
-  background: $black;
+  justify-content: center;
+  width: 100%;
   color: $white;
+  background: $black;
   padding: 0.5rem 1rem;
-  position: fixed;
-  top: 0;
+  position: relative;
+  // too jumpy
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
   z-index: 1000;
+
+  &.home {
+    // background: rgba($black, 0.5);
+    position: fixed;
+  }
+
+  &.scrolled {
+    // transform: translateY(-100px);
+    position: fixed;
+    background: $black;
+    transform: translateY(-100%);
+  }
 
   a {
     color: $white;
@@ -39,7 +53,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: auto;
+    // margin-left: auto;
+    margin: 0 auto;
     padding-left: 0;
   }
 

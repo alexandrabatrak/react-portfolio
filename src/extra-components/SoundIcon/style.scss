@@ -1,18 +1,20 @@
 @import '../../scss/variables';
 @import '../../scss/animations';
 /* SoundIcon */
-.home .sound-wrapper {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: $contrainer-padding;
-}
-
 .sound {
   &-wrapper {
-    margin: 0 1rem 0 0;
+    // position: fixed;
+    // top: 0;
+    // right: 0;
+    margin: auto $contrainer-padding;
     padding: 0.5rem;
     transition: $ease-transition;
+
+    // &.home {
+    //   .sound-icon {
+    //     bottom: 0;
+    //   }
+    // }
   }
 
   &-icon {

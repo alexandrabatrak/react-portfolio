@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SoundIcon from '../../extra-components/SoundIcon/SoundIcon';
 import './style.scss';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const onScroll = () => {
@@ -20,7 +23,8 @@ export default function Header() {
 
   return (
     <header>
-      <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
+      <nav
+        className={`nav ${scrolled ? 'scrolled' : ''}${isHome ? 'home' : ''}`}>
         <div className='nav-container'>
           <Link className='navbar-brand' to='/'>
             A.
@@ -55,6 +59,8 @@ export default function Header() {
               }>
               Contact
             </NavLink>
+          </div>
+          <div>
             <SoundIcon />
           </div>
         </div>
