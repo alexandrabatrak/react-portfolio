@@ -10,10 +10,6 @@
   background: $black;
   padding: 0.5rem 1rem;
   position: relative;
-  // too jumpy
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
-  z-index: 1000;
 
   &.home {
     // background: rgba($black, 0.5);
@@ -21,10 +17,7 @@
   }
 
   &.scrolled {
-    // transform: translateY(-100px);
-    position: fixed;
-    background: $black;
-    transform: translateY(-100%);
+    // position: fixed;
   }
 
   a {
