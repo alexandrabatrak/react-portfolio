@@ -9,9 +9,8 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   color: $white;
-  padding: 2rem;
+  padding: $contrainer-padding;
   margin-bottom: 1rem;
 
   & * {
