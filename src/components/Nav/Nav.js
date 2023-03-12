@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import SoundIcon from '../../extra-components/SoundIcon/SoundIcon';
 import './style.scss';
 
 export default function Header() {
@@ -54,6 +55,7 @@ export default function Header() {
               }>
               Contact
             </NavLink>
+            <SoundIcon />
           </div>
         </div>
       </nav>

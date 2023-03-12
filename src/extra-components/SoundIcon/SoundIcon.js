@@ -1,20 +1,36 @@
+import { useState, useEffect } from 'react';
 import './style.scss';
 
 export default function SoundIcon() {
-  const soundToggle = () => {
-    const icon = document.querySelector('.sound-icon');
-    const running = icon.style.animationPlayState === 'running';
-    icon.addEventListener('click', () => {
-      icon.style.animationPlayState = running ? 'paused' : 'running';
-    });
+  const [isPlaying, setIsPlaying] = useState(true);
+  const toggleAnimation = () => {
+    setIsPlaying(!isPlaying);
   };
 
+  const generateBars = () => {
+    const bars = [];
+    {
+      for (let i = 0; i < 7; i++) {
+        bars.push(<span className='bar' key={i}></span>);
+      }
+      return bars;
+    }
+  };
+
+  useEffect(() => {
+    const main = document.querySelector('main');
+    const header = document.querySelector('header');
+    if (main && main.querySelector('section.home')) {
+      header.classList.add('home');
+    } else {
+      header.classList.remove('home');
+    }
+  }, []);
+
   return (
-    <div className='position-absolute end-0 bottom-0 z-3' onClick={soundToggle}>
-      <div className='sound-icon'>
-        <div className='bar'></div>
-        <div className='bar'></div>
-        <div className='bar'></div>
+    <div className='sound-wrapper' onClick={toggleAnimation}>
+      <div className={`sound-icon ${isPlaying ? 'playing' : ''}`}>
+        {generateBars()}
       </div>
     </div>
   );
