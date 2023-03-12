@@ -1,5 +1,6 @@
 import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid';
 import PageTitle from '../components/PageTitle/PageTitle';
+import Container from '../components/Container/Container';
 import { motion } from 'framer-motion';
 
 export default function Projects() {
@@ -10,11 +11,9 @@ export default function Projects() {
       exit={{ opacity: 0, x: 0 }}
       transition={{ ease: 'easeInOut', duration: 1 }}>
       <PageTitle title={'Projects'} />
-      <div className='container max-width'>
-        <div className='row'>
-          <ProjectsGrid />
-        </div>
-      </div>
+      <Container>
+        <ProjectsGrid />
+      </Container>
     </motion.section>
   );
 }
