@@ -17,11 +17,20 @@ export default function RoutesWrapper() {
     );
   };
 
-  const HoverableHome = withCustomCursor(Home, 'a, button');
-  const HoverableAbout = withCustomCursor(About, 'a, button');
-  const HoverableContact = withCustomCursor(Contact, 'a, button');
-  const HoverableProjects = withCustomCursor(Projects, 'a, button');
-  const HoverableProjectPage = withCustomCursor(ProjectPage, 'a, button');
+  const HoverableHome = withCustomCursor(Home, 'a, button, .sound-wrapper');
+  const HoverableAbout = withCustomCursor(About, 'a, button, .sound-wrapper');
+  const HoverableContact = withCustomCursor(
+    Contact,
+    'a, button, .sound-wrapper'
+  );
+  const HoverableProjects = withCustomCursor(
+    Projects,
+    'a, button, .sound-wrapper'
+  );
+  const HoverableProjectPage = withCustomCursor(
+    ProjectPage,
+    'a, button, .sound-wrapper'
+  );
 
   return (
     <Routes key={location.pathname} location={location}>
