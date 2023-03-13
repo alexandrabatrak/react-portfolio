@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=inter:300,400);
+@import url(https://fonts.bunny.net/css?family=inter:200);
 
 $body-font: 'ethereal', serif;
 $text-font: 'Inter', Arial, 'Open Sans', sans-serif;
@@ -6,12 +6,13 @@ $base-size: 18px;
 $inc: 0.390625vw;
 
 $font-sizes: (
-  'def': 1rem,
   'sm': 0.88rem,
-  'md': 1.5rem,
-  'lg': 2rem,
-  'xl': 3.5rem,
-  'xxl': 7rem,
+  'def': 1rem,
+  'md': 1.25rem,
+  'lg': 1.5rem,
+  'xl': 2rem,
+  'xxl': 3.5rem,
+  'title': 7rem,
   'maintitle': 10rem,
 );
 

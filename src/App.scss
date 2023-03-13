@@ -18,6 +18,8 @@ html {
 
 body {
   font-family: $body-font;
+  color: $white;
+  background: $black;
 }
 
 a {
@@ -27,6 +29,15 @@ a {
 
 p a {
   text-decoration: underline wavy;
+}
+
+p,
+ul {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 768px;
+  color: $white;
+  line-height: 1.45;
 }
 
 main {
@@ -51,14 +62,10 @@ section {
 
 .container {
   padding: $inner-padding;
+}
 
-  p {
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 768px;
-    color: $white;
-    @include txt-size();
-  }
+.grid {
+  display: grid;
 }
 
 .max-width {

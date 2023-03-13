@@ -57,7 +57,7 @@
 h2 {
   color: $white;
   padding: 2rem 0;
-  @include txt-size('xxl');
+  @include txt-size('title');
   font-style: italic;
   position: relative;
   height: auto;
