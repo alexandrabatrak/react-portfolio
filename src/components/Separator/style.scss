@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+@import '../../scss/animations';
+
+.separator {
+  height: 1px;
+  background: $primary;
+  width: 50%;
+  margin: 3rem auto 2rem;
+}
