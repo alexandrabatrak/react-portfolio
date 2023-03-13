@@ -1,2 +1,73 @@
 @import '../../scss/variables';
+@import '../../scss/animations';
+@import '../../scss/typography';
 /* Page title */
+.heading-wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  &::before,
+  h2::before,
+  h2::after,
+  span:last-of-type:before,
+  span:last-of-type:after {
+    content: '';
+    position: absolute;
+    margin-top: 0.5rem;
+    background-color: $primary;
+    border-radius: 50%;
+  }
+
+  &::before {
+    width: 0.125rem;
+    height: 0.125rem;
+    animation: particle1 3s linear infinite;
+  }
+
+  h2::before {
+    width: 0.1rem;
+    height: 0.1rem;
+    left: 0;
+    animation: particle2 3s linear infinite;
+  }
+
+  h2::after {
+    width: 0.14rem;
+    height: 0.14rem;
+    left: 5%;
+    animation: particle3 3s linear infinite;
+  }
+
+  span::before {
+    width: 0.2rem;
+    height: 0.2rem;
+    right: 0;
+    animation: particle4 3s linear infinite;
+  }
+
+  span::after {
+    width: 0.15rem;
+    height: 0.15rem;
+    right: -5%;
+    animation: particle5 3s linear infinite;
+  }
+}
+
+h2 {
+  color: $white;
+  padding: 2rem 0;
+  @include txt-size('xxl');
+  font-style: italic;
+  position: relative;
+  height: auto;
+  animation: float 20s infinite;
+
+  span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
