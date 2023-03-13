@@ -5,7 +5,12 @@ import './style.scss';
 
 export default function ProjectsGrid({ props }) {
   return (
-    <div className='grid'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: 'easeInOut', duration: 1, delay: 1 }}
+      className='grid'>
       {projects.map((project) => {
         return (
           <motion.div
@@ -14,21 +19,20 @@ export default function ProjectsGrid({ props }) {
             className='grid-item'>
             <Link to={`/projects/${project.id}`}>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: '50%' }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
+                transition={{ ease: 'easeInOut', duration: 0.5 }}
                 className='project-wrapper'>
                 <motion.div className='project-image'>
                   <img src={project.img} alt={project.img.alt} />
                 </motion.div>
                 <motion.h3>{project.title}</motion.h3>
-                {/* <motion.a href={project.repo}>Repo</motion.a>
-            <motion.a href={project.deployment}>Deployment</motion.a> */}
               </motion.div>
             </Link>
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

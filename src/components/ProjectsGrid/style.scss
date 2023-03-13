@@ -1,13 +1,14 @@
 @import '../../scss/variables';
+@import '../../scss/typography';
 /* Projects */
 .grid {
   display: grid;
   width: 100%;
   gap: 2rem;
-  margin: 0 auto;
+  margin: 2rem auto;
 
   &-item {
-    height: 80vh;
+    height: 70vh;
 
     .project {
       &-wrapper {
@@ -33,8 +34,8 @@
           position: absolute;
           top: 50%;
           left: 50%;
+          @include txt-size('sm');
           text-transform: uppercase;
-          font-size: 0.88rem;
           letter-spacing: 10px;
           transform: translate(-50%, -50%);
           z-index: 2;
