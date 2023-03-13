@@ -10,7 +10,7 @@ export default function PageTitle({ title }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ ease: 'easeInOut', duration: 1, delay: 1 }}
+      transition={{ ease: 'easeInOut', duration: 1, delay: 0.5 }}
       className='heading-wrapper'>
       <h2>
         {title.split('').map((letter, i) => (

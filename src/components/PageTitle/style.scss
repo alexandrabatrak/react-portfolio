@@ -16,7 +16,7 @@
     position: absolute;
     margin-top: 0.5rem;
     background-color: $primary;
-    border-radius: 50%;
+    transform: rotate(-45deg);
   }
 
   &::before {
