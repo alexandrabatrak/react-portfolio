@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header>
       <nav
-        className={`nav ${scrolled ? 'scrolled' : ''}${isHome ? 'home' : ''}`}>
+        className={`nav ${scrolled ? 'scrolled' : ''} ${isHome ? 'home' : ''}`}>
         <div className='nav-container'>
           <div className='nav-item-wrapper'>
             <Link className='nav-brand' to='/'>
