@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
+import MotionSection from '../components/MotionSection/MotionSection';
 import Container from '../components/Container/Container';
 import PageTitle from '../components/PageTitle/PageTitle';
 import ContactForm from '../components/ContactForm/ContactForm';
 
 export default function Contact() {
   return (
-    <motion.section
-      initial={{ opacity: 0, x: 0 }}
-      animate={{ opacity: 1, x: [0, 50, 0] }}
-      exit={{ opacity: 0, x: 0 }}
-      transition={{ ease: 'easeInOut', duration: 1 }}>
+    <MotionSection className='contact'>
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -1 }}
@@ -21,6 +18,6 @@ export default function Contact() {
           <ContactForm />
         </motion.div>
       </Container>
-    </motion.section>
+    </MotionSection>
   );
 }

@@ -1,19 +1,27 @@
+import MotionSection from '../components/MotionSection/MotionSection';
+import Container from '../components/Container/Container';
 import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid';
 import PageTitle from '../components/PageTitle/PageTitle';
-import Container from '../components/Container/Container';
-import { motion } from 'framer-motion';
 
 export default function Projects() {
   return (
-    <motion.section
-      initial={{ opacity: 0, x: 0 }}
-      animate={{ opacity: 1, x: [0, 50, 0] }}
-      exit={{ opacity: 0, x: 0 }}
-      transition={{ ease: 'easeInOut', duration: 1 }}>
+    <MotionSection className='projects'>
       <PageTitle title={'Projects'} />
-      {/* <Container> */}
+      <Container>
+        <p>
+          Explore my portfolio of frontend development projects, where the art
+          of design and technical proficiency converge in perfect harmony. Each
+          project showcases my keen eye for detail and user-centric approach,
+          resulting in intuitive and visually appealing websites and
+          applications.
+        </p>
+        <p>
+          Take a closer look at the inner workings of each project by clicking
+          on them, and witness the design and development process that
+          culminated in their creation.
+        </p>
+      </Container>
       <ProjectsGrid />
-      {/* </Container> */}
-    </motion.section>
+    </MotionSection>
   );
 }
