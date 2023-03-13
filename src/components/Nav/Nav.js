@@ -26,9 +26,11 @@ export default function Header() {
       <nav
         className={`nav ${scrolled ? 'scrolled' : ''}${isHome ? 'home' : ''}`}>
         <div className='nav-container'>
-          <Link className='navbar-brand' to='/'>
-            A.
-          </Link>
+          <div className='nav-item-wrapper'>
+            <Link className='nav-brand' to='/'>
+              A.
+            </Link>
+          </div>
           <div className='nav-menu'>
             <NavLink
               to='/'
@@ -60,7 +62,7 @@ export default function Header() {
               Contact
             </NavLink>
           </div>
-          <div>
+          <div className='nav-item-wrapper'>
             <SoundIcon />
           </div>
         </div>

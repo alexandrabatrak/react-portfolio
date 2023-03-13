@@ -1,5 +1,7 @@
 @import '../../scss/variables';
+@import '../../scss/typography';
 
+// TODO: Better styling for mobile
 .nav {
   display: flex;
   flex-direction: row;
@@ -19,11 +21,15 @@
   // &.scrolled {
   // }
 
+  &-item-wrapper {
+    padding: auto 2rem;
+  }
+
   a {
     color: $white;
     padding: 0.375rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
+    margin: auto 1rem;
+    @include txt-size('def');
     text-decoration: none;
     white-space: nowrap;
     transition: $transition;
