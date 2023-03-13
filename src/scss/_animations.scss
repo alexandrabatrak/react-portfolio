@@ -1,3 +1,5 @@
+@import './variables';
+
 @keyframes float {
   0%,
   100% {
@@ -17,6 +19,95 @@
   }
   100% {
     height: 100%;
+  }
+}
+
+@keyframes particle {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@keyframes particle1 {
+  0%,
+  100% {
+    z-index: 0;
+    opacity: 0.75;
+  }
+  25% {
+    transform: translate(-10px, -5px);
+  }
+  50% {
+    width: 0.25rem;
+    height: 0.25rem;
+    z-index: 2;
+  }
+  75% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes particle2 {
+  25% {
+    transform: translate(20px, 0px);
+    opacity: 0.4;
+  }
+  50% {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+  75% {
+    transform: translate(-15px, -5px);
+  }
+}
+
+@keyframes particle3 {
+  25% {
+    transform: translate(-115px, 25px);
+  }
+  50% {
+    width: 0.23rem;
+    height: 0.23rem;
+  }
+  75% {
+    transform: translate(55px, -12.5px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes particle4 {
+  50% {
+    transform: translate(45px, 35px);
+    opacity: 0.78;
+  }
+  70% {
+    width: 0.24rem;
+    height: 0.24rem;
+  }
+}
+
+@keyframes particle5 {
+  0%,
+  100% {
+    transform: translate(-10px, 25px);
+  }
+  60% {
+    width: 0.24rem;
+    height: 0.24rem;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  75% {
+    transform: translate(-40px, -14px);
   }
 }
 
