@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { MdOutlineSouth } from 'react-icons/md';
 import './style.scss';
 
 export default function ScrollDown() {
@@ -7,9 +6,7 @@ export default function ScrollDown() {
     <div className='scroll-down'>
       <Link to='projects' spy='true' smooth='true' duration={500} offset={-70}>
         <p>See what I made</p>
-        <span>
-          <MdOutlineSouth />
-        </span>
+        <span>&darr;</span>
       </Link>
     </div>
   );
