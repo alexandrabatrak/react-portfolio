@@ -1,14 +1,16 @@
-@import '../../scss/animations';
 @import '../../scss/variables';
+@import '../../scss/animations';
+@import '../../scss/typography';
 /* Title */
 .masthead {
+  height: 100%;
   color: $white;
   transition: transform 1s ease-in-out;
   animation: float 15s infinite;
   text-align: center;
 
   & h1 {
-    font-size: 7rem;
+    @include txt-size('maintitle');
     font-style: italic;
     text-transform: uppercase;
     letter-spacing: 1rem;
