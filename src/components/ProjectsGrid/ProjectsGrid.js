@@ -13,7 +13,7 @@ export default function ProjectsGrid({ props }) {
       className='grid'>
       {projects.map((project) => {
         return (
-          <div className='grid-item'>
+          <div className='grid-item' key={project.id}>
             <Link to={`/projects/${project.id}`}>
               {/* <motion.div
                 initial={{ opacity: 0, y: '50%' }}
