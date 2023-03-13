@@ -1,6 +1,5 @@
 @import './scss/variables';
 @import './scss/animations';
-@import './scss/util';
 @import './scss/typography';
 
 /* General */
@@ -76,4 +75,18 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.show.fade-in {
+  opacity: 1;
+}
+
+.hide.fade-out {
+  opacity: 0;
 }
