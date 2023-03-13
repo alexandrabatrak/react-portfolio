@@ -2,11 +2,42 @@
   {
     "id": "fin-focus",
     "title": "Fin Focus",
-    "description": "Lorem Ipsumfdfd ",
+    "description": {
+      "short": "FinFocus is a trusted provider of financial news and services for individuals and businesses alike.",
+      "long": "With rising prices for essential goods and services, COVID impact, global inflation & local currency devaluation put a strain on households budgets and created significant implications for many families. FinFocus is a financial portal concept that provides latest insights on the news, access to the latest stock/shares values and crypto exchange rates."
+    },
+    "process": "This is a student collaboration project. Aside from managing the project, I was in charge of the design and UI/UX, implemented all Javascript/Jquery functionality and assisted the team with HTML structure and Bootstrap styling. The website is built with JavaScript/jQuery and Bootstrap for page structure and features detailed and minimal responsive design. Utilising several APIs for financial news display, stock and crypto values.",
+    "features": [
+      "Easy-to-navigate financial news website",
+      "Pages: main, about, contact and terms",
+      "Financial news rendered in several categories with featured articles",
+      "Add articles to favourites",
+      "Search NY times financial articles by keywords",
+      "Full list of top articles in the aside section",
+      "Sliders with stock and crypto data",
+      "Current date and weather display in the header",
+      "Sticky on-page navigation",
+      "Footer on-site global navigation",
+      "On scroll animations on the about and terms pages"
+    ],
     "tools": ["ajax", "javascript", "jquery", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./finfocus/fin-focus-ss.png"
+    "deployment": "https://alexandrabatrak.github.io/fin-focus/",
+    "repo": "https://github.com/alexandrabatrak/fin-focus",
+    "imgfolder": "../finfocus/",
+    "img": [
+      {
+        "url": "fin-focus-ss.png",
+        "alt": "FinFocus main page."
+      },
+      {
+        "url": "screenshot-about.png",
+        "alt": "FinFocus about page."
+      },
+      {
+        "url": "screenshot-contact.png",
+        "alt": "FinFocus contact page."
+      }
+    ]
   },
   {
     "id": "team-profile-generator",
