@@ -21,8 +21,10 @@
       "On scroll animations on the about and terms pages"
     ],
     "tools": ["ajax", "javascript", "jquery", "bootstrap", "html", "css"],
-    "deployment": "https://alexandrabatrak.github.io/fin-focus/",
-    "repo": "https://github.com/alexandrabatrak/fin-focus",
+    "links": {
+      "deployment": "https://alexandrabatrak.github.io/fin-focus/",
+      "repo": "https://github.com/alexandrabatrak/fin-focus"
+    },
     "imgfolder": "../finfocus/",
     "img": [
       {
@@ -42,70 +44,165 @@
   {
     "id": "team-profile-generator",
     "title": "Team profile generator",
-    "description": "Lorem Ipsumewedwe wewe",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["node-js", "javascript", "ES6", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./teamgen/team-gen-ss.png"
+    "links": {
+      "deployment": "https://alexandrabatrak.github.io/team-profile-generator/",
+      "repo": "https://github.com/alexandrabatrak/team-profile-generator"
+    },
+    "imgfolder": "../teamgen/",
+    "img": [
+      {
+        "url": "team-gen-ss.png",
+        "alt": "Screenshot of generated html from team profile generator."
+      }
+    ]
   },
   {
     "id": "readme-generator",
     "title": "README generator",
-    "description": "Lorem Ipsumwew2",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["node-js", "markdown", "javascript", "ES6"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./readmegen/readme-gen-preview.gif"
+    "links": {
+      "repo": "#"
+    },
+    "imgfolder": "../readmegen/",
+    "img": [
+      {
+        "url": "readme-gen-preview.gif",
+        "alt": "Screenshot of reamde generator functionality."
+      }
+    ]
   },
   {
     "id": "4",
     "title": "Weather Dashboard",
-    "description": "Lorem Ipsumewee",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["ajax", "jquery", "javascript", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./weather/weather-ss.png"
+    "links": {
+      "deployment": "#",
+      "repo": "#"
+    },
+    "imgfolder": "../weather/",
+    "img": [
+      {
+        "url": "weather-ss.png",
+        "alt": ""
+      }
+    ]
   },
   {
     "id": "5",
     "title": "Daily Planner",
-    "description": "Lorem Ipsum dolore",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["jquery", "javascript", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./dailyplanner/daily-plan-ss.png"
+    "links": {
+      "deployment": "#",
+      "repo": "#"
+    },
+    "imgfolder": "../dailyplanner/",
+    "img": [
+      {
+        "url": "daily-plan-ss.png",
+        "alt": ""
+      }
+    ]
   },
   {
     "id": "6",
     "title": "Code quiz",
-    "description": "Lorem Ipsum dolore",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["javascript", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./codequiz/code-q-ss.png"
+    "links": {
+      "deployment": "#",
+      "repo": "#"
+    },
+    "imgfolder": "../codequiz/",
+    "img": [
+      {
+        "url": "code-q-ss.png",
+        "alt": ""
+      }
+    ]
   },
   {
     "id": "7",
     "title": "Password Generator",
-    "description": "Lorem Ipsum dolore",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["javascript", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./passwordgen/pass-gen-ss.png"
+    "links": {
+      "deployment": "#",
+      "repo": "#"
+    },
+    "imgfolder": "../passwordgen/",
+    "img": [
+      {
+        "url": "pass-gen-ss.png",
+        "alt": ""
+      }
+    ]
   },
   {
     "id": "8",
     "title": "Portfolio 2022",
-    "description": "Lorem Ipsum dolore",
+    "description": {
+      "short": "",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": ["javascript", "bootstrap", "html", "css"],
-    "deployment": "#",
-    "repo": "#",
-    "img": "./bootstrapportfolio/bootstr-pfolio-ss.png"
+    "links": {
+      "deployment": "#",
+      "repo": "#"
+    },
+    "imgfolder": "../bootstrapportfolio/",
+    "img": [
+      {
+        "url": "bootstr-pfolio-ss.png",
+        "alt": ""
+      }
+    ]
   },
   {
     "id": "9",
     "title": "Portfolio 2021",
-    "description": "Personal portfolio: custom WordPress theme.",
+    "description": {
+      "short": "Personal portfolio: custom WordPress theme.",
+      "long": ""
+    },
+    "process": "",
+    "features": [],
     "tools": [
       "php",
       "jquery",
@@ -115,7 +212,15 @@
       "gulp",
       "node-js"
     ],
-    "deployment": "https://alexandrabatrak.uk",
-    "img": "./alexandrabatrakuk/ab-ss.jpg"
+    "links": {
+      "deployment": "https://alexandrabatrak.uk"
+    },
+    "imgfolder": "../alexandrabatrakuk/",
+    "img": [
+      {
+        "url": "ab-ss.jpg",
+        "alt": ""
+      }
+    ]
   }
 ]
