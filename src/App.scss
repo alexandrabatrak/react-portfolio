@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: $base-size;
+}
+
 body {
   font-family: $body-font;
 }
@@ -31,12 +35,30 @@ main {
   z-index: 1;
 }
 
+section {
+  min-height: 100dvh;
+  min-height: 100vh;
+  position: relative;
+
+  &:not(.home) {
+    background: $black;
+  }
+}
+
 .row {
   display: flex;
 }
 
 .container {
   padding: $inner-padding;
+
+  p {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 768px;
+    color: $white;
+    @include txt-size();
+  }
 }
 
 .max-width {
@@ -47,15 +69,4 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-section {
-  min-height: 100dvh;
-  min-height: 100vh;
-  position: relative;
-  padding: 2rem;
-
-  &:not(.home) {
-    background: $black;
-  }
 }

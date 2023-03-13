@@ -3,22 +3,13 @@
 /* SoundIcon */
 .sound {
   &-wrapper {
-    // position: fixed;
-    // top: 0;
-    // right: 0;
-    margin: auto $contrainer-padding;
     padding: 0.5rem;
     transition: $transition;
-
-    // &.home {
-    //   .sound-icon {
-    //     bottom: 0;
-    //   }
-    // }
   }
 
   &-icon {
     height: 1.5rem;
+    width: 40px;
     display: flex;
     align-items: center;
     position: relative;
