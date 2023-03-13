@@ -25,16 +25,6 @@
     padding: auto 2rem;
   }
 
-  a {
-    color: $white;
-    padding: 0.375rem;
-    margin: auto 1rem;
-    @include txt-size('def');
-    text-decoration: none;
-    white-space: nowrap;
-    transition: $transition;
-  }
-
   &-container {
     display: flex;
     flex-wrap: inherit;
@@ -58,10 +48,19 @@
 
   &-link {
     display: block;
+    color: $white;
+    margin: auto 1rem;
     padding: 0.5rem;
+    @include txt-size('def');
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    transition: $transition;
 
+    &:hover,
     &.active {
-      text-decoration: line-through;
+      color: $light;
+      transform: skewX(-7.5deg);
     }
   }
 }
