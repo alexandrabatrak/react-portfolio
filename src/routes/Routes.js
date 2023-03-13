@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import CustomCursor from '../extra-components/CustomCursor/CustomCursor';
 import Home from '../pages/Home';
@@ -7,38 +8,38 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 
 export default function RoutesWrapper() {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const touchDevice = () => setMobile(true);
+    window.addEventListener('touchstart', touchDevice);
+    return () => window.removeEventListener('touchstart', touchDevice);
+  }, []);
+
   const location = useLocation();
+  const hoverables = 'a, button, .sound-wrapper';
   const withCustomCursor = (Component, hoverable) => {
     return (props) => (
       <>
-        <CustomCursor hoverable={hoverable} />
+        {!mobile && <CustomCursor hoverable={hoverable} />}
         <Component {...props} />
       </>
     );
   };
 
-  const HoverableHome = withCustomCursor(Home, 'a, button, .sound-wrapper');
-  const HoverableAbout = withCustomCursor(About, 'a, button, .sound-wrapper');
-  const HoverableContact = withCustomCursor(
-    Contact,
-    'a, button, .sound-wrapper'
-  );
-  const HoverableProjects = withCustomCursor(
-    Projects,
-    'a, button, .sound-wrapper'
-  );
-  const HoverableProjectPage = withCustomCursor(
-    ProjectPage,
-    'a, button, .sound-wrapper'
-  );
+  const HoverHome = withCustomCursor(Home, hoverables);
+  const HoverAbout = withCustomCursor(About, hoverables);
+  const HoverContact = withCustomCursor(Contact, hoverables);
+  const HoverProjects = withCustomCursor(Projects, hoverables);
+  const HoverProjectPage = withCustomCursor(ProjectPage, hoverables);
 
   return (
     <Routes key={location.pathname} location={location}>
-      <Route exact path='/' element={<HoverableHome />} />
-      <Route path='/about' element={<HoverableAbout />} />
-      <Route path='/contact' element={<HoverableContact />} />
-      <Route path='/projects' element={<HoverableProjects />} />
-      <Route path='/projects/:projectId' element={<HoverableProjectPage />} />
+      <Route exact path='/' element={<HoverHome />} />
+      <Route path='/about' element={<HoverAbout />} />
+      <Route path='/contact' element={<HoverContact />} />
+      <Route path='/projects' element={<HoverProjects />} />
+      <Route path='/projects/:projectId' element={<HoverProjectPage />} />
     </Routes>
   );
 }
