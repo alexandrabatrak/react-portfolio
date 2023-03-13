@@ -22,8 +22,10 @@
     }
 
     &-about {
+      margin: auto;
       @include txt-size('md');
       font-style: italic;
+      text-align: center;
     }
 
     &-links {
@@ -84,35 +86,112 @@
       }
     }
 
-    &-separator {
-      height: 1px;
-      background: $primary;
-      width: 50%;
-      margin: 3rem auto 2rem;
+    &-navigation {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include txt-size('lg');
+
+      &-image {
+        min-height: 250px;
+        z-index: 0;
+
+        &:after {
+          content: '';
+          background: $black;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 1;
+          opacity: 1;
+          transition: $transition;
+        }
+      }
+
+      &-link {
+        width: 50%;
+        height: 100%;
+        border: 1px solid black;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+
+        h4 {
+          z-index: 2;
+        }
+
+        &:hover .project-navigation-image:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .back-link-wrapper {
+    position: absolute;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    width: 40px;
+  }
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include txt-size('lg');
+
+  &-image {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 250px;
+    z-index: 0;
+
+    &:after {
+      content: '';
+      background: $black;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      opacity: 1;
+      transition: $transition;
+    }
+  }
+
+  &-link {
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    h4 {
+      padding: 2rem;
+      z-index: 2;
+
+      span {
+        display: inline-block;
+      }
     }
 
-    &-hire {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-      margin: 2rem auto;
-      animation: float 15s infinite;
-
-      p {
-        @include txt-size('xl');
-        color: $primary;
-        font-style: italic;
+    &:hover {
+      .project-navigation-image:after {
+        opacity: 0.65;
       }
-
-      button {
-        background: none;
+      h4 {
         color: $white;
-        padding: 1rem 2rem;
-        @include txt-size('lg');
-        border: 2px solid $white;
       }
+    }
+  }
+
+  .link {
+    &-next {
+      text-align: right;
+    }
+    &-prev {
+      text-align: left;
     }
   }
 }
@@ -153,5 +232,16 @@
     .grid-2 {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .project {
+    &-about {
+      max-width: 50vw;
+    }
+  }
+  .back-link-wrapper {
+    position: absolute;
   }
 }
