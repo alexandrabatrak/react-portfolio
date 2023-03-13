@@ -1,0 +1,40 @@
+@import '../../scss/variables';
+@import '../../scss/typography';
+
+/* Slide */
+:root {
+  --swiper-navigation-size: 1.5rem;
+  --swiper-theme-color: $primary;
+}
+
+.swiper {
+  height: 100%;
+
+  &-button {
+    &-next,
+    &-prev {
+      bottom: 5px;
+      top: auto;
+      width: 75px;
+      height: 75px;
+      background: black;
+      color: $primary;
+    }
+
+    &-next {
+      right: 0;
+      left: auto;
+
+      &:after {
+        content: '→';
+      }
+    }
+    &-prev {
+      right: 75px;
+      left: auto;
+      &:after {
+        content: '←';
+      }
+    }
+  }
+}

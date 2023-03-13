@@ -1,12 +1,9 @@
 import projects from '../../projects.json';
+import Slider from '../Slider/Slider';
 import Separator from '../Separator/Separator';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import 'swiper/swiper-bundle.min.css';
-import './style.scss';
 
-SwiperCore.use([Navigation, Pagination]);
+import { motion, AnimatePresence } from 'framer-motion';
+import './style.scss';
 
 export default function Project({ id }) {
   const projectIndex = projects.findIndex((p) => p.id === id);
@@ -21,15 +18,6 @@ export default function Project({ id }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ ease: 'easeInOut', duration: 0.7, delay: 0.2 }}>
-          {/* <div className='project-head'> */}
-          {/* <div className='project-thumbnail'>
-          <div
-            className='bg-image'
-            style={{
-              backgroundImage: `url(${project.imgfolder + project.img[0].url})`,
-            }}
-          />
-        </div> </div>*/}
           <div className='section'>
             <div className='project-title-wrapper'>
               <h3>{project.title}</h3>
@@ -77,37 +65,8 @@ export default function Project({ id }) {
             <p>{project.process}</p>
           </div>
 
-          <div className='swiper-slider-wrapper'>
-            <Swiper
-              spaceBetween={0}
-              slidesPerView={1}
-              loop={true}
-              navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              }}>
-              {imgNum > 2 &&
-                project.img.map((image, i) => {
-                  // start from index 2
-                  if (i < 2) {
-                    return null;
-                  }
-                  return (
-                    <SwiperSlide key={i}>
-                      <div className='project-image'>
-                        <img
-                          src={project.imgfolder + image.url}
-                          alt={image.alt}
-                        />
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
+          <Slider project={project} imgNum={imgNum} />
 
-              <div className='swiper-button-next'></div>
-              <div className='swiper-button-prev'></div>
-            </Swiper>
-          </div>
           {project.features && (
             <div className='project-features section'>
               <div className='project-subheading'>

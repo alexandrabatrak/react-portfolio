@@ -48,7 +48,7 @@
       p {
         @include txt-size('md');
         font-family: $text-font;
-        font-weight: 200;
+        font-weight: 300;
       }
     }
 
@@ -70,10 +70,10 @@
     &-features {
       ul {
         font-family: $text-font;
-        font-weight: 200;
+        font-weight: 300;
         padding: 1rem 2rem 1rem 3rem;
         li {
-          list-style: '-> ';
+          list-style: '→ ';
         }
       }
     }
@@ -195,37 +195,6 @@
     }
   }
 }
-
-// .swiper {
-//   height: 100%;
-
-//   &-button {
-//     &-next,
-//     &-prev {
-//       bottom: 0;
-//       top: auto;
-//       width: 75px;
-//       height: 75px;
-//       background: white;
-//       color: black;
-//     }
-//     &-next {
-//       right: 0;
-//       left: auto;
-
-//       &:after {
-//         content: '->';
-//       }
-//     }
-//     &-prev {
-//       right: 75px;
-//       left: auto;
-//       &:after {
-//         content: '<-';
-//       }
-//     }
-//   }
-// }
 
 @media (min-width: 992px) {
   .projects-page {
