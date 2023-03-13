@@ -35,7 +35,7 @@ ul {
   margin: 0 auto;
   padding: 1rem;
   max-width: 768px;
-  color: $white;
+  color: $light;
   line-height: 1.45;
 }
 
@@ -73,8 +73,7 @@ section {
 
 .absolute-center {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 
 .bg-image {
