@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+@import '../../scss/typography';
+@import '../../scss/animations';
+
+.hire-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  animation: float 15s infinite;
+
+  p {
+    color: $primary;
+    @include txt-size('xl');
+    font-style: italic;
+  }
+
+  a {
+    color: $white;
+    padding: 1rem 2rem;
+    border: 2px solid $white;
+    @include txt-size('lg');
+  }
+}
