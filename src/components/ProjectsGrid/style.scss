@@ -2,6 +2,10 @@
 @import '../../scss/typography';
 /* Projects */
 .projects {
+  p {
+    @include txt-size('md');
+  }
+
   .grid {
     width: 100%;
     gap: 2rem;

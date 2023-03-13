@@ -9,31 +9,37 @@ export default function ProjectsGrid({ props }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ ease: 'easeInOut', duration: 1, delay: 1 }}
+      transition={{ ease: 'easeInOut', duration: 0.7, delay: 0.2 }}
       className='grid'>
       {projects.map((project) => {
         return (
-          <motion.div
-            layoutId={project.id}
-            key={project.id}
-            className='grid-item'>
+          <div className='grid-item'>
             <Link to={`/projects/${project.id}`}>
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: '50%' }}
                 whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scaleX: 0 }}
+                viewport={{ once: false }}
+                transition={{ ease: 'easeInOut', duration: 0.5 }}
+                className='project-wrapper'> */}
+              <motion.div
+                layoutId={project.id}
+                initial={{ opacity: 0, y: '50%' }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scaleX: 0 }}
                 viewport={{ once: false }}
                 transition={{ ease: 'easeInOut', duration: 0.5 }}
                 className='project-wrapper'>
-                <motion.div className='project-image'>
+                <div className='project-image'>
                   <img
                     src={project.imgfolder + project.img[0].url}
                     alt={project.img[0].alt}
                   />
-                </motion.div>
-                <motion.h3>{project.title}</motion.h3>
+                </div>
+                <h3>{project.title}</h3>
               </motion.div>
             </Link>
-          </motion.div>
+          </div>
         );
       })}
     </motion.div>
