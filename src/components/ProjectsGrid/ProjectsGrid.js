@@ -25,7 +25,10 @@ export default function ProjectsGrid({ props }) {
                 transition={{ ease: 'easeInOut', duration: 0.5 }}
                 className='project-wrapper'>
                 <motion.div className='project-image'>
-                  <img src={project.img} alt={project.img.alt} />
+                  <img
+                    src={project.imgfolder + project.img[0].url}
+                    alt={project.img[0].alt}
+                  />
                 </motion.div>
                 <motion.h3>{project.title}</motion.h3>
               </motion.div>
