@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Container from "../Container/Container";
-import Button from "../Button/Button";
 import "./footer.scss";
 
 export default function Footer() {
@@ -9,9 +8,7 @@ export default function Footer() {
       <Container>
         <div className='hire-me'>
           <p>Lemme do it for you</p>
-          <Link to='/contact'>
-            <Button text={"Hire me"} className={"btn-cta"} />
-          </Link>
+          <Link to='/contact'>Hire me</Link>
         </div>
         <div className='socials-wrapper'>
           <ul>

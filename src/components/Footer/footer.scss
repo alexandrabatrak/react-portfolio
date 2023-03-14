@@ -1,6 +1,6 @@
-@import '../../scss/variables';
-@import '../../scss/typography';
-@import '../../scss/animations';
+@import "../../scss/variables";
+@import "../../scss/typography";
+@import "../../scss/animations";
 
 footer {
   position: relative;
@@ -21,7 +21,7 @@ footer {
     justify-content: center;
 
     p {
-      @include txt-size('sm');
+      @include txt-size("sm");
     }
   }
 }
@@ -38,7 +38,22 @@ footer {
 
   p {
     color: $primary;
-    @include txt-size('xl');
+    @include txt-size("xl");
     font-style: italic;
+  }
+
+  a {
+    color: $white;
+    padding: 1rem 2rem;
+    border: 1px solid $secondary;
+    @include txt-size("md");
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: $transition;
+
+    &:hover {
+      background: $primary;
+      padding: 1rem 3rem;
+    }
   }
 }

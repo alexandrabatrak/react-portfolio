@@ -4,6 +4,7 @@ import "./contactform.scss";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xnqyzqjz");
+
   return (
     <Container>
       <div>{state.succeeded ? "Thank you for signing up!" : ""}</div>

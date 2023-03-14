@@ -37,8 +37,8 @@ export default function Project({ id }) {
                     {/* TODO: Add icons for tools */}
                     <Subheading text='Technologies' />
                     <ul>
-                      {project.tools.map((tool, i) => {
-                        return <li key={i}>{tool}</li>;
+                      {project.tools.map((tool) => {
+                        return <li key={project.id}>{tool}</li>;
                       })}
                     </ul>
                   </div>
@@ -82,8 +82,8 @@ export default function Project({ id }) {
                 <div className='project-features section'>
                   <Subheading text='Features' />
                   <ul>
-                    {project.features.map((feature, i) => {
-                      return <li key={i}>{feature}</li>;
+                    {project.features.map((feature) => {
+                      return <li key={project.id}>{feature}</li>;
                     })}
                   </ul>
                 </div>

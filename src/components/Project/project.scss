@@ -1,6 +1,6 @@
-@import '../../scss/variables';
-@import '../../scss/animations';
-@import '../../scss/typography';
+@import "../../scss/variables";
+@import "../../scss/animations";
+@import "../../scss/typography";
 
 /* Project */
 
@@ -20,7 +20,7 @@
       padding: 0 2rem 2rem;
       margin: 1rem auto;
       color: $primary;
-      @include txt-size('lg');
+      @include txt-size("lg");
       text-transform: uppercase;
       letter-spacing: 10px;
     }
@@ -36,29 +36,32 @@
       margin: auto;
 
       p {
-        @include txt-size('xl');
+        @include txt-size("xl");
         font-style: italic;
       }
     }
 
     &-links {
       a {
-        @include txt-size('def');
-        margin: 0 1rem 1rem;
-        padding: 1rem 2rem;
-        border: 1px solid $secondary;
+        display: block;
+        width: fit-content;
+        position: relative;
+        @include txt-size("def");
+        margin: 0 0 1rem 1rem;
+        padding: 1rem 1rem 0 0;
+        border-bottom: 1px solid $secondary;
         letter-spacing: 2px;
         font-weight: bold;
+        // text-align: center;
         transition: $transition;
-        position: relative;
 
         &:after {
-          content: ' →';
+          content: " →";
           width: 1rem;
           height: 1rem;
           padding-left: 0.75rem;
           color: $white;
-          position: absolute;
+          // position: absolute;
           opacity: 0;
           transform: translatex(-1rem);
           transition: $long-transition;
@@ -66,7 +69,7 @@
 
         &:hover {
           color: $white;
-          background: rgba($primary, 0.25);
+          // background: rgba($primary, 0.25);
           border-color: rgba($primary, 0.25);
 
           &:after {
@@ -80,7 +83,7 @@
     &-description,
     &-process {
       p {
-        @include txt-size('md');
+        @include txt-size("md");
         font-family: $text-font;
         font-weight: 300;
       }
@@ -99,7 +102,7 @@
         font-weight: 300;
         padding: 1rem 2rem 1rem 3rem;
         li {
-          list-style: '→ ';
+          list-style: "→ ";
         }
       }
     }
@@ -126,7 +129,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include txt-size('lg');
+  @include txt-size("lg");
 
   &-image {
     display: flex;
@@ -136,7 +139,7 @@
     z-index: 0;
 
     &:after {
-      content: '';
+      content: "";
       background: $black;
       width: 100%;
       height: 100%;
