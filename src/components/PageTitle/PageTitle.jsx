@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import './style.scss';
+import './pagetitle.scss';
 
 export default function PageTitle({ title }) {
   function rand(min, max) {

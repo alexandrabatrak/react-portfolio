@@ -1,11 +1,8 @@
 import { useState } from 'react';
-// import { useLocation } from 'react-router-dom';
-import './style.scss';
+import './soundicon.scss';
 
 export default function SoundIcon() {
   const [isPlaying, setIsPlaying] = useState(true);
-  // const location = useLocation();
-  // const isHome = location.pathname === '/';
   const toggleAnimation = () => {
     setIsPlaying(!isPlaying);
   };
@@ -21,10 +18,7 @@ export default function SoundIcon() {
   };
 
   return (
-    <div
-      // className={`sound-wrapper ${isHome ? 'home' : ''}`}
-      className='sound-wrapper'
-      onClick={toggleAnimation}>
+    <div className='sound-wrapper' onClick={toggleAnimation}>
       <div className={`sound-icon ${isPlaying ? 'playing' : ''}`}>
         {generateBars()}
       </div>

@@ -2,11 +2,14 @@ $white: white;
 $light: #ede0d4;
 $black: #191919;
 $primary: rgb(176, 137, 104);
-$secondary: rgb(127, 85, 57);
+$secondary: rgb(57, 42, 29);
+// original primary
+// $primary: rgb(170, 131, 110);
 
 $transition: all 0.5s ease-in-out;
 $long-transition: all 1s ease-in-out;
 
 $max-width: 1200px;
+$max-paragraph-width: 768px;
 $inner-padding: 1rem;
 $contrainer-padding: 2rem;

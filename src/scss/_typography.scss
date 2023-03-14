@@ -4,7 +4,7 @@
 $body-font: 'ethereal', serif;
 $text-font: 'Martel', serif;
 $base-size: 18px;
-$inc: 0.390625vw;
+// $inc: 0.390625vw;
 
 $font-sizes: (
   'sm': 0.88rem,
@@ -14,9 +14,8 @@ $font-sizes: (
   'xl': 2rem,
   'xxl': 3.5rem,
   'title': 7rem,
-  'maintitle': 10rem,
 );
 
 @mixin txt-size($size: 'md') {
-  font-size: calc(map-get($font-sizes, $size) + $inc);
+  font-size: map-get($font-sizes, $size);
 }

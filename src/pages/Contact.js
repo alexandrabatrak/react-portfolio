@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
-import MotionSection from '../components/MotionSection/MotionSection';
+import MotionSection from '../components/Motion/MotionSection';
 import Container from '../components/Container/Container';
 import PageTitle from '../components/PageTitle/PageTitle';
 import ContactForm from '../components/ContactForm/ContactForm';
+import { useEffect } from 'react';
 
 export default function Contact() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
   return (
     <MotionSection className='contact'>
       <Container>

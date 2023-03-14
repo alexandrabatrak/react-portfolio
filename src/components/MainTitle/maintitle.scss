@@ -7,18 +7,22 @@
   color: $white;
   transition: transform 1s ease-in-out;
   animation: float 15s infinite;
-  text-align: center;
+  padding: 1rem;
 
   & h1 {
-    @include txt-size('maintitle');
+    font-size: 15vw;
+    margin: auto;
     font-style: italic;
+    font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 1rem;
     word-break: break-all;
+    text-align: center;
     transition: letter-spacing 2s ease-in-out, opacity 1s ease-in-out;
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
 
     &:hover span {
-      letter-spacing: 1.5rem;
       color: $primary;
     }
 
@@ -49,14 +53,3 @@
     width: 50%;
   }
 }
-
-//! experimental shite
-// .masthead h1 {
-//   opacity: 0;
-//   transition: all 1s ease-in-out;
-//   color: #ae845e;
-//   word-break: break-all;
-//   font-size: 20rem;
-//   -webkit-text-stroke: 1px #ae845e;
-//   -webkit-text-fill-color: transparent;
-// }

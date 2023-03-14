@@ -1,12 +1,15 @@
 @import '../../scss/variables';
 @import '../../scss/animations';
+@import '../../scss/typography';
 
 /* ScrollDown */
 .scroll-down {
   display: flex;
   flex-direction: column;
+  width: fit-content;
   color: $white;
   padding: $contrainer-padding;
+  margin: auto;
   margin-bottom: 1rem;
   animation: float 10s infinite;
 
@@ -20,31 +23,28 @@
     transform: none;
   }
 
-  p {
-    text-transform: lowercase;
-    color: $white;
-    margin: 0;
-  }
+  // p {
+  //   text-transform: lowercase;
+  //   color: $white;
+  //   margin: 0;
+  //   @include txt-size('sm');
+  // }
+}
 
-  & a:hover {
-    p {
-      letter-spacing: 2px;
-    }
+.home .scroll-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  &:hover {
     span {
-      transform: rotate(-90deg) translate(60px, -55px);
+      transform: rotate(-90deg);
+      // translate(60px, -55px);
     }
 
     & * {
       color: $white;
     }
-  }
-}
-
-.home {
-  .scroll-down {
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
 }

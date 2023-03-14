@@ -1,7 +1,7 @@
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
-import './style.scss';
+import './slider.scss';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -16,10 +16,10 @@ export default function Slider({ project, imgNum }) {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }}>
-        {imgNum > 2 &&
+        {imgNum > 0 &&
           project.img.map((image, i) => {
             // start from index 2
-            if (i < 1) {
+            if (i < 0) {
               return null;
             }
             return (

@@ -15,7 +15,7 @@ export default function ProjectPage() {
   const nextProject = projects[nextIndex];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -26,12 +26,17 @@ export default function ProjectPage() {
         exit={{ opacity: 0, scaleY: 0 }}
         transition={{ ease: 'easeInOut', duration: 0.5 }}
         className='projects-page'>
-        <div className='back-link-wrapper'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.7 }}
+          className='back-link-wrapper'>
           <Link to='/projects' className='back-link'>
             <i aria-hidden='true'>&larr;</i>
             <span hidden>Back to Projects</span>
           </Link>
-        </div>
+        </motion.div>
         <div>{project && <Project id={project.id} />}</div>
       </motion.section>
       <div className='project-navigation'>

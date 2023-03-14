@@ -1,0 +1,11 @@
+@import '../../scss/variables';
+@import '../../scss/typography';
+/* Subheading */
+.subheading {
+  display: flex;
+  max-width: $max-paragraph-width;
+  margin: auto;
+  padding: 2rem 1rem;
+  @include txt-size('lg');
+  font-style: italic;
+}

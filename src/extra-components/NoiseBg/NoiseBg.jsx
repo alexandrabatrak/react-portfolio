@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, memo } from 'react';
 import P5 from 'p5';
-import './style.scss';
+import './noisebg.scss';
 
 const NoiseBg = memo(({ width, height }) => {
   const canvasRef = useRef(null);

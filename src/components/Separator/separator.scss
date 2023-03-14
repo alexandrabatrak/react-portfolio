@@ -3,7 +3,7 @@
 
 .separator {
   height: 1px;
-  background: $primary;
-  width: 50%;
+  background: rgba($primary, 0.25);
+  max-width: $max-width;
   margin: 3rem auto 2rem;
 }

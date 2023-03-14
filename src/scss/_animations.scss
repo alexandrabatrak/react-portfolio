@@ -116,4 +116,7 @@
     animation: none !important;
     transition: all 0.1s !important;
   }
+  html {
+    scroll-behavior: auto;
+  }
 }

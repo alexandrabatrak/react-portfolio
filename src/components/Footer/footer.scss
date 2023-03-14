@@ -2,6 +2,30 @@
 @import '../../scss/typography';
 @import '../../scss/animations';
 
+footer {
+  position: relative;
+
+  .socials-wrapper {
+    margin: auto;
+    padding: 2rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .copyright {
+    color: $light;
+    display: flex;
+    justify-content: center;
+
+    p {
+      @include txt-size('sm');
+    }
+  }
+}
+
 .hire-me {
   display: flex;
   flex-direction: column;
@@ -16,12 +40,5 @@
     color: $primary;
     @include txt-size('xl');
     font-style: italic;
-  }
-
-  a {
-    color: $white;
-    padding: 1rem 2rem;
-    border: 2px solid $white;
-    @include txt-size('lg');
   }
 }

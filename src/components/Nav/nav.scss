@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-@import '../../scss/typography';
+// @import '../../scss/typography';
 
 // TODO: Better styling for mobile
 .nav {
@@ -15,6 +15,7 @@
   z-index: 1000;
 
   &.home {
+    background: transparent;
     position: fixed;
   }
 
@@ -51,7 +52,6 @@
     color: $white;
     margin: auto 1rem;
     padding: 0.5rem;
-    @include txt-size('def');
     text-decoration: none;
     white-space: nowrap;
     position: relative;

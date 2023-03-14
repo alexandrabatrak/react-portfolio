@@ -1,9 +1,20 @@
 import Container from '../components/Container/Container';
 import PageTitle from '../components/PageTitle/PageTitle';
-import MotionSection from '../components/MotionSection/MotionSection';
+import MotionSection from '../components/Motion/MotionSection';
+import MotionParagraph from '../components/Motion/MotionParagraph';
+import Separator from '../components/Separator/Separator';
 import { motion } from 'framer-motion';
+import Subheading from '../components/Subheading/Subheading';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ScrollDown from '../extra-components/ScrollDown/ScrollDown';
 
 export default function About() {
+  // TODO: Not very happy with how it scrolls up not when initially directed? Generally not happy with rounting
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <MotionSection className='about'>
       <Container>
@@ -13,7 +24,135 @@ export default function About() {
           exit={{ opacity: 0, x: '200%' }}
           transition={{ ease: 'easeInOut', duration: 1 }}>
           <PageTitle title={'About'} />
-          <p>ckjdncjnfdkjvdf</p>
+          <MotionParagraph delay={0.5}>
+            <blockquote>
+              <em>
+                Do what you love, and you'll never have to work a day of your
+                life.
+              </em>
+            </blockquote>
+            <Separator />
+            <div className='text-font'>
+              <p>
+                Let me introduce myself - I'm Alexandra. I like to think of
+                myself as a web developer. I am part of the amazing community of
+                Women In Tech that collectively brings that nice feminine touch
+                to the World Wide Web.
+              </p>
+              <p>
+                <em>Creating</em> is my passion and hobby, and my love for web
+                design and development only grew over the years.
+              </p>
+            </div>
+          </MotionParagraph>
+          <MotionParagraph delay={0.6}>
+            <div className='text-font'>
+              <p>
+                For every project I create, I strive to deliver the best of my
+                capabilities and beyond. I'm continuously expanding my knowledge
+                and expertise (collecting knowledge is my special interest). I
+                deliver above what's expected and am a perfectionist.
+              </p>
+            </div>
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <Separator />
+            <Link to='/contact'>
+              <Subheading text={`Let's talk business now.`} />
+            </Link>
+            <Separator />
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <Subheading text={'What do I bring to the table?'} />
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <div className='text-font'>
+              <p>
+                <s>I bring a spoon.</s>
+              </p>
+            </div>
+          </MotionParagraph>
+          <MotionParagraph delay={0.6}>
+            <div className='text-font'>
+              <p>
+                I have over 4 cumulative years of experience with frontend
+                development (the famous trio and more). I'm skilled in semantic
+                HTML, CSS/SCSS, Javascript/jQuery and WordPress. I'm on a
+                journey to master Javascript frameworks(React and Next). I'm
+                amazing at organising my code, which, I believe, is a bonus. (
+                <em>If I don't praise myself, who else will?</em>)
+              </p>
+            </div>
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <div className='text-font'>
+              <p>
+                Over the years of learning and always challenging myself I have
+                developed skills that allow me to express my creative vision. My
+                most valuable transferable skills are problem-solving and
+                exceptionally quick learning. Everybody says that, you'd say,
+                but I mean it.
+              </p>
+            </div>
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <Subheading text={'Technicalities'} />
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <p>
+              <em>
+                I will learn more so that I will be able to add more icons to my
+                GitHub profile in the skills section. Isn't it why we are all
+                doing it?
+              </em>
+            </p>
+          </MotionParagraph>
+          <div className='text-font'>
+            <MotionParagraph delay={0.5}>
+              <p>Languages I know: Javascript, PHP.</p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>I'm good with CSS and SCSS.</p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>
+                Some popular frameworks I used: Bootstrap, Tailwind, jQuery,
+                React.
+              </p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>I worked with CMS such as WordPress and Prestashop.</p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>I'm also familiar with Node and proficient with Git.</p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>
+                Main design tools I use are: Simple White paper and Pen, Adobe
+                Illustrator, Adobe Photoshop and Adobe InDesign.
+              </p>
+            </MotionParagraph>
+            <MotionParagraph delay={0.5}></MotionParagraph>
+            <MotionParagraph delay={0.5}>
+              <p>In addition to all of that, I also have experience with:</p>
+              <ul>
+                <li>Product packaging design</li>
+                <li>Illustration (traditional art and digital)</li>
+                <li>
+                  Video editing and animation with Adobe AfterEffects and
+                  Premiere Pro.
+                </li>
+              </ul>
+            </MotionParagraph>
+          </div>
+          <MotionParagraph delay={0.5}>
+            <Subheading
+              text={`Yeah, let's build you a pretty website so that you or your business can have an online presence.`}
+            />
+          </MotionParagraph>
+          <MotionParagraph delay={0.5}>
+            <ScrollDown />
+          </MotionParagraph>
         </motion.div>
       </Container>
     </MotionSection>

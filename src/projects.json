@@ -2,10 +2,8 @@
   {
     "id": "fin-focus",
     "title": "Fin Focus",
-    "description": {
-      "short": "FinFocus is a trusted provider of financial news and services for individuals and businesses alike.",
-      "long": "With rising prices for essential goods and services, COVID impact, global inflation & local currency devaluation put a strain on households budgets and created significant implications for many families. FinFocus is a financial portal concept that provides latest insights on the news, access to the latest stock/shares values and crypto exchange rates."
-    },
+    "role": "Project manager, Developer, Designer",
+    "description": "FinFocus is a trusted provider of financial news and services for individuals and businesses alike.",
     "process": "This is a student collaboration project. Aside from managing the project, I was in charge of the design and UI/UX, implemented all Javascript/Jquery functionality and assisted the team with HTML structure and Bootstrap styling. The website is built with JavaScript/jQuery and Bootstrap for page structure and features detailed and minimal responsive design. Utilising several APIs for financial news display, stock and crypto values.",
     "features": [
       "Easy-to-navigate financial news website",
@@ -44,10 +42,8 @@
   {
     "id": "team-profile-generator",
     "title": "Team profile generator",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["node-js", "javascript", "ES6", "bootstrap", "html", "css"],
@@ -66,10 +62,8 @@
   {
     "id": "readme-generator",
     "title": "README generator",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["node-js", "markdown", "javascript", "ES6"],
@@ -87,10 +81,8 @@
   {
     "id": "4",
     "title": "Weather Dashboard",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["ajax", "jquery", "javascript", "bootstrap", "html", "css"],
@@ -109,10 +101,8 @@
   {
     "id": "5",
     "title": "Daily Planner",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["jquery", "javascript", "bootstrap", "html", "css"],
@@ -131,10 +121,8 @@
   {
     "id": "6",
     "title": "Code quiz",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["javascript", "bootstrap", "html", "css"],
@@ -153,10 +141,8 @@
   {
     "id": "7",
     "title": "Password Generator",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["javascript", "html", "css"],
@@ -175,10 +161,8 @@
   {
     "id": "8",
     "title": "Portfolio 2022",
-    "description": {
-      "short": "",
-      "long": ""
-    },
+    "role": "",
+    "description": "",
     "process": "",
     "features": [],
     "tools": ["javascript", "bootstrap", "html", "css"],
@@ -197,10 +181,9 @@
   {
     "id": "9",
     "title": "Portfolio 2021",
-    "description": {
-      "short": "Personal portfolio: custom WordPress theme.",
-      "long": ""
-    },
+    "role": "",
+    "description": "Personal portfolio: custom WordPress theme.",
+
     "process": "",
     "features": [],
     "tools": [

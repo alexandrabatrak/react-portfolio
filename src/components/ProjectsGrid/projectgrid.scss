@@ -21,11 +21,12 @@
           flex-direction: column;
           justify-content: stretch;
           height: 100%;
-          width: 100%;
+          margin: 0.5rem;
+          padding: 1rem;
+          border: 1rem solid black;
 
           h3 {
-            color: $white;
-            border: 1px solid $white;
+            border: 1px solid $primary;
             text-align: center;
             padding: 2rem 1.5rem;
             min-width: 90%;
@@ -70,6 +71,7 @@
           height: 100%;
           overflow: hidden;
           position: relative;
+          border: 1px solid black;
 
           &:before {
             content: '';
@@ -77,6 +79,8 @@
             height: 100%;
             width: 100%;
             position: absolute;
+            top: 0;
+            left: 0;
             z-index: 1;
             transition: $transition;
           }
@@ -93,10 +97,4 @@
       }
     }
   }
-}
-
-@media (min-width: 992px) {
-  // .grid {
-  //   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  // }
 }

@@ -13,10 +13,12 @@
 
 html {
   font-size: $base-size;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: $body-font;
+  font-weight: normal;
   color: $white;
   background: $black;
 }
@@ -24,6 +26,7 @@ body {
 a {
   color: $primary;
   text-decoration: none;
+  cursor: none;
 }
 
 p a {
@@ -31,12 +34,19 @@ p a {
 }
 
 p,
-ul {
+ul,
+blockquote {
   margin: 0 auto;
   padding: 1rem;
-  max-width: 768px;
+  max-width: $max-paragraph-width;
   color: $light;
+  @include txt-size('md');
   line-height: 1.45;
+}
+
+.text-font {
+  font-family: $text-font;
+  font-weight: 300;
 }
 
 main {
@@ -55,25 +65,20 @@ section {
   }
 }
 
-.row {
-  display: flex;
-}
-
 .container {
   padding: $inner-padding;
+  max-width: $max-width;
+  margin: auto;
 }
 
 .grid {
   display: grid;
 }
 
-.max-width {
-  max-width: $max-width;
-}
-
 .absolute-center {
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg-image {
