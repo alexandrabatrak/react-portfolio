@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState, memo } from 'react';
-import P5 from 'p5';
-import './noisebg.scss';
+import { useEffect, useRef, useState, memo } from "react";
+import P5 from "p5";
+import "./noisebg.scss";
 
 const NoiseBg = memo(({ width, height }) => {
   const canvasRef = useRef(null);
@@ -18,7 +18,6 @@ const NoiseBg = memo(({ width, height }) => {
   const numParicles = 2500;
   const particles = [];
   const bgColor = [25];
-  // let particleColor = [173, 155, 170];
   let particleColor = [176, 137, 104];
   let particleSpeed = 5;
   const opacity = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
@@ -101,7 +100,6 @@ const NoiseBg = memo(({ width, height }) => {
         for (let i = 0; i < numParicles; i++) {
           particles[i] = new Particle(p5);
         }
-        // replace setInterval with requestAnimationFrame
         p5.background(...bgColor);
         p5.frameRate(60);
         p5.noStroke();
@@ -206,11 +204,11 @@ const NoiseBg = memo(({ width, height }) => {
     };
 
     // reduced motion listener
-    const motionPref = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const motionPref = window.matchMedia("(prefers-reduced-motion: reduce)");
     handleReduceMotion(motionPref, p5);
 
     const handleChange = (e) => handleReduceMotion(e, p5);
-    motionPref.addEventListener('change', handleChange);
+    motionPref.addEventListener("change", handleChange);
 
     // window resize listener
     const windowResized = () => {
@@ -218,9 +216,9 @@ const NoiseBg = memo(({ width, height }) => {
         p5.resizeCanvas(window.innerWidth, window.innerHeight);
       }
     };
-    window.addEventListener('resize', windowResized);
+    window.addEventListener("resize", windowResized);
     return () => {
-      window.removeEventListener('resize', windowResized);
+      window.removeEventListener("resize", windowResized);
       p5.remove();
     };
   }, []);

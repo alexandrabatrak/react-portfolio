@@ -1,4 +1,4 @@
-import './subheading.scss';
+import "./subheading.scss";
 
 export default function Subheading({ text, props }) {
   return (

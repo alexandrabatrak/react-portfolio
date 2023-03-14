@@ -1,10 +1,10 @@
-import projects from '../../projects.json';
-import Slider from '../Slider/Slider';
-import Separator from '../Separator/Separator';
-import Subheading from '../Subheading/Subheading';
-import Container from '../Container/Container';
-import { motion, AnimatePresence } from 'framer-motion';
-import './project.scss';
+import projects from "../../projects.json";
+import Slider from "../Slider/Slider";
+import Separator from "../Separator/Separator";
+import Subheading from "../Subheading/Subheading";
+import Container from "../Container/Container";
+import { motion, AnimatePresence } from "framer-motion";
+import "./project.scss";
 
 export default function Project({ id }) {
   const projectIndex = projects.findIndex((p) => p.id === id);
@@ -18,7 +18,7 @@ export default function Project({ id }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.7, delay: 0.2 }}>
+          transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}>
           <Container>
             <div className='section'>
               <div className='project-title-wrapper'>

@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import Container from '../Container/Container';
-import Button from '../Button/Button';
-import './footer.scss';
+import { Link } from "react-router-dom";
+import Container from "../Container/Container";
+import Button from "../Button/Button";
+import "./footer.scss";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className='hire-me'>
           <p>Lemme do it for you</p>
           <Link to='/contact'>
-            <Button text={'Hire me'} className={'btn-cta'} />
+            <Button text={"Hire me"} className={"btn-cta"} />
           </Link>
         </div>
         <div className='socials-wrapper'>

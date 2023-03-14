@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import './pagetitle.scss';
+import { motion } from "framer-motion";
+import "./pagetitle.scss";
 
 export default function PageTitle({ title }) {
   function rand(min, max) {
@@ -10,10 +10,10 @@ export default function PageTitle({ title }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ ease: 'easeInOut', duration: 1, delay: 0.5 }}
+      transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
       className='heading-wrapper'>
       <h2>
-        {title.split('').map((letter, i) => (
+        {title.split("").map((letter, i) => (
           <motion.span
             key={i}
             initial={{ perspective: 800, rotateX: 0 }}
@@ -23,7 +23,7 @@ export default function PageTitle({ title }) {
               scaleZ: rand(1.1, 1.4),
               perspective: 500,
               rotateX: rand(-10, 10),
-              transition: { ease: 'easeInOut', duration: 0.5 },
+              transition: { ease: "easeInOut", duration: 0.5 },
             }}>
             {letter}
           </motion.span>

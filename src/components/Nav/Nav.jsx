@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import SoundIcon from '../../extra-components/SoundIcon/SoundIcon';
-import './nav.scss';
+import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import SoundIcon from "../../extra-components/SoundIcon/SoundIcon";
+import "./nav.scss";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,14 +17,14 @@ export default function Header() {
         setScrolled(false);
       }
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header>
       <nav
-        className={`nav ${scrolled ? 'scrolled' : ''} ${isHome ? 'home' : ''}`}>
+        className={`nav ${scrolled ? "scrolled" : ""} ${isHome ? "home" : ""}`}>
         <div className='nav-container'>
           <div className='nav-item-wrapper'>
             <Link className='nav-brand' to='/'>
@@ -36,28 +36,28 @@ export default function Header() {
               to='/'
               end
               className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
+                isActive ? "nav-link active" : "nav-link"
               }>
               Home
             </NavLink>
             <NavLink
               to='/projects'
               className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
+                isActive ? "nav-link active" : "nav-link"
               }>
               Projects
             </NavLink>
             <NavLink
               to='/about'
               className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
+                isActive ? "nav-link active" : "nav-link"
               }>
               About
             </NavLink>
             <NavLink
               to='/contact'
               className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
+                isActive ? "nav-link active" : "nav-link"
               }>
               Contact
             </NavLink>

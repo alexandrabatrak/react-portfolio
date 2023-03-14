@@ -1,18 +1,18 @@
-import Container from '../components/Container/Container';
-import PageTitle from '../components/PageTitle/PageTitle';
-import MotionSection from '../components/Motion/MotionSection';
-import MotionParagraph from '../components/Motion/MotionParagraph';
-import Separator from '../components/Separator/Separator';
-import { motion } from 'framer-motion';
-import Subheading from '../components/Subheading/Subheading';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import ScrollDown from '../extra-components/ScrollDown/ScrollDown';
+import Container from "../components/Container/Container";
+import PageTitle from "../components/PageTitle/PageTitle";
+import MotionSection from "../components/Motion/MotionSection";
+import MotionParagraph from "../components/Motion/MotionParagraph";
+import Separator from "../components/Separator/Separator";
+import { motion } from "framer-motion";
+import Subheading from "../components/Subheading/Subheading";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
 
 export default function About() {
   // TODO: Not very happy with how it scrolls up not when initially directed? Generally not happy with rounting
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
@@ -21,9 +21,9 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 1 } }}
-          exit={{ opacity: 0, x: '200%' }}
-          transition={{ ease: 'easeInOut', duration: 1 }}>
-          <PageTitle title={'About'} />
+          exit={{ opacity: 0, x: "200%" }}
+          transition={{ ease: "easeInOut", duration: 1 }}>
+          <PageTitle title={"About"} />
           <MotionParagraph delay={0.5}>
             <blockquote>
               <em>
@@ -63,7 +63,7 @@ export default function About() {
             <Separator />
           </MotionParagraph>
           <MotionParagraph delay={0.5}>
-            <Subheading text={'What do I bring to the table?'} />
+            <Subheading text={"What do I bring to the table?"} />
           </MotionParagraph>
           <MotionParagraph delay={0.5}>
             <div className='text-font'>
@@ -96,7 +96,7 @@ export default function About() {
             </div>
           </MotionParagraph>
           <MotionParagraph delay={0.5}>
-            <Subheading text={'Technicalities'} />
+            <Subheading text={"Technicalities"} />
           </MotionParagraph>
           <MotionParagraph delay={0.5}>
             <p>

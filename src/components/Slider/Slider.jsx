@@ -1,7 +1,7 @@
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
-import './slider.scss';
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import "./slider.scss";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -13,8 +13,8 @@ export default function Slider({ project, imgNum }) {
         slidesPerView={1}
         loop={true}
         navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}>
         {imgNum > 0 &&
           project.img.map((image, i) => {

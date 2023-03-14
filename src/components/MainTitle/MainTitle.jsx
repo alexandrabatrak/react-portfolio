@@ -1,10 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
-import './maintitle.scss';
+import { useState, useEffect, useCallback } from "react";
+import "./maintitle.scss";
 
 // TODO: Add more text section to appear after each other (use await?)
 
 export default function MainTitle() {
-  const wordsArr = ['Design', 'Build', 'Create'];
+  const wordsArr = ["Design", "Build", "Create"];
   const [words, setWords] = useState(wordsArr);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showWord, setShowWord] = useState(true);
@@ -54,7 +54,7 @@ export default function MainTitle() {
   return (
     <div className='masthead'>
       <h1>
-        <span className={`show ${fadeOut ? 'fade-out' : ''}`}>
+        <span className={`show ${fadeOut ? "fade-out" : ""}`}>
           {showWord && words[currentIndex]}
         </span>
       </h1>

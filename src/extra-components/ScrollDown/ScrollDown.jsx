@@ -1,4 +1,4 @@
-import './scrolldown.scss';
+import "./scrolldown.scss";
 
 export default function ScrollDown() {
   return (

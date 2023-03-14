@@ -1,4 +1,4 @@
-import './button.scss';
+import "./button.scss";
 
 export default function ButtonLg({ text, className, props }) {
   return (

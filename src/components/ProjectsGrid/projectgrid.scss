@@ -1,9 +1,9 @@
-@import '../../scss/variables';
-@import '../../scss/typography';
+@import "../../scss/variables";
+@import "../../scss/typography";
 /* Projects */
 .projects {
   p {
-    @include txt-size('md');
+    @include txt-size("md");
   }
 
   .grid {
@@ -39,7 +39,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            @include txt-size('lg');
+            @include txt-size("lg");
             text-transform: uppercase;
             letter-spacing: 10px;
             transform: translate(-50%, -50%);
@@ -74,7 +74,7 @@
           border: 1px solid black;
 
           &:before {
-            content: '';
+            content: "";
             background: rgba(black, 0.85);
             height: 100%;
             width: 100%;

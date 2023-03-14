@@ -1,12 +1,12 @@
-import { useForm } from '@formspree/react';
-import Container from '../Container/Container';
-import './contactform.scss';
+import { useForm } from "@formspree/react";
+import Container from "../Container/Container";
+import "./contactform.scss";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm('xnqyzqjz');
+  const [state, handleSubmit] = useForm("xnqyzqjz");
   return (
     <Container>
-      <div>{state.succeeded ? 'Thank you for signing up!' : ''}</div>
+      <div>{state.succeeded ? "Thank you for signing up!" : ""}</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='name'>Name</label>
         <input id='name' type='text' name='name' />

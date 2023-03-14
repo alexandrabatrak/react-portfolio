@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import CustomCursor from '../extra-components/CustomCursor/CustomCursor';
-import Home from '../pages/Home';
-import Projects from '../pages/Projects';
-import ProjectPage from '../pages/ProjectPage';
-import About from '../pages/About';
-import Contact from '../pages/Contact';
+import { useState, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import CustomCursor from "../extra-components/CustomCursor/CustomCursor";
+import Home from "../pages/Home";
+import Projects from "../pages/Projects";
+import ProjectPage from "../pages/ProjectPage";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 export default function RoutesWrapper() {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const touchDevice = () => setMobile(true);
-    window.addEventListener('touchstart', touchDevice);
-    return () => window.removeEventListener('touchstart', touchDevice);
+    window.addEventListener("touchstart", touchDevice);
+    return () => window.removeEventListener("touchstart", touchDevice);
   }, []);
 
   const location = useLocation();
-  const hoverables = 'a, button, .sound-wrapper';
+  const hoverables = "a, button, .sound-wrapper";
   const withCustomCursor = (Component, hoverable) => {
     return (props) => (
       <>

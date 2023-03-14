@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Project from '../components/Project/Project';
-import projects from '../projects.json';
+import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Project from "../components/Project/Project";
+import projects from "../projects.json";
 
 export default function ProjectPage() {
   const { projectId } = useParams();
@@ -15,7 +15,7 @@ export default function ProjectPage() {
   const nextProject = projects[nextIndex];
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
@@ -24,7 +24,7 @@ export default function ProjectPage() {
         initial={{ opacity: 0, scaleY: 0 }}
         animate={{ opacity: 1, scaleY: 1 }}
         exit={{ opacity: 0, scaleY: 0 }}
-        transition={{ ease: 'easeInOut', duration: 0.5 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
         className='projects-page'>
         <motion.div
           initial={{ opacity: 0 }}

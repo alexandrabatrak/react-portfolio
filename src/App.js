@@ -1,8 +1,8 @@
-import { AnimatePresence } from 'framer-motion';
-import Nav from './components/Nav/Nav';
-import Footer from './components/Footer/Footer';
-import RoutesWrapper from './routes/Routes';
-import './App.scss';
+import { AnimatePresence } from "framer-motion";
+import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
+import RoutesWrapper from "./routes/Routes";
+import "./App.scss";
 
 export default function App() {
   return (

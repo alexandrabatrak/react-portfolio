@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import MotionSection from '../components/Motion/MotionSection';
-import MotionParagraph from '../components/Motion/MotionParagraph';
-import PageTitle from '../components/PageTitle/PageTitle';
-import Container from '../components/Container/Container';
-import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid';
-import ScrollDown from '../extra-components/ScrollDown/ScrollDown';
+import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import MotionSection from "../components/Motion/MotionSection";
+import MotionParagraph from "../components/Motion/MotionParagraph";
+import PageTitle from "../components/PageTitle/PageTitle";
+import Container from "../components/Container/Container";
+import ProjectsGrid from "../components/ProjectsGrid/ProjectsGrid";
+import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
 
 export default function Projects() {
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
     <MotionSection className='projects'>
-      <PageTitle title={'Projects'} />
+      <PageTitle title={"Projects"} />
       <Container>
         <MotionParagraph delay={0.5}>
           <p>

@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import projects from '../../projects.json';
-import './projectgrid.scss';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import projects from "../../projects.json";
+import "./projectgrid.scss";
 
 export default function ProjectsGrid({ props }) {
   return (
@@ -9,7 +9,7 @@ export default function ProjectsGrid({ props }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ ease: 'easeInOut', duration: 0.7, delay: 0.2 }}
+      transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
       className='grid'
       id='projects-grid'>
       {projects.map((project) => {
@@ -18,11 +18,11 @@ export default function ProjectsGrid({ props }) {
             <Link to={`/projects/${project.id}`}>
               <motion.div
                 layoutId={project.id}
-                initial={{ opacity: 0, y: '50%' }}
+                initial={{ opacity: 0, y: "50%" }}
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scaleX: 0 }}
                 viewport={{ once: false }}
-                transition={{ ease: 'easeInOut', duration: 0.5 }}
+                transition={{ ease: "easeInOut", duration: 0.5 }}
                 className='project-wrapper'>
                 <div className='project-image'>
                   <img
