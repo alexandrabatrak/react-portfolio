@@ -40,6 +40,9 @@ footer {
     color: $primary;
     @include txt-size("xl");
     font-style: italic;
+    a {
+      text-decoration: none;
+    }
   }
 
   a {
@@ -49,6 +52,7 @@ footer {
     @include txt-size("md");
     text-transform: uppercase;
     letter-spacing: 5px;
+    text-align: center;
     transition: $transition;
 
     &:hover {
