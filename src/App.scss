@@ -61,6 +61,10 @@ section {
   padding: $inner-padding;
   max-width: $max-width;
   margin: auto;
+
+  ul {
+    line-height: 2;
+  }
 }
 
 .grid {
@@ -86,6 +90,10 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+img {
+  width: 100%;
 }
 
 .show.fade-in {
