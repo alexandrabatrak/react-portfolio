@@ -37,7 +37,7 @@ footer {
   animation: float 15s infinite;
 
   p {
-    color: $primary;
+    color: $light;
     @include txt-size("xl");
     font-style: italic;
     a {
@@ -46,18 +46,27 @@ footer {
   }
 
   a {
-    color: $white;
-    padding: 1rem 2rem;
-    border: 1px solid $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary;
+    border: 0.5rem solid black;
     @include txt-size("md");
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
     transition: $transition;
+    box-shadow: 0 0 10px rgba($secondary, 0.5);
+
+    span {
+      padding: 1rem;
+      border: 2px solid black;
+      background: rgba(black, 0.35);
+    }
 
     &:hover {
-      background: $primary;
-      padding: 1rem 3rem;
+      color: $light;
+      padding: 1rem;
     }
   }
 }
