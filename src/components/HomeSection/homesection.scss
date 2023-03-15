@@ -1,0 +1,15 @@
+@import "../../scss/variables";
+/* Home section */
+.home {
+  .absolute-center {
+    position: relative;
+  }
+
+  &-frame {
+    height: 100%;
+    width: 90%;
+    border: 0.5rem solid black;
+    margin: auto;
+    padding: 3rem;
+  }
+}
