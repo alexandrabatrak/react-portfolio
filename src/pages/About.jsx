@@ -129,7 +129,7 @@ export default function About() {
           <MotionParagraph></MotionParagraph>
           <MotionParagraph>
             <p>In addition to all of that, I also have experience with:</p>
-            <ul style={{ paddingInlineStart: "4rem", listStyleType: "→" }}>
+            <ul style={{ paddingInlineStart: "4rem", listStyleType: "'→ '" }}>
               <li>Product packaging design</li>
               <li>Illustration (traditional art and digital)</li>
               <li>
