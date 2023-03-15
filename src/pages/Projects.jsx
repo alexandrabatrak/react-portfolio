@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import MotionSection from "../components/Motion/MotionSection";
+import MotionPage from "../components/Motion/MotionPage";
 import MotionParagraph from "../components/Motion/MotionParagraph";
 import PageTitle from "../components/PageTitle/PageTitle";
 import Container from "../components/Container/Container";
@@ -12,10 +12,10 @@ export default function Projects() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <MotionSection className='projects'>
+    <MotionPage className='projects'>
       <PageTitle title={"Projects"} />
       <Container>
-        <MotionParagraph delay={0.5}>
+        <MotionParagraph>
           <p>
             Explore my portfolio of frontend development projects, where the art
             of design and technical proficiency converge in perfect harmony.
@@ -32,12 +32,12 @@ export default function Projects() {
           </p>
         </MotionParagraph>
       </Container>
-      <MotionParagraph delay={0.8}>
+      <MotionParagraph delay={0.7}>
         <ScrollDown />
       </MotionParagraph>
       <AnimatePresence mode='wait'>
         <ProjectsGrid />
       </AnimatePresence>
-    </MotionSection>
+    </MotionPage>
   );
 }

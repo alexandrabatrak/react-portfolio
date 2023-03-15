@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function MotionSection({ children, ...props }) {
+export default function MotionPage({ children, ...props }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: "50%" }}

@@ -1,9 +1,9 @@
-import NoiseBg from "../extra-components/NoiseBg/NoiseBg";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import NoiseBg from "../extra-components/NoiseBg/NoiseBg";
+import MotionPage from "../components/Motion/MotionPage";
 import MainTitle from "../components/MainTitle/MainTitle";
 import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
-import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -12,12 +12,7 @@ export default function Home() {
   return (
     <>
       <NoiseBg width={window.innerWidth} height={window.innerHeight} />
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, x: "100%" }}
-        transition={{ ease: "easeInOut", duration: 1 }}
-        className='home absolute-center'>
+      <MotionPage className='home absolute-center'>
         <MainTitle />
         <Link
           to='projects'
@@ -27,7 +22,7 @@ export default function Home() {
           offset={-70}>
           <ScrollDown />
         </Link>
-      </motion.section>
+      </MotionPage>
     </>
   );
 }
