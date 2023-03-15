@@ -10,7 +10,7 @@ export default function App() {
     <>
       <Nav />
       <main>
-        <AnimatePresence mode='wait' onExitComplete={handleComplete}>
+        <AnimatePresence mode='wait'>
           <RoutesWrapper />
         </AnimatePresence>
       </main>
