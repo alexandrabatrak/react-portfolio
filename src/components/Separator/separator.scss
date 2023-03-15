@@ -1,9 +1,9 @@
-@import '../../scss/variables';
-@import '../../scss/animations';
+@import "../../scss/variables";
+@import "../../scss/animations";
 
 .separator {
   height: 1px;
   background: rgba($primary, 0.25);
   max-width: $max-width;
-  margin: 3rem auto 2rem;
+  margin: 2rem auto;
 }
