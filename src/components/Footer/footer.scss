@@ -15,14 +15,25 @@ footer {
       justify-content: space-around;
     }
   }
-  .copyright {
-    color: $light;
+
+  .footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    color: $light;
 
     p {
       @include txt-size("sm");
     }
+  }
+
+  .notice span {
+    font-style: italic;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
   }
 }
 

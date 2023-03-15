@@ -22,18 +22,24 @@ export default function Footer() {
           <MotionFade delay={0.5}>
             <SocialIcons />
           </MotionFade>
-          <MotionFade delay={0.6}>
-            <div className='copyright'>
-              <p>
-                Coded with{" "}
-                <span>
-                  <RiHeart3Fill />{" "}
-                </span>
-                All right reserved. &copy; {new Date().getFullYear()}{" "}
-                <a href='https://github.com/alexandrabatrak'>
-                  Alexandra Batrak
-                </a>
+          <MotionFade delay={0.7}>
+            <div className='footer'>
+              <p className='notice'>
+                <a href='/privacy-policy'>Privacy Policy</a>{" "}
+                <span>This portfolio is a work in progress.</span>
               </p>
+              <div className='copyright'>
+                <p>
+                  Coded with{" "}
+                  <span>
+                    <RiHeart3Fill />{" "}
+                  </span>
+                  All right reserved. &copy; {new Date().getFullYear()}{" "}
+                  <a href='https://github.com/alexandrabatrak'>
+                    Alexandra Batrak
+                  </a>
+                </p>
+              </div>
             </div>
           </MotionFade>
         </Container>
