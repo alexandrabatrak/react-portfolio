@@ -3,7 +3,9 @@ import Slider from "../Slider/Slider";
 import Separator from "../Separator/Separator";
 import Subheading from "../Subheading/Subheading";
 import Container from "../Container/Container";
+import MotionParagraph from "../Motion/MotionParagraph";
 import { motion, AnimatePresence } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 import "./project.scss";
 
 export default function Project({ id }) {
@@ -21,10 +23,16 @@ export default function Project({ id }) {
           transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}>
           <Container>
             <div className='section'>
-              <div className='project-title-wrapper'>
-                <h3>{project.title}</h3>
-              </div>
+              <MotionParagraph>
+                <div className='project-title-wrapper'>
+                  <h3>{project.title}</h3>
+                </div>
+              </MotionParagraph>
+            </div>
+            <MotionParagraph delay={0.6}>
               <Separator />
+            </MotionParagraph>
+            <MotionParagraph delay={0.7}>
               <div className='project-details grid'>
                 {project.role && (
                   <div className='project-role'>
@@ -37,61 +45,82 @@ export default function Project({ id }) {
                     {/* TODO: Add icons for tools */}
                     <Subheading text='Technologies' />
                     <ul>
-                      {project.tools.map((tool) => {
-                        return <li key={project.id}>{tool}</li>;
+                      {project.tools.map((tool, i) => {
+                        const id = uuidv4();
+                        return <li key={id}>{tool}</li>;
                       })}
                     </ul>
                   </div>
                 )}
+
                 {project.links && (
                   <div className='project-links'>
                     <Subheading text='View project' />
                     {project.links.deployment && (
                       <a
-                        href={project.deployment}
+                        href={project.links.deployment}
                         target='_blank'
                         rel='noreferrer'>
                         Live site
                       </a>
                     )}
                     {project.links.repo && (
-                      <a href={project.repo} target='_blank' rel='noreferrer'>
+                      <a
+                        href={project.links.repo}
+                        target='_blank'
+                        rel='noreferrer'>
                         Github
                       </a>
                     )}
                   </div>
                 )}
               </div>
-            </div>
+            </MotionParagraph>
             {project.description && (
               <>
-                <Separator />
-                <div className='project-about'>
-                  <p>{project.description}</p>
-                </div>
+                <MotionParagraph>
+                  <Separator />
+                </MotionParagraph>
+                <MotionParagraph delay={0.6}>
+                  <div className='project-about'>
+                    <p>{project.description}</p>
+                  </div>
+                </MotionParagraph>
               </>
             )}
             {project.process && (
-              <div className='project-process section'>
-                <p>{project.process}</p>
-              </div>
+              <MotionParagraph>
+                <div className='project-process section'>
+                  <p>{project.process}</p>
+                </div>
+              </MotionParagraph>
             )}
             {project.features.length > 0 && (
               <>
-                <Separator />
-                <div className='project-features section'>
-                  <Subheading text='Features' />
-                  <ul>
-                    {project.features.map((feature) => {
-                      return <li key={project.id}>{feature}</li>;
-                    })}
-                  </ul>
-                </div>
+                <MotionParagraph delay={0.6}>
+                  <Separator />
+                </MotionParagraph>
+                <MotionParagraph delay={0.7}>
+                  <div className='project-features section'>
+                    <Subheading text='Features' />
+                    <ul>
+                      {/* Not recommended to use index as a key, but in this situation, I don't know how else to approach it, unless creating an array of objects in the projects.json */}
+                      {project.features.map((feature, i) => {
+                        const id = uuidv4();
+                        return <li key={id}>{feature}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </MotionParagraph>
               </>
             )}
           </Container>
-          <Slider project={project} imgNum={imgNum} />
-          <Separator />
+          <MotionParagraph>
+            <Slider project={project} imgNum={imgNum} />
+          </MotionParagraph>
+          <MotionParagraph delay={0.6}>
+            <Separator />
+          </MotionParagraph>
         </motion.div>
       )}
     </AnimatePresence>
