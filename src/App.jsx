@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import RoutesWrapper from "./routes/Routes";
+import MotionFade from "./components/Motion/MotionFade";
 import "./App.scss";
 
 export default function App() {
@@ -9,11 +10,15 @@ export default function App() {
     <>
       <Nav />
       <main>
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode='wait' onExitComplete={handleComplete}>
           <RoutesWrapper />
         </AnimatePresence>
       </main>
-      <Footer />
+      <AnimatePresence>
+        <MotionFade delay={0.5}>
+          <Footer />
+        </MotionFade>
+      </AnimatePresence>
     </>
   );
 }
