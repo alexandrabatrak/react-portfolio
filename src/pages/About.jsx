@@ -1,12 +1,11 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Container from "../components/Container/Container";
 import PageTitle from "../components/PageTitle/PageTitle";
 import MotionPage from "../components/Motion/MotionPage";
 import MotionParagraph from "../components/Motion/MotionParagraph";
 import Separator from "../components/Separator/Separator";
-import { motion } from "framer-motion";
 import Subheading from "../components/Subheading/Subheading";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
 
 export default function About() {
@@ -130,7 +129,7 @@ export default function About() {
           <MotionParagraph></MotionParagraph>
           <MotionParagraph>
             <p>In addition to all of that, I also have experience with:</p>
-            <ul>
+            <ul style={{ paddingInlineStart: "4rem", listStyleType: "→" }}>
               <li>Product packaging design</li>
               <li>Illustration (traditional art and digital)</li>
               <li>
@@ -141,9 +140,7 @@ export default function About() {
           </MotionParagraph>
         </div>
         <MotionParagraph>
-          <Subheading
-            text={`Yeah, let's build you a pretty website so that you or your business can have an online presence.`}
-          />
+          <Subheading text={`Yeah, let's build you a pretty website.`} />
         </MotionParagraph>
         <MotionParagraph>
           <ScrollDown />
