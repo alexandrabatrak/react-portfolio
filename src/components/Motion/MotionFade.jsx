@@ -5,7 +5,7 @@ export default function MotionFade({ children, delay, ...props }) {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
       exit={{ opacity: 0 }}
       transition={{
         ease: "easeInOut",
