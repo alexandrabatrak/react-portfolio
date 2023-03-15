@@ -55,10 +55,6 @@ section {
   min-height: 100dvh;
   min-height: 100vh;
   position: relative;
-
-  &:not(.home) {
-    background: $black;
-  }
 }
 
 .container {
@@ -75,6 +71,15 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fullheight {
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+.halfheight {
+  min-height: 50vh;
 }
 
 .bg-image {
