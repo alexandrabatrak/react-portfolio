@@ -1,6 +1,6 @@
-@import './scss/variables';
-@import './scss/animations';
-@import './scss/typography';
+@import "./scss/variables";
+@import "./scss/animations";
+@import "./scss/typography";
 
 /* General */
 *,
@@ -29,10 +29,6 @@ a {
   cursor: none;
 }
 
-p a {
-  text-decoration: underline wavy;
-}
-
 p,
 ul,
 blockquote {
@@ -40,7 +36,7 @@ blockquote {
   padding: 1rem;
   max-width: $max-paragraph-width;
   color: $light;
-  @include txt-size('md');
+  @include txt-size("md");
   line-height: 1.45;
 }
 
