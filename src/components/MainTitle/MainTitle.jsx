@@ -4,7 +4,7 @@ import "./maintitle.scss";
 // TODO: Add more text section to appear after each other (use await?)
 
 export default function MainTitle() {
-  const wordsArr = ["Design", "Build", "Create"];
+  const wordsArr = ["I Design", "I Build", "I Create"];
   const [words, setWords] = useState(wordsArr);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showWord, setShowWord] = useState(true);
@@ -58,10 +58,6 @@ export default function MainTitle() {
           {showWord && words[currentIndex]}
         </span>
       </h1>
-      <p className='hide'>
-        A design enthusiast with exceptional attention to detail, plenty of
-        patience and a desire to create beautiful solutions.
-      </p>
     </div>
   );
 }
