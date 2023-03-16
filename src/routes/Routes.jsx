@@ -17,7 +17,7 @@ export default function RoutesWrapper() {
   }, []);
 
   const location = useLocation();
-  const hoverables = "a, button, .sound-wrapper";
+  const hoverables = "a, button, .sound-wrapper, .nav-icon";
   const withCustomCursor = (Component, hoverable) => {
     return (props) => (
       <>
