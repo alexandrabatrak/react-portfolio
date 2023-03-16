@@ -3,6 +3,16 @@ import P5 from "p5";
 import "./noisebg.scss";
 
 const NoiseBg = memo(({ width, height }) => {
+  //reduce particles for mobile/tablet devices
+  const [mobile, setMobile] = useState(false);
+  const maxWidth = window.matchMedia("(max-width: 1200px)");
+
+  useEffect(() => {
+    const touchDevice = () => setMobile(true);
+    window.addEventListener("touchstart", touchDevice);
+    return () => window.removeEventListener("touchstart", touchDevice);
+  }, []);
+
   const canvasRef = useRef(null);
   const [p5, setP5] = useState(null);
   const [canvasSize, setCanvasSize] = useState({
@@ -15,12 +25,13 @@ const NoiseBg = memo(({ width, height }) => {
   let zoff = 1;
   let flowfield = [];
   let time = 0;
-  const numParicles = 2500;
+  // TODO: test that it works
+  const numParicles = mobile && maxWidth.matches ? 1000 : 2500;
   const particles = [];
   const bgColor = [25];
   let particleColor = [176, 137, 104];
   // let particleColor = [86, 61, 39];
-  let particleSpeed = 5;
+  let particleSpeed = 4;
   // const opacity = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
   const opacity = Math.floor(Math.random() * (100 - 80 + 1) + 80);
   let maxOpacityIncrease = 255;
