@@ -15,8 +15,6 @@ export default function MotionPage({ children, ...props }) {
     }
   }, []);
 
-  console.log(headerHeight, footerHeight);
-
   return (
     <motion.section
       initial={{ opacity: 0, y: "50%" }}
