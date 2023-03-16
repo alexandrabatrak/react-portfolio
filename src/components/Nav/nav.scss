@@ -1,7 +1,7 @@
-@import '../../scss/variables';
-// @import '../../scss/typography';
+@import "../../scss/variables";
+@import "../../scss/typography";
+@import "../../scss/animations";
 
-// TODO: Better styling for mobile
 .nav {
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@
   // }
 
   &-item-wrapper {
-    padding: auto 2rem;
+    padding: 0 2rem;
   }
 
   &-container {
@@ -37,19 +37,107 @@
     margin-left: auto;
   }
 
+  &-icon {
+    position: relative;
+    width: 40px;
+    height: 1.5rem;
+    padding: 0.5rem;
+    z-index: 1002;
+
+    .circle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      transform: rotate(45deg);
+      background-color: $primary;
+      transition: all 0.3s ease-out;
+
+      &-1 {
+        top: 0;
+        left: calc(25% + 1px);
+      }
+      &-2 {
+        top: calc(50% - 1px);
+        height: 7px;
+        width: 7px;
+        left: calc(12px + 25%);
+      }
+      &-3 {
+        top: calc(100% - 2px);
+        left: 25%;
+      }
+    }
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      margin-top: 0.5rem;
+      background-color: $primary;
+      transform: rotate(-45deg);
+    }
+
+    &:before {
+      width: 0.17rem;
+      height: 0.17rem;
+      animation: particle1 4s linear infinite;
+    }
+
+    &:after {
+      width: 0.125rem;
+      height: 0.125rem;
+      animation: particle2 3s linear infinite;
+    }
+
+    &.open {
+      .circle {
+        &-1 {
+          width: 3px;
+          height: 2rem;
+          top: -5px;
+          left: 50%;
+          transform: rotate(-45deg);
+        }
+        &-2 {
+          opacity: 0;
+          transform: translate(-5px, 5px);
+        }
+        &-3 {
+          width: 3px;
+          height: 2rem;
+          top: -5px;
+          left: 50%;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
   &-menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: none;
+    opacity: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba($black, 0.95);
     align-items: center;
-    // margin-left: auto;
     margin: 0 auto;
     padding-left: 0;
+    z-index: 1001;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      opacity: 1;
+    }
   }
 
   &-link {
-    display: block;
-    color: $white;
+    @include txt-size("lg");
     margin: auto 1rem;
     padding: 0.5rem;
     text-decoration: none;
@@ -61,15 +149,6 @@
     &.active {
       color: $light;
       transform: skewX(-7.5deg);
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .nav {
-    flex-wrap: wrap;
-    &-menu {
-      flex-direction: row;
     }
   }
 }
