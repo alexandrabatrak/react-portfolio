@@ -31,8 +31,9 @@ a {
 
 a,
 button,
-.sound-wrapper {
-  &:focus {
+.sound-wrapper,
+.nav-icon {
+  &:focus-visible {
     outline: 1px solid $primary;
   }
 }

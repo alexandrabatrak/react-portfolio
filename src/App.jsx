@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import RoutesWrapper from "./routes/Routes";
@@ -10,15 +9,11 @@ export default function App() {
     <>
       <Nav />
       <main>
-        <AnimatePresence mode='wait'>
-          <RoutesWrapper />
-        </AnimatePresence>
+        <RoutesWrapper />
       </main>
-      <AnimatePresence>
-        <MotionFade delay={0.5}>
-          <Footer />
-        </MotionFade>
-      </AnimatePresence>
+      <MotionFade delay={0.5}>
+        <Footer />
+      </MotionFade>
     </>
   );
 }
