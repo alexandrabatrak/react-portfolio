@@ -18,7 +18,7 @@ export default function SoundIcon() {
   };
 
   return (
-    <div className='sound-wrapper' tabindex='0' onClick={toggleAnimation}>
+    <div className='sound-wrapper' tabIndex='0' onClick={toggleAnimation}>
       <div className={`sound-icon ${isPlaying ? "playing" : ""}`}>
         {generateBars()}
       </div>
