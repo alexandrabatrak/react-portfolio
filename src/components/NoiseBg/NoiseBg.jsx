@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState, memo } from "react";
+import { useMediaQuery } from "react-responsive";
 import P5 from "p5";
 import "./noisebg.scss";
 
 const NoiseBg = memo(({ width, height }) => {
   //reduce particles for mobile/tablet devices
-  const [mobile, setMobile] = useState(false);
-  const maxWidth = window.matchMedia("(max-width: 1200px)");
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  console.log(`mobile: ${isTabletOrMobile}`);
 
-  useEffect(() => {
-    const touchDevice = () => setMobile(true);
-    window.addEventListener("touchstart", touchDevice);
-    return () => window.removeEventListener("touchstart", touchDevice);
-  }, []);
+  // useEffect(() => {
+  //   const touchDevice = () => setMobile(true);
+  //   window.addEventListener("touchstart", touchDevice);
+  //   return () => window.removeEventListener("touchstart", touchDevice);
+  // }, []);
 
   const canvasRef = useRef(null);
   const [p5, setP5] = useState(null);
@@ -20,18 +21,25 @@ const NoiseBg = memo(({ width, height }) => {
     height: window.innerHeight,
   });
   const inc = 0.1;
-  const scl = 15;
+  // const scl = 15;
+  const scl = 5;
   let cols, rows;
   let zoff = 1;
   let flowfield = [];
   let time = 0;
   // TODO: test that it works
-  const numParicles = mobile && maxWidth.matches ? 1000 : 2500;
+  // let numParicles;
+  // if (mobile && maxWidth.matches) {
+  //   numParicles = 500;
+  // } else {
+  //   numParicles = 1500;
+  // }
+  const numParicles = isTabletOrMobile ? 100 : 1500;
   const particles = [];
   const bgColor = [25];
   let particleColor = [176, 137, 104];
   // let particleColor = [86, 61, 39];
-  let particleSpeed = 4;
+  let particleSpeed = isTabletOrMobile ? 1 : 4;
   // const opacity = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
   const opacity = Math.floor(Math.random() * (100 - 80 + 1) + 80);
   let maxOpacityIncrease = 255;
@@ -39,6 +47,8 @@ const NoiseBg = memo(({ width, height }) => {
   let prevMouse = new P5.Vector(0, 0);
   let curMouse = new P5.Vector(0, 0);
   let mousePos = new P5.Vector(0, 0);
+
+  console.log(numParicles);
 
   class Particle {
     constructor(p5) {
@@ -67,7 +77,9 @@ const NoiseBg = memo(({ width, height }) => {
         // p5.circle(this.pos.x, this.pos.y, size);
         p5.beginShape();
         for (let i = 0; i < 6; i++) {
-          let angle = (i * p5.TWO_PI) / 6;
+          let angle = isTabletOrMobile
+            ? (i * p5.TWO_PI) / 3
+            : (i * p5.TWO_PI) / 6;
           let x = this.pos.x + size * p5.cos(angle);
           let y = this.pos.y + size * p5.sin(angle);
           p5.vertex(x, y);
