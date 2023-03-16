@@ -6,13 +6,6 @@ import "./noisebg.scss";
 const NoiseBg = memo(({ width, height }) => {
   //reduce particles for mobile/tablet devices
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
-  console.log(`mobile: ${isTabletOrMobile}`);
-
-  // useEffect(() => {
-  //   const touchDevice = () => setMobile(true);
-  //   window.addEventListener("touchstart", touchDevice);
-  //   return () => window.removeEventListener("touchstart", touchDevice);
-  // }, []);
 
   const canvasRef = useRef(null);
   const [p5, setP5] = useState(null);
@@ -21,19 +14,11 @@ const NoiseBg = memo(({ width, height }) => {
     height: window.innerHeight,
   });
   const inc = 0.1;
-  // const scl = 15;
-  const scl = 5;
+  const scl = isTabletOrMobile ? 5 : 15;
   let cols, rows;
   let zoff = 1;
   let flowfield = [];
   let time = 0;
-  // TODO: test that it works
-  // let numParicles;
-  // if (mobile && maxWidth.matches) {
-  //   numParicles = 500;
-  // } else {
-  //   numParicles = 1500;
-  // }
   const numParicles = isTabletOrMobile ? 100 : 1500;
   const particles = [];
   const bgColor = [25];
@@ -47,8 +32,6 @@ const NoiseBg = memo(({ width, height }) => {
   let prevMouse = new P5.Vector(0, 0);
   let curMouse = new P5.Vector(0, 0);
   let mousePos = new P5.Vector(0, 0);
-
-  console.log(numParicles);
 
   class Particle {
     constructor(p5) {
