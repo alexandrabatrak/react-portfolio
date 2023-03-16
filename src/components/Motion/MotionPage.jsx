@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 
-export default function MotionPage({ children, ...props }) {
+export default function MotionPage({ children, id, ...props }) {
   const [headerHeight, setHeaderHeight] = useState(0);
   const [footerHeight, setFooterHeight] = useState(0);
 
@@ -15,17 +16,22 @@ export default function MotionPage({ children, ...props }) {
     }
   }, []);
 
+  console.log(id);
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: "50%" }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, x: "100%" }}
-      transition={{ ease: "easeInOut", duration: 0.5 }}
-      {...props}
-      style={{
-        minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
-      }}>
-      {children}
-    </motion.section>
+    <AnimatePresence>
+      <motion.section
+        key={id}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, x: "100%" }}
+        transition={{ ease: "easeInOut", duration: 2, delayChildren: 0.5 }}
+        {...props}
+        style={{
+          minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
+        }}>
+        {children}
+      </motion.section>
+    </AnimatePresence>
   );
 }

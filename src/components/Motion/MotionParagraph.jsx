@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function MotionParagraph({ children, delay, ...props }) {
+export default function MotionParagraph({ children, ...props }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: "50%" }}
@@ -9,7 +9,7 @@ export default function MotionParagraph({ children, delay, ...props }) {
       transition={{
         ease: "easeInOut",
         duration: 0.5,
-        delay: delay ? delay : 0.5,
+        staggerChildren: 0.5,
       }}
       {...props}>
       {children}

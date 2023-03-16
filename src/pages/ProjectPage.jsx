@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProjectNav from "../components/Project/ProjectNav";
 import Project from "../components/Project/Project";
@@ -7,12 +7,22 @@ import projects from "../projects.json";
 
 export default function ProjectPage() {
   const { projectId } = useParams();
-
   const project = projects.find((project) => project.id === projectId);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
+
+  const [matchedProject, setMatchedProject] = useState(null);
+
+  useEffect(() => {
+    if (matchedProject) {
+      const matchedElement = document.getElementById(matchedProject.id);
+      if (matchedElement) {
+        matchedElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [matchedProject]);
 
   return (
     <>
@@ -28,7 +38,13 @@ export default function ProjectPage() {
           exit={{ opacity: 0 }}
           transition={{ delay: 0.7 }}
           className='back-link-wrapper'>
-          <Link to='/projects' className='back-link'>
+          <Link
+            to={{
+              pathname: "/projects",
+              state: { currentProjectId: projectId },
+            }}
+            className='back-link'
+            onClick={() => setMatchedProject(project)}>
             <i aria-hidden='true'>&larr;</i>
             <span hidden>Back to Projects</span>
           </Link>

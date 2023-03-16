@@ -15,7 +15,7 @@ export default function About() {
   }, []);
 
   return (
-    <MotionPage className='about'>
+    <MotionPage id={"about"} className='about'>
       <Container>
         <PageTitle title={"About"} />
         <MotionParagraph>

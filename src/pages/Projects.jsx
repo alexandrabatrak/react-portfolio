@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
 import MotionPage from "../components/Motion/MotionPage";
 import MotionParagraph from "../components/Motion/MotionParagraph";
 import PageTitle from "../components/PageTitle/PageTitle";
@@ -11,8 +10,9 @@ export default function Projects() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
+
   return (
-    <MotionPage className='projects'>
+    <MotionPage id='projects' className='projects'>
       <PageTitle title={"Projects"} />
       <Container>
         <MotionParagraph>
@@ -35,9 +35,7 @@ export default function Projects() {
       <MotionParagraph delay={0.7}>
         <ScrollDown />
       </MotionParagraph>
-      <AnimatePresence mode='wait'>
-        <ProjectsGrid />
-      </AnimatePresence>
+      <ProjectsGrid />
     </MotionPage>
   );
 }

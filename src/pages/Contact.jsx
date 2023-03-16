@@ -11,7 +11,7 @@ export default function Contact() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <MotionPage className='contact'>
+    <MotionPage id='contact' className='contact'>
       <Container>
         <PageTitle title={"Contact"} />
         <MotionParagraph>

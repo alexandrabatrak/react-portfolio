@@ -56,22 +56,24 @@ export default function Project({ id }) {
                 {project.links && (
                   <div className='project-links'>
                     <Subheading text='View project' />
-                    {project.links.deployment && (
-                      <a
-                        href={project.links.deployment}
-                        target='_blank'
-                        rel='noreferrer'>
-                        Live site
-                      </a>
-                    )}
-                    {project.links.repo && (
-                      <a
-                        href={project.links.repo}
-                        target='_blank'
-                        rel='noreferrer'>
-                        Github
-                      </a>
-                    )}
+                    <p>
+                      {project.links.deployment && (
+                        <a
+                          href={project.links.deployment}
+                          target='_blank'
+                          rel='noreferrer'>
+                          Live site
+                        </a>
+                      )}
+                      {project.links.repo && (
+                        <a
+                          href={project.links.repo}
+                          target='_blank'
+                          rel='noreferrer'>
+                          Github
+                        </a>
+                      )}
+                    </p>
                   </div>
                 )}
               </div>
