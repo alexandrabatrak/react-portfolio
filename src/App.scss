@@ -29,6 +29,14 @@ a {
   cursor: none;
 }
 
+a,
+button,
+.sound-wrapper {
+  &:focus {
+    outline: 1px solid $primary;
+  }
+}
+
 p,
 ul,
 blockquote {
@@ -38,6 +46,10 @@ blockquote {
   color: $light;
   @include txt-size("md");
   line-height: 1.45;
+}
+
+.small {
+  @include txt-size("sm");
 }
 
 .text-font {
@@ -52,8 +64,6 @@ main {
 }
 
 section {
-  min-height: 100dvh;
-  min-height: 100vh;
   position: relative;
 }
 
