@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import CustomCursor from "../extra-components/CustomCursor/CustomCursor";
+import CustomCursor from "../components/CustomCursor/CustomCursor";
 import Home from "../pages/Home";
 import Projects from "../pages/Projects";
 import ProjectPage from "../pages/ProjectPage";

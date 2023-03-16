@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import "./homesection.scss";
 
+// TODO: Add parallax on scroll to the frame-img section
+
 export default function HomeSection() {
   return (
     <motion.div

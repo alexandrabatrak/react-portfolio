@@ -5,7 +5,7 @@ import MotionParagraph from "../components/Motion/MotionParagraph";
 import PageTitle from "../components/PageTitle/PageTitle";
 import Container from "../components/Container/Container";
 import ProjectsGrid from "../components/ProjectsGrid/ProjectsGrid";
-import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
+import ScrollDown from "../components/ScrollDown/ScrollDown";
 
 export default function Projects() {
   useEffect(() => {

@@ -6,7 +6,7 @@ import MotionPage from "../components/Motion/MotionPage";
 import MotionParagraph from "../components/Motion/MotionParagraph";
 import Separator from "../components/Separator/Separator";
 import Subheading from "../components/Subheading/Subheading";
-import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
+import ScrollDown from "../components/ScrollDown/ScrollDown";
 
 export default function About() {
   // TODO: Not very happy with how it scrolls up not when initially directed? Generally not happy with rounting

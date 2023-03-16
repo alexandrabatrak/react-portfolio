@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HomeSection from "../components/HomeSection/HomeSection";
-import NoiseBg from "../extra-components/NoiseBg/NoiseBg";
+import NoiseBg from "../components/NoiseBg/NoiseBg";
 import MotionPage from "../components/Motion/MotionPage";
 import MainTitle from "../components/MainTitle/MainTitle";
-import ScrollDown from "../extra-components/ScrollDown/ScrollDown";
+import ScrollDown from "../components/ScrollDown/ScrollDown";
 
 export default function Home() {
   useEffect(() => {

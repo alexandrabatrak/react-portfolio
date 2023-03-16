@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./soundicon.scss";
 
 export default function SoundIcon() {
@@ -18,7 +18,7 @@ export default function SoundIcon() {
   };
 
   return (
-    <div className='sound-wrapper' onClick={toggleAnimation}>
+    <div className='sound-wrapper' tabindex='0' onClick={toggleAnimation}>
       <div className={`sound-icon ${isPlaying ? "playing" : ""}`}>
         {generateBars()}
       </div>
