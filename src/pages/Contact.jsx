@@ -4,6 +4,7 @@ import Container from "../components/Container/Container";
 import PageTitle from "../components/PageTitle/PageTitle";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { useEffect } from "react";
+import Subheading from "../components/Subheading/Subheading";
 
 export default function Contact() {
   useEffect(() => {
@@ -14,9 +15,11 @@ export default function Contact() {
       <Container>
         <PageTitle title={"Contact"} />
         <MotionParagraph>
-          <p>ckjdncjnfdkjvdf</p>
+          <Subheading text={"Tell me some good news"} />
         </MotionParagraph>
-        <ContactForm />
+        <MotionParagraph delay={0.7}>
+          <ContactForm />
+        </MotionParagraph>
       </Container>
     </MotionPage>
   );
