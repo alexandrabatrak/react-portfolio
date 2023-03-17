@@ -14,26 +14,31 @@ export default function SocialIcons() {
       <ul>
         <li>
           <a href={socials.github} target='_blank' rel='noreferrer'>
+            <span hidden>Link to Github</span>
             <RiGithubLine />
           </a>
         </li>
         <li>
           <a href={socials.linkedin} target='_blank' rel='noreferrer'>
+            <span hidden>Link to LinkedIn</span>
             <RiLinkedinLine />
           </a>
         </li>
         <li>
           <a href={socials.stackoverflow} target='_blank' rel='noreferrer'>
+            <span hidden>Link to StackOverflow</span>
             <RiStackOverflowLine />
           </a>
         </li>
         <li>
           <a href={socials.codepen} target='_blank' rel='noreferrer'>
+            <span hidden>Link to Codepen</span>
             <RiCodepenLine />
           </a>
         </li>
         <li>
           <a href={socials.email} target='_blank' rel='noreferrer'>
+            <span hidden>Link to Email</span>
             <RiMailOpenLine />
           </a>
         </li>
