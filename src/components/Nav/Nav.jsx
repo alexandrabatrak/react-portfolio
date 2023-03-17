@@ -2,29 +2,23 @@ import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import SoundIcon from "../SoundIcon/SoundIcon";
+import { useMediaQuery } from "react-responsive";
+
 import "./nav.scss";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrolledUp, setScrolledUp] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
-  // const menu = document.querySelector(".nav-menu");
-  // const navIcon = document.querySelector(".nav-icon");
   const navIconRef = useRef(null);
   const navMenuRef = useRef(null);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  // const toggleMenu = () => {
-  //   const arr = [navIcon, menu];
-  //   arr.length > 0 && arr.forEach((el) => el.classList.toggle("open"));
-  // };
-  // const closeMenu = () => {
-  //   [navIcon, menu].forEach((el) => el.classList.remove("open"));
-  // };
 
   useEffect(() => {
     const handleNavClick = () => {
@@ -42,13 +36,14 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    let prevScrollY = window.scrollY;
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      const scrolledUp = window.scrollY < prevScrollY && window.scrollY > 300;
+      setScrolled(window.scrollY > 100);
+      setScrolledUp(scrolledUp);
+      prevScrollY = window.scrollY;
     };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -56,7 +51,9 @@ export default function Header() {
   return (
     <header>
       <nav
-        className={`nav ${scrolled ? "scrolled" : ""} ${isHome ? "home" : ""}`}>
+        className={`nav ${scrolled && !scrolledUp ? "scrolled" : ""} ${
+          scrolledUp ? "scrolled-up" : ""
+        } ${isHome ? "home" : ""}`}>
         <div className='nav-container'>
           <div className='nav-item-wrapper'>
             <div
@@ -69,6 +66,7 @@ export default function Header() {
                 <div className='circle circle-2'></div>
                 <div className='circle circle-3'></div>
               </div>
+              <div className='nav-icon-word'>{isOpen ? "Close" : "Menu"}</div>
             </div>
           </div>
           <div className={`nav-menu ${isOpen ? "open" : ""}`} ref={navMenuRef}>
@@ -104,7 +102,7 @@ export default function Header() {
           </div>
           <div className='nav-item-wrapper'>
             <Link className='nav-brand' to='/'>
-              A.
+              {isTabletOrMobile ? "A." : "Alexandra Batrak"}
             </Link>
           </div>
           <div className='nav-item-wrapper'>

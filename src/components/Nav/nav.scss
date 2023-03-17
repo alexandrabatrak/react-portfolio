@@ -9,18 +9,22 @@
   justify-content: center;
   width: 100%;
   color: $white;
-  background: $black;
+  background: transparent;
   padding: 0.5rem 1rem;
-  position: relative;
+  position: fixed;
   z-index: 1000;
+  transition: $transition;
 
-  &.home {
+  &.scrolled {
     background: transparent;
-    position: fixed;
-  }
+    opacity: 0;
+    transform: translateY(-100px);
 
-  // &.scrolled {
-  // }
+    &-up {
+      background: $black;
+      transform: translate(0);
+    }
+  }
 
   // &-item-wrapper {
   //   padding: 0 2rem;
@@ -39,7 +43,6 @@
 
   &-icon {
     position: relative;
-    width: 40px;
     height: 1.5rem;
     padding: 0.5rem;
     z-index: 1002;
@@ -110,6 +113,14 @@
           transform: rotate(45deg);
         }
       }
+    }
+
+    &-word {
+      position: relative;
+      color: $primary;
+      text-transform: lowercase;
+      transform: translate(40px, -5px);
+      transition: $transition;
     }
   }
 
