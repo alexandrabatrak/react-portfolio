@@ -5,6 +5,11 @@
     position: relative;
   }
 
+  &-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-frame {
     display: flex;
     align-items: center;
@@ -14,6 +19,11 @@
     border: 0.5rem solid black;
     margin: auto;
     padding: 3rem;
+    transition: $transition;
+
+    p {
+      transition: $transition;
+    }
 
     &:before,
     &:after {
@@ -42,6 +52,7 @@
     display: flex;
     border: 0.5rem solid black;
     margin: 2rem auto;
+    transition: $transition;
     filter: grayscale(1);
 
     .image {
@@ -57,12 +68,13 @@
 
 @media (min-width: 768px) {
   .home {
-    .grid {
+    &-grid {
+      display: grid;
       grid-template-columns: repeat(5, 1fr);
-      margin-top: 2rem;
+      margin: 2rem 0;
     }
 
-    .home-frame {
+    &-frame {
       grid-area: 1/1/3/5;
       padding-right: 5rem;
     }
