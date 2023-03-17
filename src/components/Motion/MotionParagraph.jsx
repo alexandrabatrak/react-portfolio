@@ -9,6 +9,7 @@ export default function MotionParagraph({ children, ...props }) {
       transition={{
         ease: "easeInOut",
         duration: 0.5,
+        delay: 0.5,
         staggerChildren: 0.5,
       }}
       {...props}>
