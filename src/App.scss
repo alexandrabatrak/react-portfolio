@@ -66,6 +66,10 @@ main {
 
 section {
   position: relative;
+
+  &:not(.home) {
+    margin-top: 100px;
+  }
 }
 
 .container {
