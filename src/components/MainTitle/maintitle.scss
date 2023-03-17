@@ -14,10 +14,10 @@
     font-style: italic;
     font-weight: 100;
     text-transform: uppercase;
-    letter-spacing: 1rem;
+    // letter-spacing: 1rem;
     word-break: break-all;
     text-align: center;
-    transition: letter-spacing 2s ease-in-out, opacity 1s ease-in-out;
+    transition: letter-spacing 0.5s ease-in-out, opacity 1s ease-in-out;
     -webkit-text-stroke: 1px white;
     -webkit-text-fill-color: transparent;
 
