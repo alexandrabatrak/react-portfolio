@@ -28,9 +28,9 @@ export default function HomeSection() {
             patience and a desire to create beautiful solutions.
           </motion.p>
         </motion.div>
-        <motion.div style={{ y, x }} className='face'>
+        <motion.div style={{ y, x }} className='home-frame-img'>
           <motion.div className='image'>
-            <img src='./face.jpg' alt='' />
+            <img src='./bluelinebranch.png' alt='' />
           </motion.div>
         </motion.div>
       </div>
