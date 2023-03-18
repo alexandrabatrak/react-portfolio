@@ -10,10 +10,15 @@ import "./App.scss";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+
   const handleButtonClick = () => {
     setLoading(false);
     setIsPlaying(true);
   };
+
+  if (typeof window !== "undefined" && window.DOMLoaded) {
+    setLoading(false);
+  }
 
   return (
     <>
