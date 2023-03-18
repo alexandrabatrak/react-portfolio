@@ -1,5 +1,25 @@
 [
   {
+    "id": "react-portfolio",
+    "title": "React portfolio",
+    "role": "Developer, Designer",
+    "description": "A portfolio site built with React and Node.",
+    "process": "It's this website - my first ever experience with React ^_^",
+    "features": [],
+    "tools": ["react", "javascript", "jsx", "scss", "node-js"],
+    "links": {
+      "deployment": "https://alexandrabatrak.netlify.app",
+      "repo": "https://github.com/alexandrabatrak/react-portfolio"
+    },
+    "imgfolder": "/",
+    "img": [
+      {
+        "url": "placeholder.webp",
+        "alt": ""
+      }
+    ]
+  },
+  {
     "id": "fin-focus",
     "title": "Fin Focus",
     "role": "Project manager, Developer, Designer",
@@ -42,8 +62,8 @@
   {
     "id": "team-profile-generator",
     "title": "Team profile generator",
-    "role": "",
-    "description": "",
+    "role": "Developer",
+    "description": "This CLI node.js application generates an HTML file that displays essential information about a software engineering team's employees, such as their emails and GitHub profiles. Team generator prompts the user with Inquirer to provide details about the employees.",
     "process": "",
     "features": [],
     "tools": ["node-js", "javascript", "ES6", "bootstrap", "html", "css"],
@@ -55,135 +75,190 @@
     "img": [
       {
         "url": "team-gen-ss.png",
-        "alt": "Screenshot of generated html from team profile generator."
+        "alt": "Preview of generated html from team profile generator."
       }
     ]
   },
   {
     "id": "readme-generator",
     "title": "README generator",
-    "role": "",
-    "description": "",
+    "role": "Developer",
+    "description": "A node CLI application that uses the inquirer to collect the project information and generates a neat README.md based on provided information.",
     "process": "",
     "features": [],
     "tools": ["node-js", "markdown", "javascript", "ES6"],
     "links": {
-      "repo": "#"
+      "repo": "https://github.com/alexandrabatrak/readme-generator"
     },
     "imgfolder": "../readmegen/",
     "img": [
       {
         "url": "readme-gen-preview.gif",
-        "alt": "Screenshot of reamde generator functionality."
+        "alt": "Showcase of reamde generator use."
       }
     ]
   },
   {
-    "id": "4",
+    "id": "weather-dashboard",
     "title": "Weather Dashboard",
-    "role": "",
-    "description": "",
+    "role": "Designer, Developer",
+    "description": "Moody display of current weather and forecast. Access current weather data for any location on Earth. Beautiful on desktop, beautiful on mobile.",
     "process": "",
-    "features": [],
+    "features": [
+      "Current weather",
+      "5-day forecast",
+      "Search bar",
+      "History of searches accessible with a click of a button",
+      "Smooth transitions",
+      "Custom weather backgrounds for each weather type",
+      "Animated loader"
+    ],
     "tools": ["ajax", "jquery", "javascript", "bootstrap", "html", "css"],
     "links": {
-      "deployment": "#",
-      "repo": "#"
+      "deployment": "https://alexandrabatrak.github.io/weather-dashboard",
+      "repo": "https://github.com/alexandrabatrak/weather-dashboard"
     },
     "imgfolder": "../weather/",
     "img": [
       {
         "url": "weather-ss.png",
-        "alt": ""
+        "alt": "Forecast main page."
+      },
+      {
+        "url": "weather-loader.png",
+        "alt": "Forecast loading screen."
       }
     ]
   },
   {
-    "id": "5",
+    "id": "daily-planner",
     "title": "Daily Planner",
-    "role": "",
-    "description": "",
+    "role": "Designer, Developer",
+    "description": "This app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript/jQuery, Bootstrap and moment.js. Accessible, convenient, awesome. Tested in Chrome, Opera and Firefox.",
     "process": "",
-    "features": [],
+    "features": [
+      "Daily planner hour by hour",
+      "Hours selection option input for the planner, dynamically updated HTML based on input",
+      "UX: tasks are saved/deleted on a one-by-one basis, or all",
+      "Retain data utilizing local storage",
+      "Crisp like a freezing wind mobile-first responsive design"
+    ],
     "tools": ["jquery", "javascript", "bootstrap", "html", "css"],
     "links": {
-      "deployment": "#",
-      "repo": "#"
+      "deployment": "https://alexandrabatrak.github.io/daily-planner/",
+      "repo": "https://github.com/alexandrabatrak/daily-planner"
     },
     "imgfolder": "../dailyplanner/",
     "img": [
       {
         "url": "daily-plan-ss.png",
-        "alt": ""
+        "alt": "Main page of daily planner."
+      },
+      {
+        "url": "screenshot.png",
+        "alt": "Daily planner background variations."
       }
     ]
   },
   {
-    "id": "6",
+    "id": "code-quiz",
     "title": "Code quiz",
-    "role": "",
-    "description": "",
-    "process": "",
-    "features": [],
+    "role": "Designer, Developer",
+    "description": "The quiz allows to test one's knowledge of JavaScript fundamentals with a timed multiple choice quiz. For every wrong answer user is penalised by losing 10 seconds of the remaining time. Upon completion (or time run out) user is able to save their score, so they can challenge themselves over and over, until they get all the answers right.",
+    "process": "This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript. As always, built with accessibility in mind. Tested in Chrome, Firefox and Opera.",
+    "features": [
+      "Interactive timed quiz",
+      "Option for user to select amount of questions (10/15/20)",
+      "Randomised questions, each with 4 randomised answer options",
+      "Time penalty on incorrect answer",
+      "Get 2 points for the correct answer, lose 1 point for incorrect",
+      " Client-side scores saving and display of the top 10 scores",
+      "UI and sound effect feedback on correct/incorrect answer choice, variable ending sound based on the reason game ended - either all questions are answered or time runs out",
+      "Option to switch the sound off (preferences saved locally)",
+      "Clean, polished and responsive mobile-first design"
+    ],
     "tools": ["javascript", "bootstrap", "html", "css"],
     "links": {
-      "deployment": "#",
-      "repo": "#"
+      "deployment": "https://alexandrabatrak.github.io/coding-quiz",
+      "repo": "https://github.com/alexandrabatrak/coding-quiz"
     },
     "imgfolder": "../codequiz/",
     "img": [
       {
         "url": "code-q-ss.png",
-        "alt": ""
+        "alt": "Coding quiz start screen."
+      },
+      {
+        "url": "quiz-screenshot.png",
+        "alt": "Coding quiz question showcase."
+      },
+      {
+        "url": "highscores-screenshot.png",
+        "alt": "Coding quiz highscores page."
       }
     ]
   },
   {
-    "id": "7",
+    "id": "password-generator",
     "title": "Password Generator",
-    "role": "",
-    "description": "",
+    "role": "Designer, Developer",
+    "description": "Web application to generate random password based on user's configuration.",
     "process": "",
-    "features": [],
+    "features": [
+      "Generate a password with a click of a button",
+      "Customise what characters to include",
+      "Endless configuration for password length, character types(lowercase, uppercase, numeric and special characters), conveniently predefined for speedy password generation",
+      "In-built validation to avoid empty/undefined password generation",
+      "Convenient copy function with nice little animation feedback",
+      "Moody design"
+    ],
     "tools": ["javascript", "html", "css"],
     "links": {
-      "deployment": "#",
-      "repo": "#"
+      "deployment": "https://alexandrabatrak.github.io/password-generator",
+      "repo": "https://github.com/alexandrabatrak/password-generator"
     },
     "imgfolder": "../passwordgen/",
     "img": [
       {
         "url": "pass-gen-ss.png",
-        "alt": ""
+        "alt": "Password generator main page."
       }
     ]
   },
   {
-    "id": "8",
+    "id": "bootstrap-portfolio",
     "title": "Portfolio 2022",
-    "role": "",
-    "description": "",
+    "role": "Designer, Developer",
+    "description": "A sinlge-page concept portfolio heavily utilizing Bootstrap framework.",
     "process": "",
-    "features": [],
+    "features": [
+      "Bootstrap-powered HTML structure containing sections: about, projects list, counter feature, testimonials and contact",
+      "Responsive navigation bar with on-scroll behaviour",
+      "A hero section featuring a video background",
+      "Fully Responsive layout",
+      "Animations: on scroll appearance, marquee, typing effect",
+      "Modal contact form + on-page section for accessibility",
+      "Auto-turn animations and moving elements off for users on devices with defined preferences",
+      "Accessible integration of FontAwesome"
+    ],
     "tools": ["javascript", "bootstrap", "html", "css"],
     "links": {
-      "deployment": "#",
-      "repo": "#"
+      "deployment": "https://alexandrabatrak.github.io/bootstrap-portfolio/",
+      "repo": "https://github.com/alexandrabatrak/bootstrap-portfolio"
     },
     "imgfolder": "../bootstrapportfolio/",
     "img": [
       {
         "url": "bootstr-pfolio-ss.png",
-        "alt": ""
+        "alt": "Bootstrap based portfolio page."
       }
     ]
   },
   {
-    "id": "9",
+    "id": "wordpress-portfolio",
     "title": "Portfolio 2021",
-    "role": "",
-    "description": "Personal portfolio: custom WordPress theme.",
-
+    "role": "Designer, Developer",
+    "description": "Custom WordPress theme for personal site. Theme supports custom post types, taxonomies, custom in-built contact form. Posts, comments, pages and wordpress blocks style adapted to theme style.",
     "process": "",
     "features": [],
     "tools": [
@@ -202,7 +277,7 @@
     "img": [
       {
         "url": "ab-ss.jpg",
-        "alt": ""
+        "alt": "Alexandra Batrak WordPress portfolio."
       }
     ]
   }
