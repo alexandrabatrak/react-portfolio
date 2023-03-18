@@ -23,7 +23,6 @@ const NoiseBg = memo(({ width, height }) => {
   const particles = [];
   const bgColor = [25];
   let particleColor = [176, 137, 104];
-  // let particleColor = [86, 61, 39];
   let particleSpeed = isTabletOrMobile ? 1 : 4;
   // const opacity = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
   const opacity = Math.floor(Math.random() * (100 - 80 + 1) + 80);
