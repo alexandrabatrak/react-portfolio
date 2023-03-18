@@ -19,11 +19,11 @@ const NoiseBg = memo(({ width, height }) => {
   let zoff = 1;
   let flowfield = [];
   let time = 0;
-  const numParicles = isTabletOrMobile ? 100 : 1500;
+  const numParicles = isTabletOrMobile ? 100 : 1000;
   const particles = [];
   const bgColor = [25];
   let particleColor = [176, 137, 104];
-  let particleSpeed = isTabletOrMobile ? 1 : 4;
+  let particleSpeed = isTabletOrMobile ? 1 : 5;
   // const opacity = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
   const opacity = Math.floor(Math.random() * (100 - 80 + 1) + 80);
   let maxOpacityIncrease = 255;
@@ -58,7 +58,7 @@ const NoiseBg = memo(({ width, height }) => {
         p5.fill(this.color);
         // p5.circle(this.pos.x, this.pos.y, size);
         p5.beginShape();
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 12; i++) {
           let angle = isTabletOrMobile
             ? (i * p5.TWO_PI) / 3
             : (i * p5.TWO_PI) / 6;
@@ -118,8 +118,8 @@ const NoiseBg = memo(({ width, height }) => {
       p5.draw = () => {
         particleCounter++;
 
-        // update the particles every 2 frames
-        if (particleCounter % 2 === 0) {
+        // update the particles every 5 frames
+        if (particleCounter % 10 === 0) {
           particles.forEach((particle) => {
             particle.follow(flowfield);
             particle.update();
@@ -199,7 +199,7 @@ const NoiseBg = memo(({ width, height }) => {
             let d = mousePos.dist(this.pos);
             let m;
             if (d < 100) {
-              m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 2);
+              m = p5.map(d, 0, 100, this.maxspeed, this.maxspeed / 12);
             } else {
               m = this.maxspeed;
             }
