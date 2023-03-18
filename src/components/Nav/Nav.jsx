@@ -69,6 +69,9 @@ export default function Nav({ isPlaying }) {
             </div>
           </div>
           <div className={`nav-menu ${isOpen ? "open" : ""}`} ref={navMenuRef}>
+            <p className='nav-brand' to='/'>
+              {isTabletOrMobile ? "A." : "Alexandra Batrak"}
+            </p>
             <NavLink
               to='/'
               end
@@ -99,11 +102,6 @@ export default function Nav({ isPlaying }) {
               Contact
             </NavLink>
           </div>
-          {/* <div className='nav-item-wrapper'>
-            <Link className='nav-brand' to='/'>
-              {isTabletOrMobile ? "A." : "Alexandra Batrak"}
-            </Link>
-          </div> */}
         </div>
       </nav>
     </header>
