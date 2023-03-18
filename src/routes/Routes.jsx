@@ -7,8 +7,12 @@ import ProjectPage from "../pages/ProjectPage";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 
-export default function RoutesWrapper() {
+export default function RoutesWrapper({ setIsLoaded }) {
   const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(false);
+  }, [setIsLoaded]);
 
   useEffect(() => {
     const touchDevice = () => setMobile(true);

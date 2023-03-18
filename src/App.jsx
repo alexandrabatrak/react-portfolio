@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import RoutesWrapper from "./routes/Routes";
@@ -10,44 +10,70 @@ import "./App.scss";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [audioLoaded, setAudioLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(!loading);
+
+  // Load the audio
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      const audio = new Audio(sound);
+      audio.oncanplaythrough = resolve;
+      audio.onerror = reject;
+      audio.load();
+    })
+      .then(() => {
+        setAudioLoaded(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   const handleButtonClick = () => {
     setLoading(false);
     setIsPlaying(true);
   };
 
-  if (typeof window !== "undefined" && window.DOMLoaded) {
-    setLoading(false);
-  }
+  const handleDOMContentLoaded = () => {
+    document.querySelector(".loader").remove();
+  };
+
+  useEffect(() => {
+    window.addEventListener("load", handleDOMContentLoaded);
+    return () => {
+      window.removeEventListener("load", handleDOMContentLoaded);
+    };
+  }, []);
 
   return (
     <>
-      {loading ? (
-        <div className='loader'>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
-            }}>
-            <button onClick={handleButtonClick} style={{ zIndex: "1005" }}>
-              Start
-            </button>
+      {audioLoaded &&
+        (loading ? (
+          <div className='enter'>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+              }}>
+              <button onClick={handleButtonClick} style={{ zIndex: "1005" }}>
+                Enter
+              </button>
+            </div>
           </div>
-        </div>
-      ) : (
-        <>
-          <Nav />
-          <SoundPlayer url={sound} isPlaying={isPlaying} />
-          <main>
-            <RoutesWrapper />
-          </main>
-          <MotionFade delay={0.5}>
-            <Footer />
-          </MotionFade>
-        </>
-      )}
+        ) : (
+          <>
+            <Nav />
+            <SoundPlayer url={sound} isPlaying={isPlaying} />
+            <main>
+              <RoutesWrapper setIsLoaded={setIsLoaded} />
+            </main>
+            <MotionFade delay={0.5}>
+              <Footer />
+            </MotionFade>
+          </>
+        ))}
     </>
   );
 }
