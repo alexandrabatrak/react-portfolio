@@ -44,8 +44,8 @@ export default function About() {
             <p>
               For every project I create, I strive to deliver the best of my
               capabilities and beyond. I'm continuously expanding my knowledge
-              and expertise (collecting knowledge is my special interest). I
-              deliver above what's expected and am a perfectionist.
+              and expertise. I deliver above what's expected and am a
+              perfectionist.
             </p>
           </div>
         </MotionParagraph>
@@ -55,6 +55,18 @@ export default function About() {
             <Subheading text={`Let's talk business now.`} />
           </Link>
           <Separator />
+        </MotionParagraph>
+        <MotionParagraph>
+          <div className='text-font'>
+            <p>
+              I'm open for hire for remote positions in any EU country and the
+              UK. Please take a look at my{" "}
+              <a href='/AlexandraBatrakCV.pdf' target='_blank' rel='noreferrer'>
+                resume
+              </a>
+              .
+            </p>
+          </div>
         </MotionParagraph>
         <MotionParagraph>
           <Subheading text={"What do I bring to the table?"} />
@@ -82,10 +94,9 @@ export default function About() {
           <div className='text-font'>
             <p>
               Over the years of learning and always challenging myself I have
-              developed skills that allow me to express my creative vision. My
-              most valuable transferable skills are problem-solving and
-              exceptionally quick learning. Everybody says that, you'd say, but
-              I mean it.
+              developed skills to express my creative vision. My most valuable
+              transferable skills are problem-solving and being exceptionally
+              quick learner. Everybody says that you'd say, but I mean it.
             </p>
           </div>
         </MotionParagraph>
@@ -110,7 +121,7 @@ export default function About() {
           </MotionParagraph>
           <MotionParagraph>
             <p>
-              Some popular frameworks I used: Bootstrap, Tailwind, jQuery,
+              Some popular frameworks I used are Bootstrap, Tailwind, jQuery,
               React.
             </p>
           </MotionParagraph>
@@ -122,7 +133,7 @@ export default function About() {
           </MotionParagraph>
           <MotionParagraph>
             <p>
-              Main design tools I use are: Simple White paper and Pen, Adobe
+              Main design tools I use are Simple White paper and Pen, Adobe
               Illustrator, Adobe Photoshop and Adobe InDesign.
             </p>
           </MotionParagraph>
@@ -140,7 +151,9 @@ export default function About() {
           </MotionParagraph>
         </div>
         <MotionParagraph>
-          <Subheading text={`Yeah, let's build you a pretty website.`} />
+          <Subheading
+            text={`Yeah, let's build you a pretty website. Add me to your team.`}
+          />
         </MotionParagraph>
         <MotionParagraph>
           <ScrollDown />
