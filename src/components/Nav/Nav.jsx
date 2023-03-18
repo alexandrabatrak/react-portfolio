@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import SoundIcon from "../SoundIcon/SoundIcon";
 import { useMediaQuery } from "react-responsive";
 
 import "./nav.scss";
 
-export default function Header() {
+export default function Nav({ isPlaying }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrolledUp, setScrolledUp] = useState(false);
@@ -100,14 +99,11 @@ export default function Header() {
               Contact
             </NavLink>
           </div>
-          <div className='nav-item-wrapper'>
+          {/* <div className='nav-item-wrapper'>
             <Link className='nav-brand' to='/'>
               {isTabletOrMobile ? "A." : "Alexandra Batrak"}
             </Link>
-          </div>
-          <div className='nav-item-wrapper'>
-            <SoundIcon />
-          </div>
+          </div> */}
         </div>
       </nav>
     </header>
