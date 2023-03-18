@@ -5,6 +5,10 @@
     position: relative;
   }
 
+  .halfheight {
+    margin-top: 50px; // to counteract the parallax transform and keep the top section 100vh
+  }
+
   &-grid {
     display: flex;
     flex-direction: column;
