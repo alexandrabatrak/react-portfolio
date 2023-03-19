@@ -2,6 +2,56 @@
 @import "./scss/animations";
 @import "./scss/typography";
 
+/* Loader */
+.enter-wrapper {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1004;
+  transition: $long-transition;
+
+  &.hide {
+    background: transparent;
+
+    .enter {
+      padding: 100%;
+      background: transparent;
+      transform: scale(4);
+
+      span {
+        opacity: 0;
+      }
+    }
+  }
+
+  .enter {
+    color: $primary;
+    padding: 1rem 0rem;
+    background: none;
+    border: 0.5rem solid black;
+    font-family: $body-font;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: $transition;
+    cursor: pointer;
+
+    span {
+      padding: 1rem;
+      border: 2px solid black;
+      background: rgba(black, 0.35);
+    }
+
+    &:not(.hide):hover {
+      color: $light;
+      padding: 2rem 1rem;
+    }
+  }
+}
+
 /* General */
 *,
 :after,

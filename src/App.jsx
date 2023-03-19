@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import RoutesWrapper from "./routes/Routes";
@@ -12,6 +12,7 @@ export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioLoaded, setAudioLoaded] = useState(false);
   const [isLoaded, setIsLoaded] = useState(!loading);
+  const enterRef = useRef(null);
 
   // Load the audio
   useEffect(() => {
@@ -30,12 +31,20 @@ export default function App() {
   }, []);
 
   const handleButtonClick = () => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 200);
     setIsPlaying(true);
   };
 
   const handleDOMContentLoaded = () => {
-    document.querySelector(".loader").remove();
+    const loader = document.querySelector(".loader");
+    setTimeout(() => {
+      loader.classList.add("hide");
+      setTimeout(() => {
+        loader.remove();
+      }, 500);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -49,17 +58,11 @@ export default function App() {
     <>
       {audioLoaded &&
         (loading ? (
-          <div className='enter'>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100vh",
-              }}>
-              <button onClick={handleButtonClick} style={{ zIndex: "1005" }}>
-                Enter
-              </button>
+          <div
+            ref={enterRef}
+            className={`enter-wrapper ${loading ? "" : "hide"}`}>
+            <div className='enter' onClick={handleButtonClick}>
+              <span>Enter</span>
             </div>
           </div>
         ) : (
