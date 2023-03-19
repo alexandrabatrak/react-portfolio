@@ -21,7 +21,8 @@ export default function RoutesWrapper({ setIsLoaded }) {
   }, []);
 
   const location = useLocation();
-  const hoverables = "a, button, .sound-wrapper, .nav-icon";
+  const hoverables =
+    "a, button, .sound-wrapper, .nav-icon, .swiper-button-prev, .swiper-button-next";
   const withCustomCursor = (Component, hoverable) => {
     return (props) => (
       <>
