@@ -48,9 +48,9 @@ export default function App() {
   };
 
   useEffect(() => {
-    window.addEventListener("load", handleDOMContentLoaded);
+    window.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
     return () => {
-      window.removeEventListener("load", handleDOMContentLoaded);
+      window.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
     };
   }, []);
 
