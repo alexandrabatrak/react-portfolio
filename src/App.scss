@@ -52,6 +52,31 @@
   }
 }
 
+/* Scrollbar */
+html {
+  scrollbar-color: $light $primary; /* fallback for non-webkit browsers */
+}
+
+/* scrollbar modifications */
+::-webkit-scrollbar-track {
+  height: 12.5px;
+  background: $secondary;
+}
+
+::-webkit-scrollbar {
+  width: 12.5px;
+  height: 12.5px;
+  background: $secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+::selection {
+  background: $secondary;
+}
+
 /* General */
 *,
 :after,
