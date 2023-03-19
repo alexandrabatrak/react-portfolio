@@ -6,7 +6,7 @@
 
 _Lemme do it for you_ :brown_heart:
 
-MY latest porfolio built using React@latest.
+My latest porfolio built using React@latest.
 Meant to be viewed in latest browser versions (best in webkit). Design inspired by my original WordPress portfolio. All style done purely in scss.
 
 ## [Go look :star:](https://alexandrabatrak.netlify.app/)
