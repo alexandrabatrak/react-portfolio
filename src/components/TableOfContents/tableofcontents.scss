@@ -1,0 +1,11 @@
+@import "../../scss/variables";
+/* Table of contents */
+ul {
+  li {
+    list-style: none;
+
+    a:hover {
+      color: $light;
+    }
+  }
+}

@@ -40,7 +40,7 @@ export default function App() {
   const handleDOMContentLoaded = () => {
     const loader = document.querySelector(".loader");
     setTimeout(() => {
-      loader.classList.add("hide");
+      loader && loader.classList.add("hide");
       setTimeout(() => {
         loader.remove();
       }, 500);
@@ -57,6 +57,7 @@ export default function App() {
         window.removeEventListener("load", handleDOMContentLoaded);
       };
     }
+    console.log(`Hi! I see you diggin in the console 👀`);
   }, []);
 
   return (
@@ -75,9 +76,9 @@ export default function App() {
             <Nav />
             <SoundPlayer url={sound} isPlaying={isPlaying} />
             <main>
-              <RoutesWrapper setIsLoaded={setIsLoaded} />
+              <RoutesWrapper />
             </main>
-            <MotionFade delay={0.5}>
+            <MotionFade>
               <Footer />
             </MotionFade>
           </>

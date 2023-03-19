@@ -5,6 +5,7 @@ import MotionPage from "../components/Motion/MotionPage";
 import MotionParagraph from "../components/Motion/MotionParagraph";
 import Separator from "../components/Separator/Separator";
 import Subheading from "../components/Subheading/Subheading";
+import TableOfContents from "../components/TableOfContents/TableOfContents";
 
 export default function Terms() {
   useEffect(() => {
@@ -14,13 +15,16 @@ export default function Terms() {
   return (
     <MotionPage id={"terms"} className='terms'>
       <Container>
-        <PageTitle title={"Terms and conditions"} />
+        <PageTitle title={"Terms & conditions"} />
         <Separator />
-        <MotionParagraph>
-          <Subheading text={"1. Introduction"} />
+        <p>
           <small>
             The Terms and Conditions were last updated on 19th of March 2023.
           </small>
+        </p>
+        <TableOfContents />
+        <MotionParagraph>
+          <Subheading text={"1. Introduction"} />
           <p className='text-font'>
             These Terms and conditions apply to this website and to the
             transactions related to my products and services. You may be bound
@@ -30,6 +34,8 @@ export default function Terms() {
             Terms, the provisions of these additional contracts will control and
             prevail.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"2. Binding"} />
           <p className='text-font'>
             By accessing, or otherwise using this website, you hereby agree to
@@ -38,6 +44,8 @@ export default function Terms() {
             and conditions. In some particular cases, I can also ask you to
             explicitly agree.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"3. Electronic communication"} />
           <p className='text-font'>
             By using this website or communicating with me by electronic means,
@@ -48,6 +56,8 @@ export default function Terms() {
             legal requirement, including but not limited to the requirement that
             such communications should be in writing.{" "}
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"4. Intellectual property"} />
           <p className='text-font'>
             I or my licensors own and control all of the copyright and other
@@ -67,6 +77,8 @@ export default function Terms() {
             permission, except and only insofar as otherwise stipulated in
             regulations of mandatory law (such as the right to quote).
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"5. Third-party property"} />
           <p className='text-font'>
             This website may include hyperlinks or other references to other
@@ -82,6 +94,8 @@ export default function Terms() {
             loss or damage in whatever manner, however caused, resulting from
             your disclosure to third parties of personal information.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"6. Responsible use"} />
           <p className='text-font'>
             By visiting my website, you agree to use it only for the purposes
@@ -101,6 +115,8 @@ export default function Terms() {
             email). My contact details can be found below. You may use the
             attached model withdrawal form, but it is not obligatory.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"7. Idea submission"} />
           <p className='text-font'>
             Do not submit any ideas, inventions, works of authorship, or other
@@ -113,6 +129,8 @@ export default function Terms() {
             translate and distribute your content in any existing or future
             media.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"8. Termination of use"} />
           <p className='text-font'>
             I may, in my sole discretion, at any time modify or discontinue
@@ -126,6 +144,8 @@ export default function Terms() {
             permanently lost. You must not circumvent or bypass, or attempt to
             circumvent or bypass, any access restriction measures on my website.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"9. Warranties and liability"} />
           <p className='text-font'>
             Nothing in this section will limit or exclude any warranty implied
@@ -159,6 +179,8 @@ export default function Terms() {
             the aggregate to all of your claims, actions and causes of action of
             every kind and nature.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"10. Privacy"} />
           <p className='text-font'>
             To access my website and/or services, you may be required to provide
@@ -168,6 +190,8 @@ export default function Terms() {
             address any privacy concerns you may have. For more information,
             please see the <a href='privacy-statement'>Privacy Statement</a>.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"11. Export restrictions / Legal compliance"} />
           <p className='text-font'>
             Access to the website from territories or countries where the
@@ -175,6 +199,8 @@ export default function Terms() {
             is illegal is prohibited. You may not use this website in violation
             of export laws and regulations of United Kingdom.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"12. Assignment"} />
           <p className='text-font'>
             You may not assign, transfer or sub-contract any of your rights
@@ -183,6 +209,8 @@ export default function Terms() {
             purported assignment in violation of this Section will be null and
             void.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"13. Breaches of these Terms and conditions"} />
           <p>
             Without prejudice to my other rights under these Terms and
@@ -193,7 +221,9 @@ export default function Terms() {
             they block your access to the website, and/or commence legal action
             against you.
           </p>
-          <Subheading text={"Force majeure"} />
+        </MotionParagraph>
+        <MotionParagraph>
+          <Subheading text={"14. Force majeure"} />
           <p className='text-font'>
             Except for obligations to pay money hereunder, no delay, failure or
             omission by either party to carry out or observe any of its
@@ -201,6 +231,8 @@ export default function Terms() {
             and conditions if and for as long as such delay, failure or omission
             arises from any cause beyond the reasonable control of that party.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"15. Indemnification"} />
           <p className='text-font'>
             You agree to indemnify, defend and hold me harmless, from and
@@ -211,6 +243,8 @@ export default function Terms() {
             losses, costs and expenses relating to or arising out of such
             claims.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"16. Waiver"} />
           <p className='text-font'>
             Failure to enforce any of the provisions set out in these Terms and
@@ -220,18 +254,24 @@ export default function Terms() {
             any Agreement or any part thereof, or the right thereafter to
             enforce each and every provision.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"17. Language"} />
           <p className='text-font'>
             These Terms and Conditions will be interpreted and construed
             exclusively in English. All notices and correspondence will be
             written exclusively in that language.{" "}
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"18. Entire agreement"} />
           <p className='text-font'>
             These Terms and Conditions, together with my privacy statement,
             constitute the entire agreement between you and Alexandra Batrak in
             relation to your use of this website.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"19. Updating of these Terms and conditions"} />
           <p className='text-font'>
             I may update these Terms and Conditions from time to time. It is
@@ -243,6 +283,8 @@ export default function Terms() {
             the posting of changes or updates will be considered notice of your
             acceptance to abide by and be bound by these Terms and Conditions.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"20. Choice of Law and Jurisdiction"} />
           <p className='text-font'>
             These Terms and Conditions shall be governed by the laws of United
@@ -255,6 +297,8 @@ export default function Terms() {
             effect to the intent of these Terms and Conditions. The other
             provisions will not be affected.
           </p>
+        </MotionParagraph>
+        <MotionParagraph>
           <Subheading text={"21. Contact information"} />
           <p className='text-font'>
             This website is owned and operated by Alexandra Batrak. You may

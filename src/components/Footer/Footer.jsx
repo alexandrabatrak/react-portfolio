@@ -27,10 +27,10 @@ export default function Footer() {
               <div className='footer-links'>
                 <ul>
                   <li>
-                    <a href='/privacy-statement'>Privacy Policy</a>
+                    <Link to='/privacy-statement'>Privacy Policy</Link>
                   </li>
                   <li>
-                    <a href='/terms-and-conditions'>Terms and Conditions</a>
+                    <Link to='/terms-and-conditions'>Terms and Conditions</Link>
                   </li>
                   <li>
                     <span>This portfolio is a work in progress.</span>
@@ -44,7 +44,10 @@ export default function Footer() {
                     <RiHeart3Fill />{" "}
                   </span>
                   All right reserved. &copy; {new Date().getFullYear()}{" "}
-                  <a href='https://github.com/alexandrabatrak'>
+                  <a
+                    href='https://github.com/alexandrabatrak'
+                    target='_blank'
+                    rel='noreferrer'>
                     Alexandra Batrak
                   </a>
                 </p>

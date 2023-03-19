@@ -9,12 +9,8 @@ import Contact from "../pages/Contact";
 import Privacy from "../pages/Privacy";
 import Terms from "../pages/Terms";
 
-export default function RoutesWrapper({ setIsLoaded }) {
+export default function RoutesWrapper() {
   const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(false);
-  }, [setIsLoaded]);
 
   useEffect(() => {
     const touchDevice = () => setMobile(true);
@@ -46,12 +42,12 @@ export default function RoutesWrapper({ setIsLoaded }) {
   return (
     <Routes key={location.pathname} location={location}>
       <Route exact path='/' element={<HoverHome />} />
-      <Route path='/about' element={<HoverAbout />} />
-      <Route path='/contact' element={<HoverContact />} />
-      <Route path='/projects' element={<HoverProjects />} />
-      <Route path='/projects/:projectId' element={<HoverProjectPage />} />
-      <Route path='/terms-and-conditions' element={<HoverPrivacy />} />
-      <Route path='/privacy-statement' element={<HoverTerms />} />
+      <Route exact path='/about' element={<HoverAbout />} />
+      <Route exact path='/contact' element={<HoverContact />} />
+      <Route exact path='/projects' element={<HoverProjects />} />
+      <Route exact path='/projects/:projectId' element={<HoverProjectPage />} />
+      <Route exact path='/terms-and-conditions' element={<HoverTerms />} />
+      <Route exact path='/privacy-statement' element={<HoverPrivacy />} />
     </Routes>
   );
 }

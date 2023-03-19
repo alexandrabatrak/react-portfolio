@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useForm, ValidationError } from "@formspree/react";
 import MotionParagraph from "../Motion/MotionParagraph";
 import { motion } from "framer-motion";
@@ -82,8 +83,8 @@ export default function ContactForm() {
             )}
             <small>
               By submitting this form, you agree to{" "}
-              <a href='/privacy-policy'>Privacy Policy</a>. Your data will be
-              processed only to reply back.
+              <Link to='/privacy-statement'>Privacy Policy</Link>. Your data
+              will be processed only to reply back.
             </small>
             <motion.button
               initial={{ opacity: 0, y: "50%" }}

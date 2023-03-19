@@ -6,7 +6,7 @@ import MotionParagraph from "../components/Motion/MotionParagraph";
 import Separator from "../components/Separator/Separator";
 import Subheading from "../components/Subheading/Subheading";
 
-export default function Terms() {
+export default function Privacy() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -18,12 +18,10 @@ export default function Terms() {
         <Separator />
         <MotionParagraph>
           <Subheading
-            text={
-              "1. >What personal data do we collect and why do we collect it"
-            }
+            text={"What personal data do I collect and why do I collect it"}
           />
           <div className='text-font'>
-            <h5>Contact forms</h5>
+            <h5>Contact form</h5>
             <p>
               I only use the information you provide in the contact form to
               contact you back. You can request to receive an exported file of
