@@ -30,21 +30,27 @@ const useAudio = ({ url, isPlaying: initialPlaying }) => {
   }, [audio, initialPlaying]);
 
   useEffect(() => {
-    setPlaying(initialPlaying);
-  }, [initialPlaying]);
-
-  useEffect(() => {
     audio.addEventListener("ended", () => setPlaying(false));
     return () => {
       audio.removeEventListener("ended", () => setPlaying(false));
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("soundPreference", JSON.stringify(playing));
+  }, [playing]);
+
   return [playing, toggle];
 };
 
 export default function SoundPlayer({ url, isPlaying }) {
-  const [playing, toggle] = useAudio({ url, isPlaying });
+  const [storedState, setStoredState] = useState(
+    localStorage.getItem("soundPreference") !== null
+      ? JSON.parse(localStorage.getItem("soundPreference"))
+      : isPlaying
+  );
+
+  const [playing, toggle] = useAudio({ url, isPlaying: storedState });
 
   const generateBars = () => {
     const bars = [];
@@ -53,6 +59,10 @@ export default function SoundPlayer({ url, isPlaying }) {
     }
     return bars;
   };
+
+  useEffect(() => {
+    setStoredState(playing);
+  }, [playing]);
 
   return (
     <div className='sound-wrapper' tabIndex='0' onClick={toggle}>
