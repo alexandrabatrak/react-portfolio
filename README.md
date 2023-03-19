@@ -1,4 +1,4 @@
-## react-portfolio
+## Personal Portfolio
 
 ![License](https://img.shields.io/badge/license-UNLICENCE-3558AE.svg?labelColor=2F2E32&style=for-the-badge&logo=simple-icons)
 
