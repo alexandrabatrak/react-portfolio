@@ -6,6 +6,8 @@ import Projects from "../pages/Projects";
 import ProjectPage from "../pages/ProjectPage";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Privacy from "../pages/Privacy";
+import Terms from "../pages/Terms";
 
 export default function RoutesWrapper({ setIsLoaded }) {
   const [mobile, setMobile] = useState(false);
@@ -23,6 +25,7 @@ export default function RoutesWrapper({ setIsLoaded }) {
   const location = useLocation();
   const hoverables =
     "a, button, .sound-wrapper, .nav-icon, .swiper-button-prev, .swiper-button-next";
+
   const withCustomCursor = (Component, hoverable) => {
     return (props) => (
       <>
@@ -37,6 +40,8 @@ export default function RoutesWrapper({ setIsLoaded }) {
   const HoverContact = withCustomCursor(Contact, hoverables);
   const HoverProjects = withCustomCursor(Projects, hoverables);
   const HoverProjectPage = withCustomCursor(ProjectPage, hoverables);
+  const HoverPrivacy = withCustomCursor(Privacy, hoverables);
+  const HoverTerms = withCustomCursor(Terms, hoverables);
 
   return (
     <Routes key={location.pathname} location={location}>
@@ -45,6 +50,8 @@ export default function RoutesWrapper({ setIsLoaded }) {
       <Route path='/contact' element={<HoverContact />} />
       <Route path='/projects' element={<HoverProjects />} />
       <Route path='/projects/:projectId' element={<HoverProjectPage />} />
+      <Route path='/terms-and-conditions' element={<HoverPrivacy />} />
+      <Route path='/privacy-statement' element={<HoverTerms />} />
     </Routes>
   );
 }

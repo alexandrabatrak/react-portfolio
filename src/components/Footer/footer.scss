@@ -5,15 +5,19 @@
 footer {
   position: relative;
 
+  p {
+    @include txt-size("sm");
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
   .socials-wrapper {
     margin: auto;
     padding: 2rem;
-
-    ul {
-      list-style: none;
-      display: flex;
-      justify-content: space-around;
-    }
   }
 
   .footer {
@@ -22,13 +26,17 @@ footer {
     justify-content: center;
     color: $light;
 
-    p {
-      @include txt-size("sm");
-    }
-  }
+    &-links {
+      ul {
+        @include txt-size("sm");
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
 
-  .notice span {
-    font-style: italic;
+      span {
+        font-style: italic;
+      }
+    }
   }
 
   .copyright {

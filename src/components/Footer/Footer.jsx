@@ -24,10 +24,19 @@ export default function Footer() {
           </MotionFade>
           <MotionFade delay={0.7}>
             <div className='footer'>
-              <p className='notice'>
-                <a href='/privacy-policy'>Privacy Policy</a>{" "}
-                <span>This portfolio is a work in progress.</span>
-              </p>
+              <div className='footer-links'>
+                <ul>
+                  <li>
+                    <a href='/privacy-statement'>Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href='/terms-and-conditions'>Terms and Conditions</a>
+                  </li>
+                  <li>
+                    <span>This portfolio is a work in progress.</span>
+                  </li>
+                </ul>
+              </div>
               <div className='copyright'>
                 <p>
                   Coded with{" "}
