@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import MotionParagraph from "../Motion/MotionParagraph";
 import { motion } from "framer-motion";

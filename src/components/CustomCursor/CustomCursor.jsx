@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import "./customcursor.scss";
 
-// TODO: Cursor render isn't smooth enough on the home page
-
 export default function CustomCursor({ hoverable }) {
   const [clicking, setClicking] = useState(false);
   const [hovering, setHovering] = useState(false);

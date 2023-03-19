@@ -62,24 +62,3 @@ export default function SoundPlayer({ url, isPlaying }) {
     </div>
   );
 }
-
-// const toggle = () => setPlaying(!isPlaying);
-
-// useEffect(() => {
-//   setPlaying((prevPlaying) => {
-//     if (prevPlaying !== isPlaying) {
-//       return isPlaying;
-//     }
-//     return prevPlaying;
-//   });
-// }, [isPlaying]);
-
-// useEffect(() => {
-//   if (playing) {
-//     audio.loop = true;
-//     audio.play();
-//   } else {
-//     audio.loop = false;
-//     audio.pause();
-//   }
-// }, [playing]);
