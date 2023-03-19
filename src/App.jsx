@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import RoutesWrapper from "./routes/Routes";
@@ -47,11 +47,15 @@ export default function App() {
     }, 1000);
   };
 
-  useEffect(() => {
-    window.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-    return () => {
-      window.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
-    };
+  useLayoutEffect(() => {
+    if (document.readyState === "complete") {
+      handleDOMContentLoaded();
+    } else {
+      window.addEventListener("load", handleDOMContentLoaded);
+      return () => {
+        window.removeEventListener("load", handleDOMContentLoaded);
+      };
+    }
   }, []);
 
   return (
