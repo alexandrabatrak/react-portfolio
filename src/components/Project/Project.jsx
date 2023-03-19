@@ -118,7 +118,9 @@ export default function Project({ id }) {
             )}
           </Container>
           <MotionParagraph>
-            <Slider project={project} imgNum={imgNum} />
+            <Container>
+              <Slider project={project} imgNum={imgNum} />
+            </Container>
           </MotionParagraph>
           <MotionParagraph delay={0.6}>
             <Separator />
