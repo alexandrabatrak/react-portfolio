@@ -40,7 +40,7 @@ export default function App() {
   const handleDOMContentLoaded = () => {
     const loader = document.querySelector(".loader");
     setTimeout(() => {
-      loader && loader.classList.add("hide");
+      loader.classList.add("hide");
       setTimeout(() => {
         loader.remove();
       }, 500);
