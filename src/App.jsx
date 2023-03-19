@@ -47,6 +47,7 @@ export default function App() {
     }, 1000);
   };
 
+  // useEffect was not suitable. Issues were cause where loader was not removed because content loaded before and there was blah-blah I'm tired
   useLayoutEffect(() => {
     if (document.readyState === "complete") {
       handleDOMContentLoaded();
