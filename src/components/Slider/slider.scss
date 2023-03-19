@@ -1,5 +1,5 @@
-@import '../../scss/variables';
-@import '../../scss/typography';
+@import "../../scss/variables";
+@import "../../scss/typography";
 
 /* Slide */
 :root {
@@ -13,8 +13,7 @@
   &-button {
     &-next,
     &-prev {
-      bottom: 5px;
-      top: auto;
+      top: 10px;
       width: 75px;
       height: 75px;
       background: black;
@@ -26,14 +25,14 @@
       left: auto;
 
       &:after {
-        content: '→';
+        content: "→";
       }
     }
     &-prev {
       right: 75px;
       left: auto;
       &:after {
-        content: '←';
+        content: "←";
       }
     }
   }
