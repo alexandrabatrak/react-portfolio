@@ -76,7 +76,7 @@ export default function App() {
             <Nav />
             <SoundPlayer url={sound} isPlaying={isPlaying} />
             <main>
-              <RoutesWrapper />
+              <RoutesWrapper setIsLoaded={setIsLoaded} />
             </main>
             <MotionFade>
               <Footer />

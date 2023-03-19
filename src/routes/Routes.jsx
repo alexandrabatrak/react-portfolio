@@ -9,8 +9,12 @@ import Contact from "../pages/Contact";
 import Privacy from "../pages/Privacy";
 import Terms from "../pages/Terms";
 
-export default function RoutesWrapper() {
+export default function RoutesWrapper({ setIsLoaded }) {
   const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(false);
+  }, [setIsLoaded]);
 
   useEffect(() => {
     const touchDevice = () => setMobile(true);
