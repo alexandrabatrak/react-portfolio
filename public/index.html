@@ -27,7 +27,7 @@
         position: relative;
         height: 1.5rem;
         padding: 0.5rem;
-        animation: rotate 5s ease-in-out infinite;
+        animation: loader-rotate 5s ease-in-out infinite;
         transition: all 0.5s ease-in-out;
       }
       .loader .circle {
@@ -41,19 +41,19 @@
       .loader .circle-1 {
         top: 0;
         left: calc(25% + 1px);
-        animation: expand 3s ease-in-out infinite;
+        animation: loader-expand 3s ease-in-out infinite;
       }
       .loader .circle-2 {
         top: calc(50% - 1px);
         height: 7px;
         width: 7px;
         left: calc(12px + 25%);
-        animation: expand 10s ease-in-out infinite;
+        animation: loader-expand 10s ease-in-out infinite;
       }
       .loader .circle-3 {
         top: calc(100% - 2px);
         left: 25%;
-        animation: expand 4s ease-in-out infinite;
+        animation: loader-expand 4s ease-in-out infinite;
       }
       .loader .circle-2:after,
       .loader .circle-3:before {
@@ -66,12 +66,12 @@
       .loader .circle-3:before {
         width: 0.17rem;
         height: 0.17rem;
-        animation: particle 4s linear infinite;
+        animation: loader-particle 4s linear infinite;
       }
       .loader .circle-2:after {
         width: 0.125rem;
         height: 0.125rem;
-        animation: particle2 3s linear infinite;
+        animation: loader-particle2 3s linear infinite;
       }
       .loader.hide .icon {
         height: 25%;
@@ -96,7 +96,7 @@
       .loader.hide .circle-3:before {
         opacity: 0;
       }
-      @keyframes expand {
+      @keyframes loader-expand {
         0%,
         100% {
           transform: rotate(0deg) scale(1) translate(0);
@@ -105,7 +105,7 @@
           transform: rotate(360deg) scale(0.8) translate(5px, 15px);
         }
       }
-      @keyframes rotate {
+      @keyframes loader-rotate {
         0% {
           transform: rotate(0deg) scale(1);
         }
@@ -116,7 +116,7 @@
           transform: rotate(0deg) scale(1);
         }
       }
-      @keyframes particle {
+      @keyframes loader-particle {
         25% {
           transform: translate(-115px, -225px);
         }
@@ -129,7 +129,7 @@
           opacity: 0.7;
         }
       }
-      @keyframes particle2 {
+      @keyframes loader-particle2 {
         25% {
           transform: translate(-50px, 75px);
           opacity: 0.4;
