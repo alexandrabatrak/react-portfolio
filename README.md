@@ -11,6 +11,10 @@ Meant to be viewed in latest browser versions (best in webkit). Design inspired 
 
 ## [Go look :star:](https://alexandrabatrak.netlify.app/)
 
+![Screenshot1](./public/reactportfolio/homepage.png)
+![Screenshot2](./public/reactportfolio/menu.png)
+![Screenshot3](./public/reactportfolio/projectspage.png)
+
 ## Features
 
 - [x] Single page application powered by React JS
