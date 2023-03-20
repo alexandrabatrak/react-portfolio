@@ -65,6 +65,8 @@
         img {
           object-fit: cover;
           height: 100%;
+          filter: opacity(0.5);
+          transform: rotate(25deg);
         }
       }
     }
