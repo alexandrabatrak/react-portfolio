@@ -11,7 +11,7 @@
       "deployment": "https://alexandrabatrak.netlify.app",
       "repo": "https://github.com/alexandrabatrak/react-portfolio"
     },
-    "imgfolder": "/reactportfolio",
+    "imgfolder": "../reactportfolio/",
     "img": [
       {
         "url": "homepage.png",
