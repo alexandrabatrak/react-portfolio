@@ -11,11 +11,19 @@
       "deployment": "https://alexandrabatrak.netlify.app",
       "repo": "https://github.com/alexandrabatrak/react-portfolio"
     },
-    "imgfolder": "/",
+    "imgfolder": "/reactportfolio",
     "img": [
       {
-        "url": "placeholder.webp",
-        "alt": ""
+        "url": "homepage.png",
+        "alt": "Portfolio 2023 Homepage"
+      },
+      {
+        "url": "menu.png",
+        "alt": "Portfolio 2023 Menu"
+      },
+      {
+        "url": "projectspage.png",
+        "alt": "Portfolio 2023 Projects page"
       }
     ]
   },
