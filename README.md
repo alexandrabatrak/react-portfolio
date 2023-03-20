@@ -90,4 +90,6 @@ Official documentation for React and used packages + some of the resources consu
 
 All rights reserved. :exclamation: **You have no permission to use, modify, or share the code. Although a code host such as GitHub may allow you to view and fork the code, this does not imply that you are permitted to use, modify, or share the code for any purpose.**
 
+[![Image of github-profile-views-counter](https://github.com/alexandrabatrak/github-profile-views-counter/blob/master/svg/608660507/badge.svg)](https://github.com/alexandrabatrak/github-profile-views-counter/blob/master/readme/608660507/week.md)
+
 Copyright 2023 :copyright: Alexandra Batrak
