@@ -44,7 +44,7 @@ export default function App() {
       setTimeout(() => {
         loader.remove();
       }, 500);
-    }, 1000);
+    }, 250);
   };
 
   // useEffect was not suitable. Issues were cause where loader was not removed because content loaded before and there was blah-blah I'm tired
