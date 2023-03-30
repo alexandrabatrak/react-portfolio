@@ -26,6 +26,11 @@ export default function About() {
             </em>
           </blockquote>
           <Separator />
+          <div className='avatar-wrapper'>
+            <div className='avatar'>
+              <img src='./face.jpg' alt='' />
+            </div>
+          </div>
           <div className='text-font'>
             <p>
               Let me introduce myself - I'm Alexandra. I like to think of myself
